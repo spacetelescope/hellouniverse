@@ -15,7 +15,7 @@ jobs:
       max-parallel: 5
 
     steps:
-    - name: cuda-toolkit-fork
+    #- name: cuda-toolkit-fork
       # You may pin to the exact commit or the version.
       # uses: unimonkiez/cuda-toolkit@2ab6b684c3cfd2bb40392d66847758dd59cf19bb
       #uses: unimonkiez/cuda-toolkit@v0.2.5
