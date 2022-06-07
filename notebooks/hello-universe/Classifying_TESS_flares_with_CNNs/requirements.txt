@@ -1,0 +1,9 @@
+astropy>=5.0.2
+keras>=2.8.0
+lightkurve>=2.1.0
+matplotlib>=3.5.1
+numpy>=1.22.3
+sklearn>=0.0
+tensorflow>=2.8.0
+protobuf==3.18
+git+https://github.com/afeinstein20/stella.git
