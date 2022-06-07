@@ -77,9 +77,9 @@ File [0;32m/usr/share/miniconda/lib/python3.9/site-packages/lightkurve/io/read.
 [1;32m    124[0m     )
 
 [0;31mLightkurveError[0m: Not recognized as a supported data product:
-/home/runner/.lightkurve-cache/mastDownload/HLSP/hlsp_gsfc-eleanor-lite_tess_ffi_s0001-0000000052121469_tess_v1.0_lc/hlsp_gsfc-eleanor-lite_tess_ffi_s0001-0000000052121469_tess_v1.0_lc.fits
+/home/runner/.lightkurve-cache/mastDownload/HLSP/hlsp_gsfc-eleanor-lite_tess_ffi_s0001-0000000278779899_tess_v1.0_lc/hlsp_gsfc-eleanor-lite_tess_ffi_s0001-0000000278779899_tess_v1.0_lc.fits
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
 LightkurveError: Not recognized as a supported data product:
-/home/runner/.lightkurve-cache/mastDownload/HLSP/hlsp_gsfc-eleanor-lite_tess_ffi_s0001-0000000052121469_tess_v1.0_lc/hlsp_gsfc-eleanor-lite_tess_ffi_s0001-0000000052121469_tess_v1.0_lc.fits
+/home/runner/.lightkurve-cache/mastDownload/HLSP/hlsp_gsfc-eleanor-lite_tess_ffi_s0001-0000000278779899_tess_v1.0_lc/hlsp_gsfc-eleanor-lite_tess_ffi_s0001-0000000278779899_tess_v1.0_lc.fits
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
 
