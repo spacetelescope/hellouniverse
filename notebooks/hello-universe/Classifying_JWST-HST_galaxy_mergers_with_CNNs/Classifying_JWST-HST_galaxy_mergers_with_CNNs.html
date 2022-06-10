@@ -337,26 +337,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#imports">
    Imports
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convolutional-neural-network-cnn-for-image-regression">
-   Convolutional Neural Network (CNN)  for Image Regression
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-the-data-and-visualize-a-sample-of-the-data">
      1. Load the data and visualize a sample of the data
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-the-data">
-     Load the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-example-images">
-     Plot example images
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#load-the-data">
+       Load the data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-example-images">
+       Plot example images
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -452,26 +449,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#imports">
    Imports
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convolutional-neural-network-cnn-for-image-regression">
-   Convolutional Neural Network (CNN)  for Image Regression
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-the-data-and-visualize-a-sample-of-the-data">
      1. Load the data and visualize a sample of the data
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-the-data">
-     Load the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-example-images">
-     Plot example images
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#load-the-data">
+       Load the data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-example-images">
+       Plot example images
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -611,24 +605,20 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-09 19:08:47.410564: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.12/x64/lib
-2022-06-09 19:08:47.410604: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-10 16:15:48.254663: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.12/x64/lib
+2022-06-10 16:15:48.254704: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="convolutional-neural-network-cnn-for-image-regression">
-<h2>Convolutional Neural Network (CNN)  for Image Regression<a class="headerlink" href="#convolutional-neural-network-cnn-for-image-regression" title="Permalink to this headline">#</a></h2>
 <section id="load-the-data-and-visualize-a-sample-of-the-data">
 <h3>1. Load the data and visualize a sample of the data<a class="headerlink" href="#load-the-data-and-visualize-a-sample-of-the-data" title="Permalink to this headline">#</a></h3>
 <p>Load the simulated galaxy observations (3-band images) and merger probabilities (output labels).</p>
 <p>In total, there are 15,426 simulated images, each in three filters (F814W from the Advanced Camera for Surveys and F160W from the Wide Field Camera 3 on the Hubble Space Telescope (HST), and F160W and F356W from Near Infrared Camera on the James Webb Space Telescope (JWST)), retrieved and augmented from synthetic observations of the Illustris cosmological simulation. The sample includes 8120 galaxy mergers and 7306 non-mergers. Two versions of the sample are available, with and without realistic observational and experimental noise (“pristine” and “noisy”). The sample construction and augmentation process for the HST images is described in detail in <a class="reference external" href="https://doi.org/10.1016/j.ascom.2020.100390">Ciprijanovic et al. 2020</a>, and is identical for the mock JWST images.</p>
 <p>These datasets are hosted at the Mikulski Archive for Space Telescopes as an the <a class="reference external" href="https://archive.stsci.edu/doi/resolve/resolve.html?doi=10.17909/t9-vqk6-pc80">DEEPMERGE</a> high-level science product (HLSP).</p>
 <p>The CNN will be trained to distinguish between merging and non-merging galaxies.</p>
-</section>
 <section id="load-the-data">
-<h3>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">#</a></h3>
+<h4>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">#</a></h4>
 <p>The simulated images are stored in FITS format. We refer you to the <a class="reference external" href="https://docs.astropy.org/en/stable/io/fits/index.html">Astropy Documentation</a> for further information about this format.</p>
 <p>For this example, we will download the “pristine” set of galaxy images, i.e., those without added observational noise. To select the “noisy” sample, change the version below. Alternatively, you can download data files from the <a class="reference external" href="https://stdatu.stsci.edu/hlsp/deepmerge">DEEPMERGE</a> website.</p>
 <div class="cell docutils container">
@@ -647,8 +637,8 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.45 s, sys: 5.77 s, total: 10.2 s
-Wall time: 1min 1s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.86 s, sys: 4.32 s, total: 7.18 s
+Wall time: 20.6 s
 </pre></div>
 </div>
 </div>
@@ -719,7 +709,7 @@ EXTNAME = &#39;MergerLabel&#39;
 <p>The file includes a primary header card with overall information, an image card with the simulated images, and a bintable with the merger labels for the images (1=merger, 0=non-merger).</p>
 </section>
 <section id="plot-example-images">
-<h3>Plot example images<a class="headerlink" href="#plot-example-images" title="Permalink to this headline">#</a></h3>
+<h4>Plot example images<a class="headerlink" href="#plot-example-images" title="Permalink to this headline">#</a></h4>
 <p>For a random selection of images, plot the images and their corresponding labels:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -761,9 +751,10 @@ EXTNAME = &#39;MergerLabel&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_19_0.png" src="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_19_0.png" />
+<img alt="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_18_0.png" src="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_18_0.png" />
 </div>
 </div>
+</section>
 </section>
 </section>
 <section id="divide-data-into-training-validation-and-testing-sets">
@@ -853,10 +844,10 @@ Further details about the sigmoid and softmax activation function can be found i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-09 19:09:55.205866: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.12/x64/lib
-2022-06-09 19:09:55.205903: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-06-09 19:09:55.205931: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az459-538): /proc/driver/nvidia/version does not exist
-2022-06-09 19:09:55.206915: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-10 16:16:14.145693: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.12/x64/lib
+2022-06-10 16:16:14.145728: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-06-10 16:16:14.145755: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az72-385): /proc/driver/nvidia/version does not exist
+2022-06-10 16:16:14.146445: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 </pre></div>
 </div>
@@ -1054,15 +1045,15 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-09 19:09:55.417430: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 728865000 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-10 16:16:14.299271: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 728865000 exceeds 10% of free system memory.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-09 19:09:58.917713: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23040000 exceeds 10% of free system memory.
-2022-06-09 19:09:59.087881: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23040000 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-10 16:16:17.689708: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23040000 exceeds 10% of free system memory.
+2022-06-10 16:16:17.833326: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23040000 exceeds 10% of free system memory.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-09 19:09:59.276329: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23887872 exceeds 10% of free system memory.
-2022-06-09 19:09:59.276426: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23887872 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-10 16:16:17.985895: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23887872 exceeds 10% of free system memory.
+2022-06-10 16:16:17.986426: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23887872 exceeds 10% of free system memory.
 </pre></div>
 </div>
 </div>
@@ -1103,7 +1094,7 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_34_0.png" src="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_34_0.png" />
+<img alt="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_33_0.png" src="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_33_0.png" />
 </div>
 </div>
 <p>Observe how the loss for the validation set is higher than for the training set (and conversely, the accuracy for the validation set is lower than for the training set), suggesting that this model is suffering from <a class="reference external" href="https://www.tensorflow.org/tutorials/keras/overfit_and_underfit">overfitting</a>. Revisit <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020A%26C....3200390C/abstract">the original paper</a> and notice the strategies they employ to improve the validation accuracy. Observe <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S2213133720300445">their Figure 2</a> for an example of what the results of a properly-trained network look like!</p>
@@ -1172,7 +1163,7 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_41_0.png" src="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_41_0.png" />
+<img alt="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_40_0.png" src="../../../_images/Classifying_JWST-HST_galaxy_mergers_with_CNNs_40_0.png" />
 </div>
 </div>
 </section>
