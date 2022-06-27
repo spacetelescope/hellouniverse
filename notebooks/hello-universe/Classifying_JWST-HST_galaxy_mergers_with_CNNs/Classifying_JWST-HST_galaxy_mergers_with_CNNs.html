@@ -605,8 +605,8 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-10 16:15:48.254663: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.12/x64/lib
-2022-06-10 16:15:48.254704: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-27 18:22:06.528110: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.12/x64/lib
+2022-06-27 18:22:06.528141: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
 </div>
@@ -637,8 +637,8 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.86 s, sys: 4.32 s, total: 7.18 s
-Wall time: 20.6 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.98 s, sys: 3.74 s, total: 6.73 s
+Wall time: 51.2 s
 </pre></div>
 </div>
 </div>
@@ -844,10 +844,10 @@ Further details about the sigmoid and softmax activation function can be found i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-10 16:16:14.145693: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.12/x64/lib
-2022-06-10 16:16:14.145728: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-06-10 16:16:14.145755: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az72-385): /proc/driver/nvidia/version does not exist
-2022-06-10 16:16:14.146445: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-27 18:23:02.615443: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.12/x64/lib
+2022-06-27 18:23:02.615475: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-06-27 18:23:02.615503: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az128-590): /proc/driver/nvidia/version does not exist
+2022-06-27 18:23:02.616731: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 </pre></div>
 </div>
@@ -1045,15 +1045,15 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-10 16:16:14.299271: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 728865000 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-27 18:23:02.774125: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 728865000 exceeds 10% of free system memory.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-10 16:16:17.689708: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23040000 exceeds 10% of free system memory.
-2022-06-10 16:16:17.833326: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23040000 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-27 18:23:05.197110: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23040000 exceeds 10% of free system memory.
+2022-06-27 18:23:05.348217: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23040000 exceeds 10% of free system memory.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-10 16:16:17.985895: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23887872 exceeds 10% of free system memory.
-2022-06-10 16:16:17.986426: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23887872 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-27 18:23:05.467973: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23887872 exceeds 10% of free system memory.
+2022-06-27 18:23:05.468029: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 23887872 exceeds 10% of free system memory.
 </pre></div>
 </div>
 </div>
