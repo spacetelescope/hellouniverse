@@ -1,0 +1,4 @@
+numpy
+pytorch
+astropy
+git+https://github.com/zclaytor/smartsnn
