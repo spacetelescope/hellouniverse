@@ -19,7 +19,12 @@ on:
 env:
   CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
   CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
-
+  
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  
 jobs:
   NotebookExecutionValidation:
    uses: spacetelescope/notebook-ci-actions/.github/workflows/ci_runner.yml@v2
