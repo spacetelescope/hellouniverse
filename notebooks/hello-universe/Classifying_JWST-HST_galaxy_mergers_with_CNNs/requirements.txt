@@ -5,3 +5,6 @@ numpy>=1.22.3
 scikit-learn
 tensorflow>=2.8.0
 protobuf>=3.18
+tensorrt 
+torch-tensorrt
+
