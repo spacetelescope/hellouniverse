@@ -4,3 +4,4 @@ numpy>=1.22.3
 scikit-learn
 tensorrt 
 torch-tensorrt
+pandas
