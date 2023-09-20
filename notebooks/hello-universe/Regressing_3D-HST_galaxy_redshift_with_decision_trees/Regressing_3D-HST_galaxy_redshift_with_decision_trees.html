@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -77,6 +78,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -317,10 +327,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -328,7 +338,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -443,19 +453,6 @@ document.write(`
 
 <span class="c1"># from IPython import get_ipython</span>
 <span class="c1"># get_ipython().run_line_magic(&#39;matplotlib&#39;, &#39;notebook&#39;)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># arrays</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># unpacking files</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">tarfile</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
 </div>
@@ -837,7 +834,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/03b42bdc6cb4c59471ca98082829015b75d6fa677d7720f29f1fd3fba6d46c6e.png" src="../../../_images/03b42bdc6cb4c59471ca98082829015b75d6fa677d7720f29f1fd3fba6d46c6e.png" />
+<img alt="../../../_images/a138ebc1d572ae0036311d38aabb5ffb34e4670b19f4d8f37d9180d3e80781c2.png" src="../../../_images/a138ebc1d572ae0036311d38aabb5ffb34e4670b19f4d8f37d9180d3e80781c2.png" />
 </div>
 </div>
 <p>By inspection of this plot, we will only keep sources with log(M)&gt;9 to remove sources which do not have complete coverage across redshift.</p>
@@ -877,7 +874,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/15c7399099491dd32eacf776cdbda57f7cc7df8781ecfd4f8cfaaa3118bc3212.png" src="../../../_images/15c7399099491dd32eacf776cdbda57f7cc7df8781ecfd4f8cfaaa3118bc3212.png" />
+<img alt="../../../_images/9f52772ee449ffdcba2d7b868f7b6250d45f9a067a1328d449088966a94a2a4b.png" src="../../../_images/9f52772ee449ffdcba2d7b868f7b6250d45f9a067a1328d449088966a94a2a4b.png" />
 </div>
 </div>
 <p>The ‘Av’, ‘lmass’ and ‘z_peak’ values were all computed via FAST photometric fit, and so we will exclude them as well. In addition, we will exclude the categorical flag variables (‘flags’, ‘f140w_flag’, ‘star_flag’, ‘use_phot’, ‘near_star’).</p>
@@ -938,7 +935,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/af77aa836d354f126b027816f2eac4ac025b90c55f8a9b81e9be335be616dae3.png" src="../../../_images/af77aa836d354f126b027816f2eac4ac025b90c55f8a9b81e9be335be616dae3.png" />
+<img alt="../../../_images/72d314466cfc40982e847b455fb08480c7cbba395f73211812efc47cc63d51d5.png" src="../../../_images/72d314466cfc40982e847b455fb08480c7cbba395f73211812efc47cc63d51d5.png" />
 </div>
 </div>
 </section>
@@ -1008,10 +1005,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.2033
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.2433
 </pre></div>
 </div>
-<img alt="../../../_images/36198d472a64860e29149c8c71ed6d7bcc3d73144dfb2f1d9e960bdfdbe40478.png" src="../../../_images/36198d472a64860e29149c8c71ed6d7bcc3d73144dfb2f1d9e960bdfdbe40478.png" />
+<img alt="../../../_images/a5bf6820f9b04d673abe1b329017528d677d33e621cf08d65701facd141a92cb.png" src="../../../_images/a5bf6820f9b04d673abe1b329017528d677d33e621cf08d65701facd141a92cb.png" />
 </div>
 </div>
 <p>Hmm, maybe we can do better by tuning the parameters of the model. Decision trees have many parameters, such as the maximum number of decisions (<code class="docutils literal notranslate"><span class="pre">max_depth</span></code>), the minimum number of samples required to create a split a node (<code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>) and the minimum number of samples required to be at a node leaf (<code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>). All available parameters are listed below, and are described in the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html">sklearn documenation</a>.</p>
@@ -1062,7 +1059,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;min_samples_split&#39;: 25, &#39;min_samples_leaf&#39;: 15, &#39;max_depth&#39;: 7}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;min_samples_split&#39;: 45, &#39;min_samples_leaf&#39;: 45, &#39;max_depth&#39;: 11}
 </pre></div>
 </div>
 </div>
@@ -1085,10 +1082,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.1493
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.1556
 </pre></div>
 </div>
-<img alt="../../../_images/1f574a1e9807b5dbf57c7d9a581e4f06b50e7b23c3c62eae3aceb7432d64a33d.png" src="../../../_images/1f574a1e9807b5dbf57c7d9a581e4f06b50e7b23c3c62eae3aceb7432d64a33d.png" />
+<img alt="../../../_images/d40317f22fa6d146a5b71b329f84b4473c72f737f8a62bc05c6f069f5af08049.png" src="../../../_images/d40317f22fa6d146a5b71b329f84b4473c72f737f8a62bc05c6f069f5af08049.png" />
 </div>
 </div>
 <p>The model improved somewhat with hyperparameter tuning (i.e., the MSE decreased), but the results still looks pretty bad. We’ll try another model next!</p>
@@ -1134,10 +1131,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.1165
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.1137
 </pre></div>
 </div>
-<img alt="../../../_images/7272c5f278a03d6a3353b5de91fc925ad1463fc2f7b6867d90eb66dda5f4316e.png" src="../../../_images/7272c5f278a03d6a3353b5de91fc925ad1463fc2f7b6867d90eb66dda5f4316e.png" />
+<img alt="../../../_images/754f8f841ad087dada2a6d2177fbbe3e02fd0710f056b82cb47e5b4a6fd2bddf.png" src="../../../_images/754f8f841ad087dada2a6d2177fbbe3e02fd0710f056b82cb47e5b4a6fd2bddf.png" />
 </div>
 </div>
 </section>
@@ -1180,7 +1177,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/3cb5ef598ea1a4f1ab5c90b44c2509bbca4a0fa40fe88b99a2384ce9f5e11f99.png" src="../../../_images/3cb5ef598ea1a4f1ab5c90b44c2509bbca4a0fa40fe88b99a2384ce9f5e11f99.png" />
+<img alt="../../../_images/50347b848aad3d1a963f135d313171a6cb57629e92a221c96ccc32ae3a8cb54a.png" src="../../../_images/50347b848aad3d1a963f135d313171a6cb57629e92a221c96ccc32ae3a8cb54a.png" />
 </div>
 </div>
 <p>Beyond a max_depth of ~10, the MSE on the training set declines while the MSE on the test set flattens out, suggesting some amount of over-fitting.</p>
@@ -1200,7 +1197,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validated score: -0.145 +/- 0.056
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validated score: -0.146 +/- 0.056
 </pre></div>
 </div>
 </div>
@@ -1224,7 +1221,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/71866d21088dd6d1c9a5a4264a158d07acd9faae743ee8b265470bbc725ee577.png" src="../../../_images/71866d21088dd6d1c9a5a4264a158d07acd9faae743ee8b265470bbc725ee577.png" />
+<img alt="../../../_images/21f6ebf86b7dc71bc15de12499a74500a9e342559609d1dc8bf5db5b6e19e6c5.png" src="../../../_images/21f6ebf86b7dc71bc15de12499a74500a9e342559609d1dc8bf5db5b6e19e6c5.png" />
 </div>
 </div>
 <p>The most “important” features in this model are the F125W and F606W fluxes. Parameters such as id, ra, dec, x, and y understandably have very little influence on the predictions.</p>
@@ -1259,7 +1256,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/d585ce2d45b376d191d114a79a4e84409859f4625b44b3135d8227a871682a2f.png" src="../../../_images/d585ce2d45b376d191d114a79a4e84409859f4625b44b3135d8227a871682a2f.png" />
+<img alt="../../../_images/56541c3461e339b3325dd5811f1776d7a73ee7b7f6c3550c6566b5c8e6a29762.png" src="../../../_images/56541c3461e339b3325dd5811f1776d7a73ee7b7f6c3550c6566b5c8e6a29762.png" />
 </div>
 </div>
 <p>Comparing the MSE for the results above:</p>
@@ -1271,7 +1268,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random forest MSE = 0.1393
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random forest MSE = 0.1375
 Skelton et al. (2014) MSE = 0.0928
 </pre></div>
 </div>
@@ -1344,11 +1341,10 @@ authors. Follow these links for more information:</p>
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../Classifying_JWST-HST_galaxy_mergers_with_CNNs/Classifying_JWST-HST_galaxy_mergers_with_CNNs.html"
@@ -1368,10 +1364,7 @@ authors. Follow these links for more information:</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1449,8 +1442,8 @@ By STScI Notebook Dev
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
