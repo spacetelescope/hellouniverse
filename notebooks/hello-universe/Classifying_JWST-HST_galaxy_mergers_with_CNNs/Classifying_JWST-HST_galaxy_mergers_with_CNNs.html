@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -147,13 +147,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../../../_static/HelloUniverseLogo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../../_static/HelloUniverseLogo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../../_static/HelloUniverseLogo.png" class="logo__image only-light" alt="Hello Universe! - Home"/>
+    <script>document.write(`<img src="../../../_static/HelloUniverseLogo.png" class="logo__image only-dark" alt="Hello Universe! - Home"/>`);</script>
   
   
 </a></div>
@@ -403,7 +404,6 @@ document.write(`
   <p><a id="top"></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="classifying-jwst-hst-galaxy-mergers-with-cnns">
 <h1>Classifying JWST-HST galaxy mergers with CNNs<a class="headerlink" href="#classifying-jwst-hst-galaxy-mergers-with-cnns" title="Permalink to this heading">#</a></h1>
-<p><font color="red">This notebook currently fails to execute, use as reference only</font></p>
 <hr class="docutils" />
 <section id="learning-goals">
 <h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading">#</a></h2>
@@ -454,7 +454,7 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 <span class="c1"># keras</span>
 <span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
 <span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">BatchNormalization</span>
-<span class="kn">from</span> <span class="nn">keras.layers.convolutional</span> <span class="kn">import</span> <span class="n">Convolution2D</span><span class="p">,</span> <span class="n">MaxPooling2D</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Convolution2D</span><span class="p">,</span> <span class="n">MaxPooling2D</span>
 <span class="kn">from</span> <span class="nn">keras.regularizers</span> <span class="kn">import</span> <span class="n">l2</span>
 <span class="kn">from</span> <span class="nn">keras.callbacks</span> <span class="kn">import</span> <span class="n">EarlyStopping</span>
 
@@ -464,6 +464,18 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 
 <span class="c1"># from IPython import get_ipython</span>
 <span class="c1"># get_ipython().run_line_magic(&#39;matplotlib&#39;, &#39;notebook&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-10-26 15:44:50.713353: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-10-26 15:44:50.800219: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-10-26 15:44:50.800270: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-10-26 15:44:50.800322: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-10-26 15:44:50.818176: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-10-26 15:44:50.819617: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-10-26 15:44:52.690239: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 </pre></div>
 </div>
 </div>
@@ -493,6 +505,12 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.43 ms, sys: 569 µs, total: 3 ms
+Wall time: 2.87 ms
+</pre></div>
+</div>
+</div>
 </div>
 <p>Explore the header of the file for information about its contents</p>
 <div class="cell docutils container">
@@ -501,10 +519,58 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SIMPLE  =                    T / conforms to FITS standard                      
+BITPIX  =                  -64 / array data type                                
+NAXIS   =                    4 / number of array dimensions                     
+NAXIS1  =                   75                                                  
+NAXIS2  =                   75                                                  
+NAXIS3  =                    3                                                  
+NAXIS4  =                15426                                                  
+EXTEND  =                    T                                                  
+NAME1   = &#39;ImageX  &#39;                                                            
+NAME2   = &#39;ImageY  &#39;                                                            
+NAME3   = &#39;filter  &#39;           / F814W,F356W,F160W                              
+NAME4   = &#39;object  &#39;                                                            
+EXTNAME = &#39;Images  &#39;                                                            
+BUNIT   = &#39;microjanskies/arcsec^2&#39; / image units                                
+PIXSIZE =               0.1875 / arcsec                                         
+DOI     = &#39;10.17909/t9-vqk6-pc80&#39;                                               
+HLSPID  = &#39;DEEPMERGE&#39;                                                           
+HLSPLEAD= &#39;Aleksandra Ciprijanovic&#39;                                             
+HLSPNAME= &#39;Mock Image Training Sets for DeepMerge&#39;                              
+SIMULATD=                    T                                                  
+HLSPTARG= &#39;Illustris Simulation&#39;                                                
+HLSPVER = &#39;v1      &#39;                                                            
+INSTRUME= &#39;ACS,WFC3,NIRCam&#39;                                                     
+LICENSE = &#39;CC BY 4.0&#39;                                                           
+LICENURL= &#39;https://creativecommons.org/licenses/by/4.0/&#39;                        
+OBSERVAT= &#39;HST,JWST&#39;                                                            
+TELESCOP= &#39;HST,JWST&#39;                                                            
+PROPOSID= &#39;HST AR#13887&#39;                                                        
+REFERENC= &#39;2021MNRAS.506..677C&#39;                                                 
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hdu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XTENSION= &#39;BINTABLE&#39;           / binary table extension                         
+BITPIX  =                    8 / array data type                                
+NAXIS   =                    2 / number of array dimensions                     
+NAXIS1  =                    8 / length of dimension 1                          
+NAXIS2  =                15426 / length of dimension 2                          
+PCOUNT  =                    0 / number of group parameters                     
+GCOUNT  =                    1 / number of groups                               
+TFIELDS =                    1 / number of table fields                         
+TTYPE1  = &#39;MergerLabel&#39;                                                         
+TFORM1  = &#39;D       &#39;                                                            
+EXTNAME = &#39;MergerLabel&#39;                                                         
 </pre></div>
 </div>
 </div>
@@ -517,6 +583,11 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hdu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(15426, 3, 75, 75)
 </pre></div>
 </div>
 </div>
@@ -547,6 +618,9 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/3cd9befee764acf8c0071be8b64f073f23c3c17fcccb2d30cb6489843822a091.png" src="../../../_images/3cd9befee764acf8c0071be8b64f073f23c3c17fcccb2d30cb6489843822a091.png" />
 </div>
 </div>
 </section>
@@ -656,6 +730,59 @@ As in <a class="reference external" href="https://doi.org/10.1016/j.ascom.2020.1
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;model&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 75, 75, 3)]       0         
+                                                                 
+ conv2d (Conv2D)             (None, 75, 75, 8)         608       
+                                                                 
+ batch_normalization (Batch  (None, 75, 75, 8)         32        
+ Normalization)                                                  
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 37, 37, 8)         0         
+ D)                                                              
+                                                                 
+ dropout (Dropout)           (None, 37, 37, 8)         0         
+                                                                 
+ conv2d_1 (Conv2D)           (None, 37, 37, 16)        1168      
+                                                                 
+ batch_normalization_1 (Bat  (None, 37, 37, 16)        64        
+ chNormalization)                                                
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 18, 18, 16)        0         
+ g2D)                                                            
+                                                                 
+ dropout_1 (Dropout)         (None, 18, 18, 16)        0         
+                                                                 
+ conv2d_2 (Conv2D)           (None, 18, 18, 32)        4640      
+                                                                 
+ batch_normalization_2 (Bat  (None, 18, 18, 32)        128       
+ chNormalization)                                                
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 9, 9, 32)          0         
+ g2D)                                                            
+                                                                 
+ dropout_2 (Dropout)         (None, 9, 9, 32)          0         
+                                                                 
+ flatten (Flatten)           (None, 2592)              0         
+                                                                 
+ dense (Dense)               (None, 64)                165952    
+                                                                 
+ dense_1 (Dense)             (None, 32)                2080      
+                                                                 
+ dense_2 (Dense)             (None, 1)                 33        
+                                                                 
+=================================================================
+Total params: 174705 (682.44 KB)
+Trainable params: 174593 (682.00 KB)
+Non-trainable params: 112 (448.00 Byte)
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="train-the-cnn-to-perform-a-classification-task">
@@ -678,6 +805,12 @@ In other words, it doesn’t have to be retrained every time one wants to use it
                   <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">),</span>
                   <span class="n">shuffle</span><span class="o">=</span><span class="n">shuffle</span><span class="p">,</span>
                   <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-10-26 15:45:06.215887: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 728865000 exceeds 10% of free system memory.
+2023-10-26 15:45:49.044500: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 104287500 exceeds 10% of free system memory.
 </pre></div>
 </div>
 </div>
@@ -717,6 +850,9 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/7945ea5aa26215accc2232409342d253b4fa857b472d21df05817ee1e82bfd43.png" src="../../../_images/7945ea5aa26215accc2232409342d253b4fa857b472d21df05817ee1e82bfd43.png" />
+</div>
 </div>
 <p>Observe how the loss for the validation set is higher than for the training set (and conversely, the accuracy for the validation set is lower than for the training set), suggesting that this model is suffering from <a class="reference external" href="https://www.tensorflow.org/tutorials/keras/overfit_and_underfit">overfitting</a>. Revisit <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020A%26C....3200390C/abstract">the original paper</a> and notice the strategies they employ to improve the validation accuracy. Observe <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S2213133720300445">their Figure 2</a> for an example of what the results of a properly-trained network look like!</p>
 </section>
@@ -726,6 +862,14 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_predictions</span> <span class="o">=</span> <span class="n">cnn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-10-26 15:58:50.355317: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 208102500 exceeds 10% of free system memory.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97/97 [==============================] - 4s 35ms/step
 </pre></div>
 </div>
 </div>
@@ -782,6 +926,18 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 3/97 [..............................] - ETA: 3s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-10-26 15:58:54.502282: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 208102500 exceeds 10% of free system memory.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97/97 [==============================] - 3s 34ms/step
+</pre></div>
+</div>
+<img alt="../../../_images/377908f509c4723c6557278d54b757b18e190500dadc94249bca4a5ef4167316.png" src="../../../_images/377908f509c4723c6557278d54b757b18e190500dadc94249bca4a5ef4167316.png" />
 </div>
 </div>
 </section>
@@ -964,8 +1120,8 @@ By STScI Notebook Dev
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
 
   <footer class="bd-footer">
   </footer>
