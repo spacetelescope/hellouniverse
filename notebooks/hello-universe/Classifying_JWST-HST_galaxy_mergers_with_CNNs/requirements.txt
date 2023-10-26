@@ -1,4 +1,6 @@
-astropy>=5.2.1
+tensorflow
+numpy
+astropy
 keras>=2.14.0
 matplotlib>=3.7.0
 numpy>=1.25.2
