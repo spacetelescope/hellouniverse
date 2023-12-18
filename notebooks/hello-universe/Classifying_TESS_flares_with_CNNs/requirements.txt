@@ -1,11 +1,8 @@
-astropy>=5.0.2
-keras>=2.8.0
-lightkurve>=2.1.0
-matplotlib>=3.5.1
-numpy>=1.22.3
-scikit-learn
-tensorflow>=2.8.0
-protobuf>=3.18
-tensorrt 
-torch-tensorrt
+tensorflow
+astropy>=6.0.0
+keras
+lightkurve>=2.4.2
+matplotlib>=3.8.2
+numpy>=1.26.2
+scikit_learn>=1.3.2
 
