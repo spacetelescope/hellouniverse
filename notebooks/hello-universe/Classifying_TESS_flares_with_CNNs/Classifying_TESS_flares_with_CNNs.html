@@ -431,7 +431,6 @@ Yotam Cohen, STScI Staff Scientist, <a class="reference external" href="mailto:y
 This notebook is based on the <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020JOSS....5.2347F/abstract"><code class="docutils literal notranslate"><span class="pre">stella</span></code></a> software package for the CNN used in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">“Flare Statistics for Young Stars from a Convolutional Neural Network Analysis of TESS Data”</a>, Adina D. Feinstein et al. Astronomical Journal, Volume 160, Issue 5, November 2020, and the notebook “CNN_for_cluster_masses” by Michelle Ntampaka, Assistant Astronomer, <a class="reference external" href="mailto:mntampaka&#37;&#52;&#48;stsci&#46;edu">mntampaka<span>&#64;</span>stsci<span>&#46;</span>edu</a>.</p>
 <p><strong>Published:</strong> 2022-06-01</p>
 <p><strong>Updated:</strong> 2023-12-13</p>
-<p><font color="red">This notebook currently fails to execute, use as reference only</font></p>
 </section>
 <hr class="docutils" />
 <section id="imports">
@@ -477,12 +476,14 @@ This notebook is based on the <a class="reference external" href="https://ui.ads
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-12-18 17:06:29.331676: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2023-12-18 17:06:29.331720: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2023-12-18 17:06:29.332624: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2023-12-18 17:06:29.338373: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-12-18 17:33:44.886514: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2023-12-18 17:33:44.918222: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-12-18 17:33:44.918246: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-12-18 17:33:44.919419: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-12-18 17:33:44.925107: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2023-12-18 17:33:44.925568: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2023-12-18 17:06:30.769582: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2023-12-18 17:33:45.617140: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 </pre></div>
 </div>
 </div>
@@ -507,8 +508,8 @@ In other words, the CNN performs a <strong>classification</strong> task at each 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13.8 ms, sys: 4.42 ms, total: 18.2 ms
-Wall time: 383 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.27 ms, sys: 481 µs, total: 1.75 ms
+Wall time: 1.44 ms
 </pre></div>
 </div>
 </div>
@@ -686,45 +687,45 @@ Once you’ve run your model and evaluated the fit, you can come back here and r
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/20
-23/23 [==============================] - 1s 16ms/step - loss: 0.6877 - accuracy: 0.6455 - val_loss: 0.6485 - val_accuracy: 0.7088
+23/23 [==============================] - 1s 15ms/step - loss: 0.6098 - accuracy: 0.7158 - val_loss: 0.6070 - val_accuracy: 0.7088
 Epoch 2/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.5991 - accuracy: 0.7316 - val_loss: 0.6024 - val_accuracy: 0.7088
+23/23 [==============================] - 0s 9ms/step - loss: 0.5910 - accuracy: 0.7309 - val_loss: 0.6046 - val_accuracy: 0.7088
 Epoch 3/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5822 - accuracy: 0.7329 - val_loss: 0.6023 - val_accuracy: 0.7088
+23/23 [==============================] - 0s 9ms/step - loss: 0.5886 - accuracy: 0.7309 - val_loss: 0.6063 - val_accuracy: 0.7088
 Epoch 4/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5801 - accuracy: 0.7336 - val_loss: 0.6000 - val_accuracy: 0.7088
+23/23 [==============================] - 0s 9ms/step - loss: 0.5813 - accuracy: 0.7309 - val_loss: 0.6095 - val_accuracy: 0.7088
 Epoch 5/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.5737 - accuracy: 0.7363 - val_loss: 0.5905 - val_accuracy: 0.7143
+23/23 [==============================] - 0s 9ms/step - loss: 0.5834 - accuracy: 0.7329 - val_loss: 0.5988 - val_accuracy: 0.7088
 Epoch 6/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.5673 - accuracy: 0.7432 - val_loss: 0.5890 - val_accuracy: 0.7143
+23/23 [==============================] - 0s 9ms/step - loss: 0.5750 - accuracy: 0.7343 - val_loss: 0.5968 - val_accuracy: 0.7143
 Epoch 7/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.5511 - accuracy: 0.7480 - val_loss: 0.5761 - val_accuracy: 0.7143
+23/23 [==============================] - 0s 9ms/step - loss: 0.5668 - accuracy: 0.7411 - val_loss: 0.5861 - val_accuracy: 0.7143
 Epoch 8/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.5445 - accuracy: 0.7520 - val_loss: 0.5670 - val_accuracy: 0.7253
+23/23 [==============================] - 0s 9ms/step - loss: 0.5530 - accuracy: 0.7486 - val_loss: 0.5743 - val_accuracy: 0.7143
 Epoch 9/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5320 - accuracy: 0.7596 - val_loss: 0.5740 - val_accuracy: 0.7253
+23/23 [==============================] - 0s 9ms/step - loss: 0.5405 - accuracy: 0.7520 - val_loss: 0.5658 - val_accuracy: 0.7308
 Epoch 10/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.5115 - accuracy: 0.7684 - val_loss: 0.5360 - val_accuracy: 0.7308
+23/23 [==============================] - 0s 9ms/step - loss: 0.5404 - accuracy: 0.7596 - val_loss: 0.5550 - val_accuracy: 0.7308
 Epoch 11/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5004 - accuracy: 0.7780 - val_loss: 0.5242 - val_accuracy: 0.7363
+23/23 [==============================] - 0s 9ms/step - loss: 0.5316 - accuracy: 0.7609 - val_loss: 0.5483 - val_accuracy: 0.7308
 Epoch 12/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.4931 - accuracy: 0.7862 - val_loss: 0.5063 - val_accuracy: 0.7637
+23/23 [==============================] - 0s 9ms/step - loss: 0.5177 - accuracy: 0.7712 - val_loss: 0.5419 - val_accuracy: 0.7308
 Epoch 13/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.4734 - accuracy: 0.7923 - val_loss: 0.4835 - val_accuracy: 0.7637
+23/23 [==============================] - 0s 9ms/step - loss: 0.5044 - accuracy: 0.7746 - val_loss: 0.5331 - val_accuracy: 0.7363
 Epoch 14/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.4564 - accuracy: 0.8067 - val_loss: 0.4692 - val_accuracy: 0.7857
+23/23 [==============================] - 0s 9ms/step - loss: 0.4979 - accuracy: 0.7828 - val_loss: 0.5139 - val_accuracy: 0.7637
 Epoch 15/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.4512 - accuracy: 0.8149 - val_loss: 0.4692 - val_accuracy: 0.7747
+23/23 [==============================] - 0s 9ms/step - loss: 0.4827 - accuracy: 0.7896 - val_loss: 0.4947 - val_accuracy: 0.7637
 Epoch 16/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.4416 - accuracy: 0.8163 - val_loss: 0.4459 - val_accuracy: 0.7857
+23/23 [==============================] - 0s 9ms/step - loss: 0.4723 - accuracy: 0.7944 - val_loss: 0.4816 - val_accuracy: 0.7747
 Epoch 17/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.4243 - accuracy: 0.8272 - val_loss: 0.4228 - val_accuracy: 0.7967
+23/23 [==============================] - 0s 9ms/step - loss: 0.4592 - accuracy: 0.8067 - val_loss: 0.4797 - val_accuracy: 0.7637
 Epoch 18/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.4071 - accuracy: 0.8388 - val_loss: 0.4187 - val_accuracy: 0.7967
+23/23 [==============================] - 0s 9ms/step - loss: 0.4425 - accuracy: 0.8122 - val_loss: 0.4584 - val_accuracy: 0.7802
 Epoch 19/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.3948 - accuracy: 0.8402 - val_loss: 0.3931 - val_accuracy: 0.7967
+23/23 [==============================] - 0s 9ms/step - loss: 0.4345 - accuracy: 0.8197 - val_loss: 0.4391 - val_accuracy: 0.7912
 Epoch 20/20
-23/23 [==============================] - 0s 10ms/step - loss: 0.3749 - accuracy: 0.8511 - val_loss: 0.3950 - val_accuracy: 0.7967
+23/23 [==============================] - 0s 9ms/step - loss: 0.4124 - accuracy: 0.8279 - val_loss: 0.4212 - val_accuracy: 0.7967
 </pre></div>
 </div>
 </div>
@@ -738,7 +739,7 @@ Epoch 20/20
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save(&#39;my_model.keras&#39;)`.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.11/site-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save(&#39;my_model.keras&#39;)`.
   saving_api.save_model(
 </pre></div>
 </div>
@@ -829,7 +830,7 @@ We note that in this notebook we are using a subset of the available training da
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6/6 [==============================] - 0s 2ms/step
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6/6 [==============================] - 0s 1ms/step
 </pre></div>
 </div>
 <img alt="../../../_images/b27487f73744c85a56cc08c12daae8abe8cbf7b30fa9590f95e10b9fcd33f940.png" src="../../../_images/b27487f73744c85a56cc08c12daae8abe8cbf7b30fa9590f95e10b9fcd33f940.png" />
@@ -995,17 +996,17 @@ The sample is a set of bright M dwarfs not featured in the training/validation/t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>572/572 [==============================] - 1s 2ms/step
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>572/572 [==============================] - 1s 1ms/step
+572/572 [==============================] - 1s 1ms/step
 572/572 [==============================] - 1s 2ms/step
 572/572 [==============================] - 1s 2ms/step
 572/572 [==============================] - 1s 2ms/step
-572/572 [==============================] - 1s 2ms/step
-572/572 [==============================] - 1s 2ms/step
-572/572 [==============================] - 1s 2ms/step
-572/572 [==============================] - 1s 2ms/step
+572/572 [==============================] - 1s 1ms/step
+572/572 [==============================] - 1s 1ms/step
+572/572 [==============================] - 1s 1ms/step
 </pre></div>
 </div>
-<img alt="../../../_images/9c97145a9acf7e5a1a1a4f70761959e42a63c344b74f9cc506c06f8ab66d9d8a.png" src="../../../_images/9c97145a9acf7e5a1a1a4f70761959e42a63c344b74f9cc506c06f8ab66d9d8a.png" />
+<img alt="../../../_images/4999510bb48c7e7b27d0a88701724712c247a82b29be5c3aa2c36b69be2a7025.png" src="../../../_images/4999510bb48c7e7b27d0a88701724712c247a82b29be5c3aa2c36b69be2a7025.png" />
 </div>
 </div>
 </section>
