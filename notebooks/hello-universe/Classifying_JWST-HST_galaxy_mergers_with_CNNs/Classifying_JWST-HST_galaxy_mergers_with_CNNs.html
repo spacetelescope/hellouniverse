@@ -471,14 +471,14 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-10-26 15:44:50.713353: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
-2023-10-26 15:44:50.800219: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2023-10-26 15:44:50.800270: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2023-10-26 15:44:50.800322: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2023-10-26 15:44:50.818176: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
-2023-10-26 15:44:50.819617: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-12-18 16:48:06.688347: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2023-12-18 16:48:06.714404: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-12-18 16:48:06.714436: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-12-18 16:48:06.715214: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-12-18 16:48:06.719896: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2023-12-18 16:48:06.720729: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2023-10-26 15:44:52.690239: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2023-12-18 16:48:07.732001: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 </pre></div>
 </div>
 </div>
@@ -509,8 +509,8 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.43 ms, sys: 569 µs, total: 3 ms
-Wall time: 2.87 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.31 s, sys: 3.13 s, total: 5.44 s
+Wall time: 13.7 s
 </pre></div>
 </div>
 </div>
@@ -623,7 +623,7 @@ EXTNAME = &#39;MergerLabel&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/3cd9befee764acf8c0071be8b64f073f23c3c17fcccb2d30cb6489843822a091.png" src="../../../_images/3cd9befee764acf8c0071be8b64f073f23c3c17fcccb2d30cb6489843822a091.png" />
+<img alt="../../../_images/a03880ed11f3992769a7adf5791b853c455ac5a38abc2d4fd7a03b3197f36a29.png" src="../../../_images/a03880ed11f3992769a7adf5791b853c455ac5a38abc2d4fd7a03b3197f36a29.png" />
 </div>
 </div>
 </section>
@@ -812,8 +812,7 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-10-26 15:45:06.215887: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 728865000 exceeds 10% of free system memory.
-2023-10-26 15:45:49.044500: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 104287500 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-12-18 16:48:23.793432: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 728865000 exceeds 10% of free system memory.
 </pre></div>
 </div>
 </div>
@@ -854,7 +853,7 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/7945ea5aa26215accc2232409342d253b4fa857b472d21df05817ee1e82bfd43.png" src="../../../_images/7945ea5aa26215accc2232409342d253b4fa857b472d21df05817ee1e82bfd43.png" />
+<img alt="../../../_images/0bb71c1875a0ef480679bd4820ca6f2fe37d1138134189841d635293598f0ddb.png" src="../../../_images/0bb71c1875a0ef480679bd4820ca6f2fe37d1138134189841d635293598f0ddb.png" />
 </div>
 </div>
 <p>Observe how the loss for the validation set is higher than for the training set (and conversely, the accuracy for the validation set is lower than for the training set), suggesting that this model is suffering from <a class="reference external" href="https://www.tensorflow.org/tutorials/keras/overfit_and_underfit">overfitting</a>. Revisit <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020A%26C....3200390C/abstract">the original paper</a> and notice the strategies they employ to improve the validation accuracy. Observe <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S2213133720300445">their Figure 2</a> for an example of what the results of a properly-trained network look like!</p>
@@ -869,10 +868,7 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-10-26 15:58:50.355317: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 208102500 exceeds 10% of free system memory.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97/97 [==============================] - 4s 35ms/step
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97/97 [==============================] - 2s 16ms/step
 </pre></div>
 </div>
 </div>
@@ -931,16 +927,10 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 3/97 [..............................] - ETA: 3s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97/97 [==============================] - 2s 16ms/step
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-10-26 15:58:54.502282: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 208102500 exceeds 10% of free system memory.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97/97 [==============================] - 3s 34ms/step
-</pre></div>
-</div>
-<img alt="../../../_images/377908f509c4723c6557278d54b757b18e190500dadc94249bca4a5ef4167316.png" src="../../../_images/377908f509c4723c6557278d54b757b18e190500dadc94249bca4a5ef4167316.png" />
+<img alt="../../../_images/8f81ce337692f5db8bf25226164e35c7c636726a1a958d935ba1e2ecf30aed82.png" src="../../../_images/8f81ce337692f5db8bf25226164e35c7c636726a1a958d935ba1e2ecf30aed82.png" />
 </div>
 </div>
 </section>

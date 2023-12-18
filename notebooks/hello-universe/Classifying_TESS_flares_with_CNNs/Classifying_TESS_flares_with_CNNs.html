@@ -371,22 +371,19 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goals">Learning Goals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-network-cnn-for-vector-classification">Convolutional Neural Network (CNN)  for Vector Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-training-data-using-stella">1. Download the training data using <code class="docutils literal notranslate"><span class="pre">stella</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-cnn-in-keras">3. Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compile-the-cnn">4. Compile the CNN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-the-cnn-to-perform-a-classification-task">5. Train the CNN to perform a classification task</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-cnn-performance">6. Test the CNN performance</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensions-exercises">Extensions/Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-flares-in-a-new-dataset">7. Predict flares in a new dataset</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">FAQ</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-notebook">About this Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-training-data">1. Download the training data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-cnn-in-keras">2. Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compile-the-cnn">3. Compile the CNN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-the-cnn-to-perform-a-classification-task">4. Train the CNN to perform a classification task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-cnn-performance">5. Test the CNN performance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extensions-exercises">Extensions/Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-flares-in-a-new-dataset">6. Predict flares in a new dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">FAQ</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
 </ul>
             </nav>
@@ -402,8 +399,6 @@ document.write(`
   <p><a id="top"></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="classifying-flaring-stars-with-stella-a-convolutional-neural-network-for-tess">
 <h1>Classifying flaring stars with stella: a convolutional neural network for TESS<a class="headerlink" href="#classifying-flaring-stars-with-stella-a-convolutional-neural-network-for-tess" title="Permalink to this heading">#</a></h1>
-<p><font color="red">This notebook currently fails to execute, use as reference only</font></p>
-<hr class="docutils" />
 <section id="learning-goals">
 <h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading">#</a></h2>
 <p><strong>In this tutorial, you will see an example of building, compiling, and training a CNN to classify astronomical data in vector form.</strong>
@@ -414,7 +409,6 @@ By the end of this tutorial you will have a working example of a simple Convolut
 <p>CNNs are a class of machine learning (ML) algorithms that can extract information from data. In this notebook, you will walk through the basic steps of applying a CNN to data:</p>
 <ol class="arabic simple">
 <li><p>Load the data and visualize a sample of the data.</p></li>
-<li><p>Divide the data into training, validation, and testing sets.</p></li>
 <li><p>Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code>.</p></li>
 <li><p>Compile the CNN.</p></li>
 <li><p>Train the CNN to perform a classification task.</p></li>
@@ -427,28 +421,35 @@ This work is based on the model described in the <a class="reference external" h
 <p><strong>NOTE:</strong> <em>The <a class="reference external" href="https://adina.feinste.in/stella/"><code class="docutils literal notranslate"><span class="pre">stella</span></code> team has publicly-available code and documentation</a> for demonstrating the architecture and optimal performance of this model, which we encourage you to check out!
 The goal of this notebook is to step through the model building and training process.</em></p>
 </section>
+<section id="about-this-notebook">
+<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this heading">#</a></h2>
+<p><strong>Author:</strong><br />
+Claire Murray, Assistant Astronomer, <a class="reference external" href="mailto:cmurray1&#37;&#52;&#48;stsci&#46;edu">cmurray1<span>&#64;</span>stsci<span>&#46;</span>edu</a></p>
+<p><strong>Additional Contributors:</strong><br />
+Yotam Cohen, STScI Staff Scientist, <a class="reference external" href="mailto:ycohen&#37;&#52;&#48;stsci&#46;edu">ycohen<span>&#64;</span>stsci<span>&#46;</span>edu</a></p>
+<p><strong>Info:</strong><br />
+This notebook is based on the <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020JOSS....5.2347F/abstract"><code class="docutils literal notranslate"><span class="pre">stella</span></code></a> software package for the CNN used in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">“Flare Statistics for Young Stars from a Convolutional Neural Network Analysis of TESS Data”</a>, Adina D. Feinstein et al. Astronomical Journal, Volume 160, Issue 5, November 2020, and the notebook “CNN_for_cluster_masses” by Michelle Ntampaka, Assistant Astronomer, <a class="reference external" href="mailto:mntampaka&#37;&#52;&#48;stsci&#46;edu">mntampaka<span>&#64;</span>stsci<span>&#46;</span>edu</a>.</p>
+<p><strong>Published:</strong> 2022-06-01</p>
+<p><strong>Updated:</strong> 2023-12-13</p>
+<p><font color="red">This notebook currently fails to execute, use as reference only</font></p>
+</section>
+<hr class="docutils" />
 <section id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
 <p>This notebook uses the following:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> to handle array functions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tarfile</span></code> for unpacking files</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">astropy</span></code> for accessing FITS files</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> for plotting data</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stella</span></code> for generating the training set and processing data</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">keras</span></code> for building the CNN</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sklearn</span></code> for model performance metrics</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lightkurve.search</span></code> for extracting light curves</p></li>
 </ul>
-<p>For the <code class="docutils literal notranslate"><span class="pre">stella</span></code> package, <em><strong>please install the development version</strong></em> (see their <a class="reference external" href="https://adina.feinste.in/stella/getting_started/installation.html">documentation</a> for instructions).</p>
 <p>For other packages, you can install them using <a class="reference external" href="https://pip.pypa.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a> or <a class="reference external" href="https://docs.conda.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">conda</span></code></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># arrays</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># unpacking files</span>
-<span class="kn">import</span> <span class="nn">tarfile</span>
 
 <span class="c1"># fits</span>
 <span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
@@ -456,21 +457,16 @@ The goal of this notebook is to step through the model building and training pro
 
 <span class="c1"># plotting</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">ticker</span>
-
-<span class="c1"># stella CNN functions</span>
-<span class="kn">import</span> <span class="nn">stella</span>
 
 <span class="c1"># keras</span>
-<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span><span class="p">,</span> <span class="n">Model</span><span class="p">,</span> <span class="n">load_model</span>
-<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">BatchNormalization</span>
-<span class="kn">from</span> <span class="nn">keras.layers.convolutional</span> <span class="kn">import</span> <span class="n">Convolution1D</span><span class="p">,</span> <span class="n">MaxPooling1D</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">load_model</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Conv1D</span><span class="p">,</span> <span class="n">MaxPooling1D</span>
 
 <span class="c1"># sklearn for performance metrics</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
 
 <span class="c1"># lightkurve</span>
-<span class="kn">from</span> <span class="nn">lightkurve.search</span> <span class="kn">import</span> <span class="n">search_lightcurve</span>
+<span class="kn">from</span> <span class="nn">lightkurve</span> <span class="kn">import</span> <span class="n">search_lightcurve</span>
 
 <span class="c1"># from IPython import get_ipython</span>
 <span class="c1"># get_ipython().run_line_magic(&#39;matplotlib&#39;, &#39;notebook&#39;)</span>
@@ -482,90 +478,51 @@ The goal of this notebook is to step through the model building and training pro
 </div>
 </div>
 </section>
-<section id="convolutional-neural-network-cnn-for-vector-classification">
-<h2>Convolutional Neural Network (CNN)  for Vector Classification<a class="headerlink" href="#convolutional-neural-network-cnn-for-vector-classification" title="Permalink to this heading">#</a></h2>
-<section id="download-the-training-data-using-stella">
-<h3>1. Download the training data using <code class="docutils literal notranslate"><span class="pre">stella</span></code><a class="headerlink" href="#download-the-training-data-using-stella" title="Permalink to this heading">#</a></h3>
-<p>Load the sample of TESS lightcurves (input vectors) and flare classifications (output labels) to be used to train the CNN from the <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020JOSS....5.2347F/abstract"><code class="docutils literal notranslate"><span class="pre">stella</span></code></a> package.
-<code class="docutils literal notranslate"><span class="pre">stella</span></code> pre-processes the light curves and splits the data into training, test and validation sets.</p>
+<section id="download-the-training-data">
+<h2>1. Download the training data<a class="headerlink" href="#download-the-training-data" title="Permalink to this heading">#</a></h2>
+<p>Load the sample of TESS lightcurves (input vectors) and flare classifications (output labels) to be used to train the CNN.</p>
 <p>The training set contains stars observed at 2-minute cadence in TESS Sectors 1 and 2, classified by hand and presented as a flare catalog by <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/ab5d3a">Gunther et al. 2020</a>.
 The light curves are processed into examples of length 200 cadences, where each flaring event, if present, is located at the center of the example. The full sample of lightcurves contains 8694 positive classes (flare), and 35896 negative classes (no flare).
 For this notebook, we will download a subset of this sample.
 These data are described in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">Feinstein et al. 2020</a>.</p>
 <p>The CNN will be used to predict the presence of flaring events as a function of observing cadence.
 The input to the CNN is a light curve (time, flux, and flux error) and the output is a “probability light curve”, or probabilities (value between 0 and 1) that the measurement at each cadence is of a flaring event (1=flare, 0=no flare).
-In other words, the CNN performs a <strong>classification</strong> task at each cadence.
-Before a probability light curve can be produced, <code class="docutils literal notranslate"><span class="pre">stella</span></code> first pre-processes the input light curve by assembling it into examples of length 200 cadences, so that the model can predict a value for the flare probability at each valid cadence.</p>
+In other words, the CNN performs a <strong>classification</strong> task at each cadence.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="n">file_url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.stsci.edu/hlsps/hellouniverse/hellouniverse_stella_500.tar.gz&#39;</span>
-
-<span class="c1"># open file</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">download_file</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-  
-<span class="c1"># extracting file</span>
-<span class="n">file</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build train, test, validation dataset, &quot;ds&quot;</span>
-<span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;./hellouniverse_stella_500/&#39;</span>
-
-<span class="n">ds</span> <span class="o">=</span> <span class="n">stella</span><span class="o">.</span><span class="n">FlareDataSet</span><span class="p">(</span><span class="n">fn_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span>
-                         <span class="n">catalog</span><span class="o">=</span><span class="n">data_dir</span><span class="o">+</span><span class="s1">&#39;Guenther_2020_flare_catalog.txt&#39;</span><span class="p">)</span>
+<span class="n">file_url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.stsci.edu/hlsps/hellouniverse/hellouniverse_stella_500.fits&#39;</span>
+<span class="n">hdu</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">download_file</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">stella</span></code> dataset includes training, test and validation lightcurves (input vectors) and flare labels (output labels).
-<code class="docutils literal notranslate"><span class="pre">stella</span></code> applies the necessary pre-processing to the lightcurves for input to the CNN model.
 For more on how these are constructed, see <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">Feinstein et al. 2020</a>.
-For our purposes (i.e., building the <code class="docutils literal notranslate"><span class="pre">stella</span></code> CNN from scratch to illustrate its structure and function), we first need to remove all lightcurves from the training, test and validation sets with NaN-valued inputs.
-To do this, we loop through the data and select only lightcurves without NaNs.</p>
+For our purposes (i.e., building the <code class="docutils literal notranslate"><span class="pre">stella</span></code> CNN from scratch to illustrate its structure and function), we first unpack the multi-extension table to isolate the training dataset and training labels, validation dataset and validation labels, and testing dataset and testing labels.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove lightcurves with NaNs from training, test and validation data</span>
-<span class="k">def</span> <span class="nf">remove_nans</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Determine indices of files without NaNs&#39;&#39;&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_data&#39;</span><span class="p">]</span>
+<span class="n">train_labels</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_labels&#39;</span><span class="p">]</span>
 
-    <span class="n">idx</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">input_data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_data</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:][</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">input_data</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:])])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">idx</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_data&#39;</span><span class="p">]</span>
+<span class="n">test_labels</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_labels&#39;</span><span class="p">]</span>
 
-
-<span class="c1"># find indices in train, test and validation sets without NaNs</span>
-<span class="n">idx_train</span> <span class="o">=</span> <span class="n">remove_nans</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">train_data</span><span class="p">)</span>
-<span class="n">idx_test</span> <span class="o">=</span> <span class="n">remove_nans</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">test_data</span><span class="p">)</span>
-<span class="n">idx_val</span> <span class="o">=</span> <span class="n">remove_nans</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">val_data</span><span class="p">)</span>
-
-<span class="n">ds</span><span class="o">.</span><span class="n">train_data</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">train_data</span><span class="p">[</span><span class="n">idx_train</span><span class="p">]</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">train_labels</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">train_labels</span><span class="p">[</span><span class="n">idx_train</span><span class="p">]</span>
-
-<span class="n">ds</span><span class="o">.</span><span class="n">test_data</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">test_data</span><span class="p">[</span><span class="n">idx_test</span><span class="p">]</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">test_labels</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">test_labels</span><span class="p">[</span><span class="n">idx_test</span><span class="p">]</span>
-
-<span class="n">ds</span><span class="o">.</span><span class="n">val_data</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">val_data</span><span class="p">[</span><span class="n">idx_val</span><span class="p">]</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">val_labels</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">val_labels</span><span class="p">[</span><span class="n">idx_val</span><span class="p">]</span>
+<span class="n">val_data</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;val_data&#39;</span><span class="p">]</span>
+<span class="n">val_labels</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;val_labels&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>To visualize the structure of the lightcurves in the training set, we plot a random selection of 16 examples:</p>
+<p>To visualize the structure of the lightcurves in the training set, in the cell below we plot a random selection of examples. The resulting figure displays a grid of 16 light curves (flux as a function of time), one per panel. If a flare is detected in the light curve, it is colored red and the title of the panel is “Flare”. If a flare is not detected in the light curve, it is colored black and the title of the panel is “Non-flare”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select random image indices:</span>
-<span class="n">example_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">train_labels</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">example_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_labels</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
 
 <span class="c1"># pull the lightcurves and labels for these selections</span>
-<span class="n">example_lightcurves</span> <span class="o">=</span> <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">train_data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">example_ids</span><span class="p">]</span>
-<span class="n">example_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">train_labels</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">example_ids</span><span class="p">]</span>
+<span class="n">example_lightcurves</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">example_ids</span><span class="p">]</span>
+<span class="n">example_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_labels</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">example_ids</span><span class="p">]</span>
 
 
 <span class="c1"># initialize your figure</span>
@@ -588,7 +545,7 @@ To do this, we loop through the data and select only lightcurves without NaNs.</
 </div>
 </section>
 <section id="build-a-cnn-in-keras">
-<h3>3. Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code><a class="headerlink" href="#build-a-cnn-in-keras" title="Permalink to this heading">#</a></h3>
+<h2>2. Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code><a class="headerlink" href="#build-a-cnn-in-keras" title="Permalink to this heading">#</a></h2>
 <p>Here, we will build the CNN model described in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">Feinstein et al. 2020</a> and implemented in <code class="docutils literal notranslate"><span class="pre">stella</span></code> from scratch.</p>
 <p>Further details about Conv1D, MaxPooling1D, BatchNormalization, Dropout, and Dense layers can be found in the <a class="reference external" href="https://keras.io/api/layers/">Keras Layers Documentation</a>.
 Further details about the sigmoid and softmax activation function can be found in the <a class="reference external" href="https://keras.io/api/layers/activations/">Keras Activation Function Documentation</a>.</p>
@@ -608,15 +565,15 @@ Further details about the sigmoid and softmax activation function can be found i
 <span class="n">dropout</span> <span class="o">=</span> <span class="mf">0.1</span>
 
 <span class="c1"># Define architecture for model</span>
-<span class="n">data_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">train_data</span><span class="p">)</span>
-<span class="n">input_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">train_data</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">data_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+<span class="n">input_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">train_data</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="n">x_in</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">)</span>
-<span class="n">c0</span> <span class="o">=</span> <span class="n">Convolution1D</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">filter1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">)(</span><span class="n">x_in</span><span class="p">)</span>
+<span class="n">c0</span> <span class="o">=</span> <span class="n">Conv1D</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">filter1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">)(</span><span class="n">x_in</span><span class="p">)</span>
 <span class="n">b0</span> <span class="o">=</span> <span class="n">MaxPooling1D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)(</span><span class="n">c0</span><span class="p">)</span>
 <span class="n">d0</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">dropout</span><span class="p">)(</span><span class="n">b0</span><span class="p">)</span>
 
-<span class="n">c1</span> <span class="o">=</span> <span class="n">Convolution1D</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">filter2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)(</span><span class="n">d0</span><span class="p">)</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">Conv1D</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">filter2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)(</span><span class="n">d0</span><span class="p">)</span>
 <span class="n">b1</span> <span class="o">=</span> <span class="n">MaxPooling1D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)(</span><span class="n">c1</span><span class="p">)</span>
 <span class="n">d1</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">dropout</span><span class="p">)(</span><span class="n">b1</span><span class="p">)</span>
 
@@ -633,7 +590,7 @@ Further details about the sigmoid and softmax activation function can be found i
 </div>
 </section>
 <section id="compile-the-cnn">
-<h3>4. Compile the CNN<a class="headerlink" href="#compile-the-cnn" title="Permalink to this heading">#</a></h3>
+<h2>3. Compile the CNN<a class="headerlink" href="#compile-the-cnn" title="Permalink to this heading">#</a></h2>
 <p>Next, we compile the model.
 As in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">Feinstein et al. 2020</a>, we select the Adam optimizer and the binary cross entropy loss function (as this is a binary classification problem).</p>
 <p>You can learn more about <a class="reference external" href="https://keras.io/api/optimizers/">optimizers</a> and more about <a class="reference external" href="https://keras.io/api/losses/">loss functions for regression tasks</a> in the <a class="reference external" href="https://keras.io/">Keras documentation</a>.</p>
@@ -651,7 +608,7 @@ As in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/a
 </div>
 </section>
 <section id="train-the-cnn-to-perform-a-classification-task">
-<h3>5. Train the CNN to perform a classification task<a class="headerlink" href="#train-the-cnn-to-perform-a-classification-task" title="Permalink to this heading">#</a></h3>
+<h2>4. Train the CNN to perform a classification task<a class="headerlink" href="#train-the-cnn-to-perform-a-classification-task" title="Permalink to this heading">#</a></h2>
 <p>We will start with training for 20 epochs, but this almost certainly won’t be long enough to get great results.
 Once you’ve run your model and evaluated the fit, you can come back here and run the next cell again for 100 epochs or longer.</p>
 <p>You can learn more about <code class="docutils literal notranslate"><span class="pre">fit</span></code> <a class="reference external" href="https://keras.rstudio.com/reference/fit.html">here</a>.</p>
@@ -662,10 +619,10 @@ Once you’ve run your model and evaluated the fit, you can come back here and r
 <span class="n">shuffle</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="c1"># Train</span>
-<span class="n">history</span> <span class="o">=</span> <span class="n">cnn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">train_data</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">train_labels</span><span class="p">,</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">cnn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span>
                   <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> 
                   <span class="n">epochs</span><span class="o">=</span><span class="n">nb_epoch</span><span class="p">,</span> 
-                  <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">val_data</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">val_labels</span><span class="p">),</span> 
+                  <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">val_data</span><span class="p">,</span> <span class="n">val_labels</span><span class="p">),</span> 
                   <span class="n">shuffle</span><span class="o">=</span><span class="n">shuffle</span><span class="p">,</span>
                   <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -683,7 +640,7 @@ Once you’ve run your model and evaluated the fit, you can come back here and r
 </div>
 </section>
 <section id="test-the-cnn-performance">
-<h3>6. Test the CNN performance<a class="headerlink" href="#test-the-cnn-performance" title="Permalink to this heading">#</a></h3>
+<h2>5. Test the CNN performance<a class="headerlink" href="#test-the-cnn-performance" title="Permalink to this heading">#</a></h2>
 <p>Apply the CNN to predict flares on the “test” set, not used for training or validating the CNN, and evaluate the performance using a confusion matrix.
 See the documentation from <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html">sklearn on confusion matrices</a> for more information.
 The code for generating and plotting the confusion matrix below was adapted from the application by <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020A%26C....3200390C/abstract">Ciprijanovic et al. 2020</a> for <a class="reference external" href="https://github.com/deepskies/deepmerge-public">DeepMerge</a>.</p>
@@ -726,34 +683,36 @@ The code for generating and plotting the confusion matrix below was adapted from
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cm_norm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cm_norm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">cm_norm</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">fmt</span><span class="p">),</span> 
-                    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span> <span class="k">if</span> <span class="n">cm_norm</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">thresh</span> <span class="k">else</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
+                    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span> <span class="k">if</span> <span class="n">cm_norm</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">thresh</span> <span class="k">else</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>In the cell below, we execute the code to plot the confusion matrix. The result is a 2x2 grid of squares, with the predicted classes (“Flare” and “No Flare”) on the x-axis and the true classes (“Flare” and “No Flare”) on the y-axis. Numbers at the center of each panel quantify the fraction of results in each true class that are found in each predicted class (e.g., the fraction of true flares which are predicted to be flares), so that the numbers in each horizontal row sum to 1.0. The color of each panel also corresponds to these fractions and range from white to black, where white is equal to 1.0 and black is equal to 0.</p>
+<p>In this example, the values in the top row are 1.0 and 0.0, meaning that 100% of true flares are predicted to be flares, and 0% of true flares are predicted to be no flare. The values in the bottom row are 0.7 and 0.3, meaning that 70% of the true not flares are predicted to be flares, and 30% of the true not flares are predicted to be not flares.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">test_data</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">test_labels</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
 <section id="faq">
-<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">#</a></h2>
+<h3>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>The results don’t look great… why?</strong> From the confusion matrix in Section 6, when faced with the test dataset (i.e., data not used for training or validation), the model predicts a large fraction of false positive flare events, and consequently not enough true negative flare events).
+<li><p><strong>The results don’t look great… why?</strong> From the confusion matrix in Section 5, when faced with the test dataset (i.e., data not used for training or validation), the model predicts a large fraction of false positive flare events, and consequently not enough true negative flare events).
 The published models from <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">Feinstein et al. 2020</a> perform <em>much better</em>, and the confusion matrix <strong>should look more like the results shown below</strong>.
 We note that in this notebook we are using a subset of the available training data, and we are training the model for only a subset of the optimal number of epochs for space and time considerations, but you are welcome to augment these restrictions, and as always check out <a class="reference external" href="https://adina.feinste.in/stella/">the <code class="docutils literal notranslate"><span class="pre">stella</span></code> repository</a> for more information!</p></li>
 </ul>
+<p>In the cell below, we execute the code to plot the confusion matrix. The result is a 2x2 grid of squares, with the predicted classes (“Flare” and “No Flare”) on the x-axis and the true classes (“Flare” and “No Flare”) on the y-axis. Numbers at the center of each panel quantify the fraction of results in each true class that are found in each predicted class (e.g., the fraction of true flares which are predicted to be flares), so that the numbers in each horizontal row sum to 1.0. The color of each panel also corresponds to these fractions and range from white to black, where white is equal to 1.0 and black is equal to 0.</p>
+<p>In this example (which uses the trained model from Fein, the values in the top row are 0.98 and 0.02, meaning that % of true flares are predicted to be flares, and 0% of true flares are predicted to be no flare. The values in the bottom row are 0.7 and 0.3, meaning that 70% of the true not flares are predicted to be flares, and 30% of the true not flares are predicted to be not flares.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.stsci.edu/hlsps/stella/hlsp_stella_tess_ensemblemodel_s042_tess_v0.1.0_cnn.h5&#39;</span>
 <span class="n">pretrained_model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="n">download_file</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 
-<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">pretrained_model</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">test_data</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">test_labels</span><span class="p">)</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">pretrained_model</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -776,7 +735,7 @@ Always keep your training, validation, and testing sets completely separate!</p>
 </ul>
 </section>
 <section id="extensions-exercises">
-<h2>Extensions/Exercises<a class="headerlink" href="#extensions-exercises" title="Permalink to this heading">#</a></h2>
+<h3>Extensions/Exercises<a class="headerlink" href="#extensions-exercises" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Is the model “overfitting”?</strong>
 Using the results of the model’s <code class="docutils literal notranslate"><span class="pre">history</span></code> (saved as a result of the model training process), investigate the behavior of the training and validation losses and accuracies as a function of training epoch.
@@ -785,13 +744,16 @@ How do the training and validation losses compare?
 How do the training and validation accuracies compare?
 If the loss for the validation set is higher than for the training set (and conversely, the accuracy for the validation set is lower than for the training set), the model may be suffering from <a class="reference external" href="https://www.tensorflow.org/tutorials/keras/overfit_and_underfit">overfitting</a>.</p></li>
 <li><p><strong>Try applying this model to a new dataset</strong>
-Using the built-in functionality provided by the <code class="docutils literal notranslate"><span class="pre">stella</span></code> package, you can pre-process your own 2-minute cadence TESS light curves and predict flares.
+You can pre-process your own 2-minute cadence TESS light curves and predict flares.
 An example workflow is shown below:</p></li>
 </ul>
+</section>
+</section>
 <section id="predict-flares-in-a-new-dataset">
-<h3>7. Predict flares in a new dataset<a class="headerlink" href="#predict-flares-in-a-new-dataset" title="Permalink to this heading">#</a></h3>
-<p>In this step, we will download light curves directly from TESS, pre-process them with <code class="docutils literal notranslate"><span class="pre">stella</span></code> for input to the CNN, and predict flares.
+<h2>6. Predict flares in a new dataset<a class="headerlink" href="#predict-flares-in-a-new-dataset" title="Permalink to this heading">#</a></h2>
+<p>In this step, we will download light curves directly from TESS, pre-process them for input to the CNN, and predict flares.
 The sample is a set of bright M dwarfs not featured in the training/validation/tests datasets.</p>
+<p>First select a sample of sources by their ids numbers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ticids</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;120461526&#39;</span><span class="p">,</span> <span class="s1">&#39;278779899&#39;</span><span class="p">,</span> <span class="s1">&#39;139754153&#39;</span><span class="p">,</span> <span class="s1">&#39;273418879&#39;</span><span class="p">,</span> <span class="s1">&#39;52121469&#39;</span><span class="p">,</span> <span class="s1">&#39;188580272&#39;</span><span class="p">,</span> <span class="s1">&#39;394015919&#39;</span><span class="p">,</span> <span class="s1">&#39;402104884&#39;</span><span class="p">]</span>
@@ -811,40 +773,110 @@ The sample is a set of bright M dwarfs not featured in the training/validation/t
 </div>
 </div>
 </div>
+<p>Here we define functions (based on <code class="docutils literal notranslate"><span class="pre">stella</span></code>) which pre-process the light curves (“identify gaps”) and apply a pre-trained model to predict flares (“stella_predict”)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the CNN using `stella`</span>
-<span class="n">cnn_stella</span> <span class="o">=</span> <span class="n">stella</span><span class="o">.</span><span class="n">ConvNN</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">ds</span><span class="o">=</span><span class="n">ds</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">identify_gaps</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">cad_pad</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Identifies which cadences can be predicted on given</span>
+<span class="sd">    locations of gaps in the data. Will always stay </span>
+<span class="sd">    cadences/2 away from the gaps.</span>
+
+<span class="sd">    Returns lists of good indices to predict on.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># SETS ALL CADENCES AVAILABLE</span>
+    <span class="n">all_inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="c1"># REMOVES BEGINNING AND ENDS</span>
+    <span class="n">bad_inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cad_pad</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">bad_inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bad_inds</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="n">cad_pad</span><span class="p">,</span>
+                                             <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">))</span>
+
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">med</span><span class="p">,</span> <span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">diff</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+
+    <span class="n">bad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">med</span> <span class="o">+</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">std</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bad</span><span class="p">:</span>
+        <span class="n">bad_inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bad_inds</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">cad_pad</span><span class="p">,</span>
+                                                 <span class="n">b</span><span class="o">+</span><span class="n">cad_pad</span><span class="p">,</span>
+                                                 <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">))</span>
+    <span class="n">bad_inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">bad_inds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">all_inds</span><span class="p">,</span> <span class="n">bad_inds</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">stella_predict</span><span class="p">(</span><span class="n">modelname</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">err</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Loads pre-trained model and predicts </span>
+<span class="sd">    flares in input light curves.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns array of flare predictions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># load model               </span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="n">modelname</span><span class="p">)</span>
+
+    <span class="c1"># GETS REQUIRED INPUT SHAPE FROM MODEL</span>
+    <span class="n">cadences</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">cad_pad</span> <span class="o">=</span> <span class="n">cadences</span><span class="o">/</span><span class="mi">2</span>
+
+    <span class="c1"># normalize flux</span>
+    <span class="n">lc</span> <span class="o">=</span> <span class="n">flux</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">flux</span><span class="p">)</span>  
+
+    <span class="c1"># identify good channels</span>
+    <span class="n">good_inds</span> <span class="o">=</span> <span class="n">identify_gaps</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">cad_pad</span><span class="p">)</span>
+
+    <span class="c1"># reshape data </span>
+    <span class="n">reshaped_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lc</span><span class="p">),</span> <span class="n">cadences</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">good_inds</span><span class="p">:</span>
+        <span class="n">loc</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">cad_pad</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">cad_pad</span><span class="p">)]</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">lc</span><span class="p">[</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>                  
+        <span class="n">reshaped_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span>
+
+    <span class="n">reshaped_data</span> <span class="o">=</span> <span class="n">reshaped_data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">reshaped_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+                                          <span class="n">reshaped_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># predict flares and reshape output</span>
+    <span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">reshaped_data</span><span class="p">)</span>
+    <span class="n">preds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">preds</span><span class="p">),))</span>
+
+    <span class="k">return</span> <span class="n">time</span><span class="p">,</span> <span class="n">lc</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">preds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below we loop through the selected targets and generate flare predictions using the functions defined above. The figure produced by this cell is a 2x4 grid of panels, each displaying a light curve (flux as a function of time). The light curve data points are colored according to the probability of a flare being present from the model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lcs</span><span class="p">):</span>
     <span class="c1"># pull out on the first light curve in each set, if more than one exist</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lc</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span> <span class="n">lc</span> <span class="o">=</span> <span class="n">lc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lc</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">lc</span> <span class="o">=</span> <span class="n">lc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         
     <span class="c1"># predict the flare probability light cuvey for the input data using `stella` </span>
     <span class="c1"># (which applies the necessary pre-processing to the data for input to the CNN)</span>
-    <span class="n">cnn_stella</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">cnn_file</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">lc</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fluxes</span><span class="o">=</span><span class="n">lc</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span> <span class="n">errs</span><span class="o">=</span><span class="n">lc</span><span class="o">.</span><span class="n">flux_err</span><span class="p">)</span>
-    
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cnn_stella</span><span class="o">.</span><span class="n">predict_time</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cnn_stella</span><span class="o">.</span><span class="n">predict_flux</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">cnn_stella</span><span class="o">.</span><span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.</span> <span class="p">)</span>
+    <span class="n">time</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">preds</span> <span class="o">=</span> <span class="n">stella_predict</span><span class="p">(</span><span class="n">cnn_file</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">lc</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">flux</span><span class="o">=</span><span class="n">lc</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span> <span class="n">err</span><span class="o">=</span><span class="n">lc</span><span class="o">.</span><span class="n">flux_err</span><span class="p">)</span>
+    <span class="c1"># print(np.shape(lc.time.value), np.shape(preds))</span>
+                   
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">preds</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
     
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Probability of Flare&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time [BJD-2457000]&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Normalized Flux&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;TIC </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lc</span><span class="o">.</span><span class="n">targetid</span><span class="p">));</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;TIC </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lc</span><span class="o">.</span><span class="n">targetid</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="id1">
 <h2>FAQ<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
@@ -858,16 +890,6 @@ As such, <code class="docutils literal notranslate"><span class="pre">stella</sp
 There may very well be flares towards the data gaps!
 Unfortunately, <code class="docutils literal notranslate"><span class="pre">stella</span></code> cannot find those for you at present, and you’ll need to identify those yourself.</p></li>
 </ul>
-</section>
-<section id="about-this-notebook">
-<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this heading">#</a></h2>
-<p><strong>Author:</strong><br />
-Claire Murray, Assistant Astronomer, <a class="reference external" href="mailto:cmurray1&#37;&#52;&#48;stsci&#46;edu">cmurray1<span>&#64;</span>stsci<span>&#46;</span>edu</a></p>
-<p><strong>Additional Contributors:</strong><br />
-Yotam Cohen, STScI Staff Scientist, <a class="reference external" href="mailto:ycohen&#37;&#52;&#48;stsci&#46;edu">ycohen<span>&#64;</span>stsci<span>&#46;</span>edu</a></p>
-<p><strong>Info:</strong><br />
-This notebook is based on the <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020JOSS....5.2347F/abstract"><code class="docutils literal notranslate"><span class="pre">stella</span></code></a> software package for the CNN used in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">“Flare Statistics for Young Stars from a Convolutional Neural Network Analysis of TESS Data”</a>, Adina D. Feinstein et al. Astronomical Journal, Volume 160, Issue 5, November 2020, and the notebook “CNN_for_cluster_masses” by Michelle Ntampaka, Assistant Astronomer, <a class="reference external" href="mailto:mntampaka&#37;&#52;&#48;stsci&#46;edu">mntampaka<span>&#64;</span>stsci<span>&#46;</span>edu</a>.</p>
-<p><strong>Updated On:</strong> 2022-5-25</p>
 </section>
 <section id="citations">
 <h2>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
@@ -949,22 +971,19 @@ authors. Follow these links for more information:</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goals">Learning Goals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-network-cnn-for-vector-classification">Convolutional Neural Network (CNN)  for Vector Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-training-data-using-stella">1. Download the training data using <code class="docutils literal notranslate"><span class="pre">stella</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-cnn-in-keras">3. Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compile-the-cnn">4. Compile the CNN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-the-cnn-to-perform-a-classification-task">5. Train the CNN to perform a classification task</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-cnn-performance">6. Test the CNN performance</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensions-exercises">Extensions/Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-flares-in-a-new-dataset">7. Predict flares in a new dataset</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">FAQ</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-notebook">About this Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-training-data">1. Download the training data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-cnn-in-keras">2. Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compile-the-cnn">3. Compile the CNN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-the-cnn-to-perform-a-classification-task">4. Train the CNN to perform a classification task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-cnn-performance">5. Test the CNN performance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extensions-exercises">Extensions/Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-flares-in-a-new-dataset">6. Predict flares in a new dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">FAQ</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
 </ul>
   </nav></div>

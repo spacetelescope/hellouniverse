@@ -838,7 +838,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/a138ebc1d572ae0036311d38aabb5ffb34e4670b19f4d8f37d9180d3e80781c2.png" src="../../../_images/a138ebc1d572ae0036311d38aabb5ffb34e4670b19f4d8f37d9180d3e80781c2.png" />
+<img alt="../../../_images/ba133ec7b3cd24b4886abd42a6ca2fcd5a7c27a50226a173903d13e289193753.png" src="../../../_images/ba133ec7b3cd24b4886abd42a6ca2fcd5a7c27a50226a173903d13e289193753.png" />
 </div>
 </div>
 <p>By inspection of this plot, we will only keep sources with log(M)&gt;9 to remove sources which do not have complete coverage across redshift.</p>
@@ -878,7 +878,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/9f52772ee449ffdcba2d7b868f7b6250d45f9a067a1328d449088966a94a2a4b.png" src="../../../_images/9f52772ee449ffdcba2d7b868f7b6250d45f9a067a1328d449088966a94a2a4b.png" />
+<img alt="../../../_images/a424942d1580c0c26f4a555320db1348df7d23337d2aea520a1b80ef7a2d0c67.png" src="../../../_images/a424942d1580c0c26f4a555320db1348df7d23337d2aea520a1b80ef7a2d0c67.png" />
 </div>
 </div>
 <p>The ‘Av’, ‘lmass’ and ‘z_peak’ values were all computed via FAST photometric fit, and so we will exclude them as well. In addition, we will exclude the categorical flag variables (‘flags’, ‘f140w_flag’, ‘star_flag’, ‘use_phot’, ‘near_star’).</p>
@@ -939,7 +939,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/72d314466cfc40982e847b455fb08480c7cbba395f73211812efc47cc63d51d5.png" src="../../../_images/72d314466cfc40982e847b455fb08480c7cbba395f73211812efc47cc63d51d5.png" />
+<img alt="../../../_images/12afa103f88afb099849cdc03d57ea33b2b9f61b11d410e96b38d3c8b7f3f3e1.png" src="../../../_images/12afa103f88afb099849cdc03d57ea33b2b9f61b11d410e96b38d3c8b7f3f3e1.png" />
 </div>
 </div>
 </section>
@@ -1009,10 +1009,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.2381
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.2361
 </pre></div>
 </div>
-<img alt="../../../_images/d2ef0d8cd2940a97b53e8598ef2b236c38a7ed1a3c07236dae59499bbf07fb49.png" src="../../../_images/d2ef0d8cd2940a97b53e8598ef2b236c38a7ed1a3c07236dae59499bbf07fb49.png" />
+<img alt="../../../_images/1568b047418ec5af4ca033b61e1f8c3f50afa02636d26d84db09448e2426890f.png" src="../../../_images/1568b047418ec5af4ca033b61e1f8c3f50afa02636d26d84db09448e2426890f.png" />
 </div>
 </div>
 <p>Hmm, maybe we can do better by tuning the parameters of the model. Decision trees have many parameters, such as the maximum number of decisions (<code class="docutils literal notranslate"><span class="pre">max_depth</span></code>), the minimum number of samples required to create a split a node (<code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>) and the minimum number of samples required to be at a node leaf (<code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>). All available parameters are listed below, and are described in the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html">sklearn documenation</a>.</p>
@@ -1063,7 +1063,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;min_samples_split&#39;: 85, &#39;min_samples_leaf&#39;: 45, &#39;max_depth&#39;: 19}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;min_samples_split&#39;: 5, &#39;min_samples_leaf&#39;: 15, &#39;max_depth&#39;: 7}
 </pre></div>
 </div>
 </div>
@@ -1086,10 +1086,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.1556
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.1493
 </pre></div>
 </div>
-<img alt="../../../_images/d40317f22fa6d146a5b71b329f84b4473c72f737f8a62bc05c6f069f5af08049.png" src="../../../_images/d40317f22fa6d146a5b71b329f84b4473c72f737f8a62bc05c6f069f5af08049.png" />
+<img alt="../../../_images/bc093250e3ff418db40ca73c540b330398ce0a074b90ee8e2cea90b79e9043da.png" src="../../../_images/bc093250e3ff418db40ca73c540b330398ce0a074b90ee8e2cea90b79e9043da.png" />
 </div>
 </div>
 <p>The model improved somewhat with hyperparameter tuning (i.e., the MSE decreased), but the results still looks pretty bad. We’ll try another model next!</p>
@@ -1135,10 +1135,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.1126
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE = 0.1153
 </pre></div>
 </div>
-<img alt="../../../_images/ae0675da44d018355cb4801b61d5522b4716ce390417b2973e652aa2483071c8.png" src="../../../_images/ae0675da44d018355cb4801b61d5522b4716ce390417b2973e652aa2483071c8.png" />
+<img alt="../../../_images/605275a9f7a5febdc035ed18036156390ec601a9b7d9c41cc6ca00ebe1375b91.png" src="../../../_images/605275a9f7a5febdc035ed18036156390ec601a9b7d9c41cc6ca00ebe1375b91.png" />
 </div>
 </div>
 </section>
@@ -1181,7 +1181,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/5844d67a73505d2adcad55d75cb31721f0a741e05e0ded9867658b3fa65736d2.png" src="../../../_images/5844d67a73505d2adcad55d75cb31721f0a741e05e0ded9867658b3fa65736d2.png" />
+<img alt="../../../_images/d2a518a16da319ca6f0c80601ffe9e7c3e063a233a97ed86b0f851f9e1a57129.png" src="../../../_images/d2a518a16da319ca6f0c80601ffe9e7c3e063a233a97ed86b0f851f9e1a57129.png" />
 </div>
 </div>
 <p>Beyond a max_depth of ~10, the MSE on the training set declines while the MSE on the test set flattens out, suggesting some amount of over-fitting.</p>
@@ -1225,7 +1225,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/e76e7e15d4c7ce682f87f8ea2907f35c2fb07b185ec9c3086a857b621c08f5a7.png" src="../../../_images/e76e7e15d4c7ce682f87f8ea2907f35c2fb07b185ec9c3086a857b621c08f5a7.png" />
+<img alt="../../../_images/81e79bbc35ad1425b071a94b39dbc8e5a18f628539bde1719bc77b89431ed7fe.png" src="../../../_images/81e79bbc35ad1425b071a94b39dbc8e5a18f628539bde1719bc77b89431ed7fe.png" />
 </div>
 </div>
 <p>The most “important” features in this model are the F125W and F606W fluxes. Parameters such as id, ra, dec, x, and y understandably have very little influence on the predictions.</p>
@@ -1260,7 +1260,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/1a0f3a5f04a1873848dc5e4e07a844b82e37cf7139725266f21d7b6dbf72d92b.png" src="../../../_images/1a0f3a5f04a1873848dc5e4e07a844b82e37cf7139725266f21d7b6dbf72d92b.png" />
+<img alt="../../../_images/a360cb08295e176cad50344603da0bd8dc0c7a4eaa278a08e7f21b6134ae55cb.png" src="../../../_images/a360cb08295e176cad50344603da0bd8dc0c7a4eaa278a08e7f21b6134ae55cb.png" />
 </div>
 </div>
 <p>Comparing the MSE for the results above:</p>
@@ -1272,7 +1272,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random forest MSE = 0.1350
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random forest MSE = 0.1356
 Skelton et al. (2014) MSE = 0.0928
 </pre></div>
 </div>
