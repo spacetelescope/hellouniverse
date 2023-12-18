@@ -476,6 +476,16 @@ This notebook is based on the <a class="reference external" href="https://ui.ads
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-12-18 17:06:29.331676: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-12-18 17:06:29.331720: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-12-18 17:06:29.332624: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-12-18 17:06:29.338373: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-12-18 17:06:30.769582: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="download-the-training-data">
@@ -493,6 +503,12 @@ In other words, the CNN performs a <strong>classification</strong> task at each 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="n">file_url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.stsci.edu/hlsps/hellouniverse/hellouniverse_stella_500.fits&#39;</span>
 <span class="n">hdu</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">download_file</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13.8 ms, sys: 4.42 ms, total: 18.2 ms
+Wall time: 383 ms
 </pre></div>
 </div>
 </div>
@@ -541,6 +557,9 @@ For our purposes (i.e., building the <code class="docutils literal notranslate">
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/a2264e9510fe310225f771b72b749be977f6e6a193b3ce667db6e614cac69ebb.png" src="../../../_images/a2264e9510fe310225f771b72b749be977f6e6a193b3ce667db6e614cac69ebb.png" />
 </div>
 </div>
 </section>
@@ -605,6 +624,43 @@ As in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/a
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;model&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 200, 1)]          0         
+                                                                 
+ conv1d (Conv1D)             (None, 200, 7)            119       
+                                                                 
+ max_pooling1d (MaxPooling1  (None, 100, 7)            0         
+ D)                                                              
+                                                                 
+ dropout (Dropout)           (None, 100, 7)            0         
+                                                                 
+ conv1d_1 (Conv1D)           (None, 100, 3)            1347      
+                                                                 
+ max_pooling1d_1 (MaxPoolin  (None, 50, 3)             0         
+ g1D)                                                            
+                                                                 
+ dropout_1 (Dropout)         (None, 50, 3)             0         
+                                                                 
+ flatten (Flatten)           (None, 150)               0         
+                                                                 
+ dense (Dense)               (None, 32)                4832      
+                                                                 
+ dropout_2 (Dropout)         (None, 32)                0         
+                                                                 
+ dense_1 (Dense)             (None, 1)                 33        
+                                                                 
+=================================================================
+Total params: 6331 (24.73 KB)
+Trainable params: 6331 (24.73 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="train-the-cnn-to-perform-a-classification-task">
@@ -628,12 +684,62 @@ Once you’ve run your model and evaluated the fit, you can come back here and r
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/20
+23/23 [==============================] - 1s 16ms/step - loss: 0.6877 - accuracy: 0.6455 - val_loss: 0.6485 - val_accuracy: 0.7088
+Epoch 2/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.5991 - accuracy: 0.7316 - val_loss: 0.6024 - val_accuracy: 0.7088
+Epoch 3/20
+23/23 [==============================] - 0s 9ms/step - loss: 0.5822 - accuracy: 0.7329 - val_loss: 0.6023 - val_accuracy: 0.7088
+Epoch 4/20
+23/23 [==============================] - 0s 9ms/step - loss: 0.5801 - accuracy: 0.7336 - val_loss: 0.6000 - val_accuracy: 0.7088
+Epoch 5/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.5737 - accuracy: 0.7363 - val_loss: 0.5905 - val_accuracy: 0.7143
+Epoch 6/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.5673 - accuracy: 0.7432 - val_loss: 0.5890 - val_accuracy: 0.7143
+Epoch 7/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.5511 - accuracy: 0.7480 - val_loss: 0.5761 - val_accuracy: 0.7143
+Epoch 8/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.5445 - accuracy: 0.7520 - val_loss: 0.5670 - val_accuracy: 0.7253
+Epoch 9/20
+23/23 [==============================] - 0s 9ms/step - loss: 0.5320 - accuracy: 0.7596 - val_loss: 0.5740 - val_accuracy: 0.7253
+Epoch 10/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.5115 - accuracy: 0.7684 - val_loss: 0.5360 - val_accuracy: 0.7308
+Epoch 11/20
+23/23 [==============================] - 0s 9ms/step - loss: 0.5004 - accuracy: 0.7780 - val_loss: 0.5242 - val_accuracy: 0.7363
+Epoch 12/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.4931 - accuracy: 0.7862 - val_loss: 0.5063 - val_accuracy: 0.7637
+Epoch 13/20
+23/23 [==============================] - 0s 9ms/step - loss: 0.4734 - accuracy: 0.7923 - val_loss: 0.4835 - val_accuracy: 0.7637
+Epoch 14/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.4564 - accuracy: 0.8067 - val_loss: 0.4692 - val_accuracy: 0.7857
+Epoch 15/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.4512 - accuracy: 0.8149 - val_loss: 0.4692 - val_accuracy: 0.7747
+Epoch 16/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.4416 - accuracy: 0.8163 - val_loss: 0.4459 - val_accuracy: 0.7857
+Epoch 17/20
+23/23 [==============================] - 0s 9ms/step - loss: 0.4243 - accuracy: 0.8272 - val_loss: 0.4228 - val_accuracy: 0.7967
+Epoch 18/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.4071 - accuracy: 0.8388 - val_loss: 0.4187 - val_accuracy: 0.7967
+Epoch 19/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.3948 - accuracy: 0.8402 - val_loss: 0.3931 - val_accuracy: 0.7967
+Epoch 20/20
+23/23 [==============================] - 0s 10ms/step - loss: 0.3749 - accuracy: 0.8511 - val_loss: 0.3950 - val_accuracy: 0.7967
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># save the model to file</span>
 <span class="n">cnn_file</span> <span class="o">=</span> <span class="s1">&#39;flare_model.h5&#39;</span>
 <span class="n">cnn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">cnn_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save(&#39;my_model.keras&#39;)`.
+  saving_api.save_model(
 </pre></div>
 </div>
 </div>
@@ -697,6 +803,12 @@ The code for generating and plotting the confusion matrix below was adapted from
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6/6 [==============================] - 0s 2ms/step
+</pre></div>
+</div>
+<img alt="../../../_images/1f2fe2eb034f7e80c1407665c19045a67992be5f29ebc1bc348d2288385c0b74.png" src="../../../_images/1f2fe2eb034f7e80c1407665c19045a67992be5f29ebc1bc348d2288385c0b74.png" />
+</div>
 </div>
 <section id="faq">
 <h3>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">#</a></h3>
@@ -715,6 +827,12 @@ We note that in this notebook we are using a subset of the available training da
 <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">pretrained_model</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6/6 [==============================] - 0s 2ms/step
+</pre></div>
+</div>
+<img alt="../../../_images/b27487f73744c85a56cc08c12daae8abe8cbf7b30fa9590f95e10b9fcd33f940.png" src="../../../_images/b27487f73744c85a56cc08c12daae8abe8cbf7b30fa9590f95e10b9fcd33f940.png" />
 </div>
 </div>
 <ul class="simple">
@@ -875,6 +993,19 @@ The sample is a set of bright M dwarfs not featured in the training/validation/t
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>572/572 [==============================] - 1s 2ms/step
+572/572 [==============================] - 1s 2ms/step
+572/572 [==============================] - 1s 2ms/step
+572/572 [==============================] - 1s 2ms/step
+572/572 [==============================] - 1s 2ms/step
+572/572 [==============================] - 1s 2ms/step
+572/572 [==============================] - 1s 2ms/step
+572/572 [==============================] - 1s 2ms/step
+</pre></div>
+</div>
+<img alt="../../../_images/9c97145a9acf7e5a1a1a4f70761959e42a63c344b74f9cc506c06f8ab66d9d8a.png" src="../../../_images/9c97145a9acf7e5a1a1a4f70761959e42a63c344b74f9cc506c06f8ab66d9d8a.png" />
 </div>
 </div>
 </section>
