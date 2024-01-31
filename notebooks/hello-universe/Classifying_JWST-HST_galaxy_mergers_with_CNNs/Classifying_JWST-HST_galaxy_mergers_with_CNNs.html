@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Classifying JWST-HST galaxy mergers with CNNs &#8212; Hello Universe!</title>
   
@@ -19,50 +18,54 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/table.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=cd6c26fb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/hello-universe/Classifying_JWST-HST_galaxy_mergers_with_CNNs/Classifying_JWST-HST_galaxy_mergers_with_CNNs';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -77,10 +80,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,11 +123,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -159,7 +164,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -402,19 +418,19 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><a id="top"></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="classifying-jwst-hst-galaxy-mergers-with-cnns">
-<h1>Classifying JWST-HST galaxy mergers with CNNs<a class="headerlink" href="#classifying-jwst-hst-galaxy-mergers-with-cnns" title="Permalink to this heading">#</a></h1>
+<h1>Classifying JWST-HST galaxy mergers with CNNs<a class="headerlink" href="#classifying-jwst-hst-galaxy-mergers-with-cnns" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="learning-goals">
-<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading">#</a></h2>
+<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Link to this heading">#</a></h2>
 <p><strong>In this tutorial, you will see an example of building, compiling, and training a CNN on simulated astronomical data.</strong>
 By the end of this tutorial you will have a working example of a simple Convolutional Neural Network (CNN) in <code class="docutils literal notranslate"><span class="pre">Keras</span></code>.</p>
 </section>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>CNNs are a class of machine learning (ML) algorithms that can extract information from images.
 In this notebook, you will walk through the basic steps of applying a CNN to data:</p>
 <ol class="arabic simple">
@@ -431,7 +447,7 @@ This work is based on the public data and code from <a href='https://ui.adsabs.h
 <p><strong>NOTE:</strong> <em>The DeepMerge team has <a class="reference external" href="https://github.com/deepskies/deepmerge-public">publicly-available code</a> for demonstrating the architecture and optimal performace of the model, which we encourage you to check out! The goal of this notebook is to step through the model building and training process.</em></p>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <p>This notebook uses the following packages:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> to handle array functions</p></li>
@@ -484,13 +500,13 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <section id="load-the-data-and-visualize-a-sample-of-the-data">
-<h3>1. Load the data and visualize a sample of the data<a class="headerlink" href="#load-the-data-and-visualize-a-sample-of-the-data" title="Permalink to this heading">#</a></h3>
+<h3>1. Load the data and visualize a sample of the data<a class="headerlink" href="#load-the-data-and-visualize-a-sample-of-the-data" title="Link to this heading">#</a></h3>
 <p>Load the simulated galaxy observations (3-band images) and merger probabilities (output labels).</p>
 <p>In total, there are 15,426 simulated images, each in three filters (F814W from the Advanced Camera for Surveys and F160W from the Wide Field Camera 3 on the Hubble Space Telescope (HST), and F160W and F356W from Near Infrared Camera on the James Webb Space Telescope (JWST)), retrieved and augmented from synthetic observations of the Illustris cosmological simulation. The sample includes 8120 galaxy mergers and 7306 non-mergers. Two versions of the sample are available, with and without realistic observational and experimental noise (“pristine” and “noisy”). The sample construction and augmentation process for the HST images is described in detail in <a class="reference external" href="https://doi.org/10.1016/j.ascom.2020.100390">Ciprijanovic et al. 2020</a>, and is identical for the mock JWST images.</p>
 <p>These datasets are hosted at the Mikulski Archive for Space Telescopes as an the <a class="reference external" href="https://archive.stsci.edu/doi/resolve/resolve.html?doi=10.17909/t9-vqk6-pc80">DEEPMERGE</a> high-level science product (HLSP).</p>
 <p>The CNN will be trained to distinguish between merging and non-merging galaxies.</p>
 <section id="load-the-data">
-<h4>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this heading">#</a></h4>
+<h4>Load the data<a class="headerlink" href="#load-the-data" title="Link to this heading">#</a></h4>
 <p>The simulated images are stored in FITS format. We refer you to the <a class="reference external" href="https://docs.astropy.org/en/stable/io/fits/index.html">Astropy Documentation</a> for further information about this format.</p>
 <p>For this example, we will download the “pristine” set of galaxy images, i.e., those without added observational noise. To select the “noisy” sample, change the version below. Alternatively, you can download data files from the <a class="reference external" href="https://stdatu.stsci.edu/hlsp/deepmerge">DEEPMERGE</a> website.</p>
 <div class="cell docutils container">
@@ -581,7 +597,7 @@ EXTNAME = &#39;MergerLabel&#39;
 <p>The file includes a primary header card with overall information, an image card with the simulated images, and a bintable with the merger labels for the images (1=merger, 0=non-merger).</p>
 </section>
 <section id="plot-example-images">
-<h4>Plot example images<a class="headerlink" href="#plot-example-images" title="Permalink to this heading">#</a></h4>
+<h4>Plot example images<a class="headerlink" href="#plot-example-images" title="Link to this heading">#</a></h4>
 <p>For a random selection of images, plot the images and their corresponding labels:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -630,7 +646,7 @@ EXTNAME = &#39;MergerLabel&#39;
 </section>
 </section>
 <section id="divide-data-into-training-validation-and-testing-sets">
-<h2>2. Divide data into training, validation, and testing sets<a class="headerlink" href="#divide-data-into-training-validation-and-testing-sets" title="Permalink to this heading">#</a></h2>
+<h2>2. Divide data into training, validation, and testing sets<a class="headerlink" href="#divide-data-into-training-validation-and-testing-sets" title="Link to this heading">#</a></h2>
 <p>To divide the data set into training, validation, and testing data we will use Scikit-Learn’s <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html"><code class="docutils literal notranslate"><span class="pre">train_test_split</span></code></a> function.</p>
 <p>We will denote the input images as <code class="docutils literal notranslate"><span class="pre">X</span></code> and their corresponding labels (i.e. the integer indicating whether or not they are a merger) as <code class="docutils literal notranslate"><span class="pre">y</span></code>, following the convention used by <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
 <div class="cell docutils container">
@@ -675,7 +691,7 @@ CNN’s will work with an arbitrary number of channels.</p>
 </div>
 </div>
 <section id="build-a-cnn-in-keras">
-<h3>3. Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code><a class="headerlink" href="#build-a-cnn-in-keras" title="Permalink to this heading">#</a></h3>
+<h3>3. Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code><a class="headerlink" href="#build-a-cnn-in-keras" title="Link to this heading">#</a></h3>
 <p>Here, we will build the model described in Section 3 of <a class="reference external" href="https://doi.org/10.1016/j.ascom.2020.100390">Ciprijanovic et al. 2020</a>.</p>
 <p>Further details about <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code>, <code class="docutils literal notranslate"><span class="pre">MaxPooling2D</span></code>, <code class="docutils literal notranslate"><span class="pre">BatchNormalization</span></code>, <code class="docutils literal notranslate"><span class="pre">Dropout</span></code>, and Dense layers can be found in the <a class="reference external" href="https://keras.io/api/layers/">Keras Layers Documentation</a>.
 Further details about the sigmoid and softmax activation function can be found in the <a class="reference external" href="https://keras.io/api/layers/activations/">Keras Activation Function Documentation</a>.</p>
@@ -718,7 +734,7 @@ Further details about the sigmoid and softmax activation function can be found i
 </div>
 </section>
 <section id="compile-the-cnn">
-<h3>4. Compile the CNN<a class="headerlink" href="#compile-the-cnn" title="Permalink to this heading">#</a></h3>
+<h3>4. Compile the CNN<a class="headerlink" href="#compile-the-cnn" title="Link to this heading">#</a></h3>
 <p>Next, we compile the model.
 As in <a class="reference external" href="https://doi.org/10.1016/j.ascom.2020.100390">Ciprijanovic et al. 2020</a>, we select the Adam opmimizer and the binary cross entropy loss function (as this is a binary classification problem).</p>
 <p>You can learn more about <a class="reference external" href="https://keras.io/api/optimizers/">optimizers</a> and more about <a class="reference external" href="https://keras.io/api/losses/">loss functions for regression tasks</a> in the <a class="reference external" href="https://keras.io/">Keras documentation</a>.</p>
@@ -789,7 +805,7 @@ _________________________________________________________________
 </div>
 </section>
 <section id="train-the-cnn-to-perform-a-classification-task">
-<h3>5. Train the CNN to perform a classification task<a class="headerlink" href="#train-the-cnn-to-perform-a-classification-task" title="Permalink to this heading">#</a></h3>
+<h3>5. Train the CNN to perform a classification task<a class="headerlink" href="#train-the-cnn-to-perform-a-classification-task" title="Link to this heading">#</a></h3>
 <p>We will start with training for 20 epochs, but this almost certainly won’t be long enough to get great results. We set the “batch size” of the network (i.e., the number of samples to be propagated through the network, see the keras documentation <a class="reference external" href="https://keras.io/api/models/model_training_apis/">here</a>) to 128. Once you’ve run your model and evaluated the fit, you can come back here and run the next cell again for 100 epochs or longer.
 This step will likely take many minutes. The training step is typically the computational bottleneck for using CNNs.
 However, once a CNN is trained, it can effectively be “packaged up” for future use on the original or other machines.
@@ -819,7 +835,7 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </div>
 </section>
 <section id="visualize-cnn-performance">
-<h3>6. Visualize CNN performance<a class="headerlink" href="#visualize-cnn-performance" title="Permalink to this heading">#</a></h3>
+<h3>6. Visualize CNN performance<a class="headerlink" href="#visualize-cnn-performance" title="Link to this heading">#</a></h3>
 <p>To visualize the performance of the CNN, we plot the evolution of the accuracy and loss as a function of training epochs, for the training set and for the validation set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -859,7 +875,7 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 <p>Observe how the loss for the validation set is higher than for the training set (and conversely, the accuracy for the validation set is lower than for the training set), suggesting that this model is suffering from <a class="reference external" href="https://www.tensorflow.org/tutorials/keras/overfit_and_underfit">overfitting</a>. Revisit <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020A%26C....3200390C/abstract">the original paper</a> and notice the strategies they employ to improve the validation accuracy. Observe <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S2213133720300445">their Figure 2</a> for an example of what the results of a properly-trained network look like!</p>
 </section>
 <section id="predict-mergers">
-<h3>7. Predict mergers!<a class="headerlink" href="#predict-mergers" title="Permalink to this heading">#</a></h3>
+<h3>7. Predict mergers!<a class="headerlink" href="#predict-mergers" title="Link to this heading">#</a></h3>
 <p>Apply the CNN to predict mergers in the “test” set, not used for training or validating the CNN.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -936,7 +952,7 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </section>
 </section>
 <section id="faq">
-<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">#</a></h2>
+<h2>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>How do I interpret theses results?</strong> The confusion matrix shows the model predicts a large fraction of false positive (roughly 25%) and false negative (roughly 36%) merger events. The published models from <a class="reference external" href="https://doi.org/10.1016/j.ascom.2020.100390">Ciprijanovic et al. 2020</a> perform much better.  We note that in this notebook we are training for only a subset of the optimal number of epochs for space and time considerations, but you are welcome to agument these restricitons, and as always check out <a class="reference external" href="https://github.com/deepskies/deepmerge-public">the DeepMerge code</a> for more information!</p></li>
 <li><p><strong>Can I improve the model by changing it?</strong> We only trained for 20 epochs, which is many fewer than the published model. Go back to Section 4 (“Train the CNN to perform a classification task”) and increase the number of epochs to 100 (or more!) and train again. Does your model perform better? Your results may look better/worse/different from the published results due to the stochastic nature of training.</p></li>
@@ -944,7 +960,7 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 <li><p><strong>I want to test my model on my training data!</strong> No. You will convince yourself that your results are much better than they actually are.  Always keep your training, validation, and testing sets completely separate!</p></li>
 </ul>
 <section id="extensions-exercises">
-<h3>Extensions/Exercises<a class="headerlink" href="#extensions-exercises" title="Permalink to this heading">#</a></h3>
+<h3>Extensions/Exercises<a class="headerlink" href="#extensions-exercises" title="Link to this heading">#</a></h3>
 <ul>
 <li><p><strong>Effect of noise?</strong> Try re-training the network with “noisy” data (i.e., modify the <code class="docutils literal notranslate"><span class="pre">version</span></code> in Section 1 to “noisy” and download the associated data product). Do the results change? If so, how and why? What are the pros and cons of using noisy vs. pristine data to train a ML model?</p></li>
 <li><p><strong>Effect of wavelength?</strong> The <a class="reference external" href="https://archive.stsci.edu/doi/resolve/resolve.html?doi=10.17909/t9-vqk6-pc80">DEEPMERGE HLSP</a> includes mock galaxy images in 2 filters only (only HST data). If you train the network with this data (hint: this will require downloading it from the website, or modifying the download cells to point to the correct URL; and also modifying the shapes of the training, validation and test data, as well as the network inputs), how do the results change?</p></li>
@@ -956,7 +972,7 @@ In other words, it doesn’t have to be retrained every time one wants to use it
 </section>
 </section>
 <section id="about-this-notebook">
-<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this heading">#</a></h2>
+<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Link to this heading">#</a></h2>
 <p><strong>Author:</strong><br />
 Claire Murray, Assistant Astronomer, <a class="reference external" href="mailto:cmurray1&#37;&#52;&#48;stsci&#46;edu">cmurray1<span>&#64;</span>stsci<span>&#46;</span>edu</a></p>
 <p><strong>Additional Contributors:</strong><br />
@@ -966,7 +982,7 @@ This notebook is based on the code repository for the paper <a href="https://doi
 <p><strong>Updated On:</strong> 2022-5-25</p>
 </section>
 <section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
+<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
 <p>If you use this data set, <code class="docutils literal notranslate"><span class="pre">astropy</span></code>, or <code class="docutils literal notranslate"><span class="pre">keras</span></code> for published research, please cite the
 authors. Follow these links for more information:</p>
 <ul class="simple">
@@ -974,7 +990,7 @@ authors. Follow these links for more information:</p>
 <li><p><a class="reference external" href="https://www.astropy.org/acknowledging.html">Citing <code class="docutils literal notranslate"><span class="pre">astropy</span></code></a></p></li>
 <li><p><a class="reference external" href="https://keras.io/getting_started/faq/#how-should-i-cite-keras">Citing <code class="docutils literal notranslate"><span class="pre">keras</span></code></a></p></li>
 </ul>
-<p><span class="xref myst">Top of Page</span>
+<p><a class="reference internal" href="#top"><span class="xref myst">Top of Page</span></a>
 <img style="float: right;" src="https://raw.githubusercontent.com/spacetelescope/notebooks/master/assets/stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="Space Telescope Logo" width="200px"/></p>
 </section>
 </section>
@@ -1036,6 +1052,7 @@ authors. Follow these links for more information:</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1090,7 +1107,7 @@ By STScI Notebook Dev
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2022-2024.
       <br/>
     
   </p>
@@ -1114,8 +1131,8 @@ By STScI Notebook Dev
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
