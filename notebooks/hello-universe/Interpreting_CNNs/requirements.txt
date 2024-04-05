@@ -1,0 +1,7 @@
+keras>=2.12.0
+tensorflow>=2.12.1
+astropy
+numpy
+matplotlib>=3.7.2
+opencv-python
+scikit-learn>=1.2.2
