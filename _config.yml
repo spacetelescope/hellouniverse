@@ -3,6 +3,7 @@
 
 title: Hello Universe!
 author: STScI Notebook Dev
+copyright: 2022-2024
 logo: HelloUniverseLogo.png
 
 html:
@@ -11,7 +12,7 @@ html:
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: auto
+  execute_notebooks: off
   timeout                   : -1    # timeout in seconds, -1 removes timeout restrictions
 
 # Define the name of the latex output file for PDF builds
