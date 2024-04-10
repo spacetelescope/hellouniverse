@@ -1,6 +1,6 @@
-tensorflow
+tensorflow==2.15.1
 astropy>=6.0.0
-keras==2.8.0
+keras==2.16
 lightkurve>=2.4.2
 matplotlib>=3.8.2
 numpy>=1.26.2
