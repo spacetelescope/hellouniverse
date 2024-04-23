@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Classifying flaring stars with stella: a convolutional neural network for TESS &#8212; Hello Universe!</title>
   
@@ -28,44 +29,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=cd6c26fb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/table.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../../_static/sphinx-thebe.js?v=afe5de03"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/hello-universe/Classifying_TESS_flares_with_CNNs/Classifying_TESS_flares_with_CNNs';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -164,18 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -414,14 +400,14 @@ document.write(`
                   
   <p><a id="top"></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="classifying-flaring-stars-with-stella-a-convolutional-neural-network-for-tess">
-<h1>Classifying flaring stars with stella: a convolutional neural network for TESS<a class="headerlink" href="#classifying-flaring-stars-with-stella-a-convolutional-neural-network-for-tess" title="Link to this heading">#</a></h1>
+<h1>Classifying flaring stars with stella: a convolutional neural network for TESS<a class="headerlink" href="#classifying-flaring-stars-with-stella-a-convolutional-neural-network-for-tess" title="Permalink to this heading">#</a></h1>
 <section id="learning-goals">
-<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Link to this heading">#</a></h2>
+<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading">#</a></h2>
 <p><strong>In this tutorial, you will see an example of building, compiling, and training a CNN to classify astronomical data in vector form.</strong>
 By the end of this tutorial you will have a working example of a simple Convolutional Neural Network (CNN) in <code class="docutils literal notranslate"><span class="pre">Keras</span></code>.</p>
 </section>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>CNNs are a class of machine learning (ML) algorithms that can extract information from data. In this notebook, you will walk through the basic steps of applying a CNN to data:</p>
 <ol class="arabic simple">
 <li><p>Load the data and visualize a sample of the data.</p></li>
@@ -438,7 +424,7 @@ This work is based on the model described in the <a class="reference external" h
 The goal of this notebook is to step through the model building and training process.</em></p>
 </section>
 <section id="about-this-notebook">
-<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Link to this heading">#</a></h2>
+<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this heading">#</a></h2>
 <p><strong>Author:</strong><br />
 Claire Murray, Assistant Astronomer, <a class="reference external" href="mailto:cmurray1&#37;&#52;&#48;stsci&#46;edu">cmurray1<span>&#64;</span>stsci<span>&#46;</span>edu</a></p>
 <p><strong>Additional Contributors:</strong><br />
@@ -447,10 +433,11 @@ Yotam Cohen, STScI Staff Scientist, <a class="reference external" href="mailto:y
 This notebook is based on the <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020JOSS....5.2347F/abstract"><code class="docutils literal notranslate"><span class="pre">stella</span></code></a> software package for the CNN used in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">“Flare Statistics for Young Stars from a Convolutional Neural Network Analysis of TESS Data”</a>, Adina D. Feinstein et al. Astronomical Journal, Volume 160, Issue 5, November 2020, and the notebook “CNN_for_cluster_masses” by Michelle Ntampaka, Assistant Astronomer, <a class="reference external" href="mailto:mntampaka&#37;&#52;&#48;stsci&#46;edu">mntampaka<span>&#64;</span>stsci<span>&#46;</span>edu</a>.</p>
 <p><strong>Published:</strong> 2022-06-01</p>
 <p><strong>Updated:</strong> 2023-12-13</p>
+<p><font color="red">This notebook currently fails to execute, use as reference only</font></p>
 </section>
 <hr class="docutils" />
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
 <p>This notebook uses the following:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> to handle array functions</p></li>
@@ -491,22 +478,10 @@ This notebook is based on the <a class="reference external" href="https://ui.ads
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-12-18 17:33:44.886514: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-2023-12-18 17:33:44.918222: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2023-12-18 17:33:44.918246: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2023-12-18 17:33:44.919419: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2023-12-18 17:33:44.925107: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-2023-12-18 17:33:44.925568: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2023-12-18 17:33:45.617140: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="download-the-training-data">
-<h2>1. Download the training data<a class="headerlink" href="#download-the-training-data" title="Link to this heading">#</a></h2>
+<h2>1. Download the training data<a class="headerlink" href="#download-the-training-data" title="Permalink to this heading">#</a></h2>
 <p>Load the sample of TESS lightcurves (input vectors) and flare classifications (output labels) to be used to train the CNN.</p>
 <p>The training set contains stars observed at 2-minute cadence in TESS Sectors 1 and 2, classified by hand and presented as a flare catalog by <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/ab5d3a">Gunther et al. 2020</a>.
 The light curves are processed into examples of length 200 cadences, where each flaring event, if present, is located at the center of the example. The full sample of lightcurves contains 8694 positive classes (flare), and 35896 negative classes (no flare).
@@ -520,12 +495,6 @@ In other words, the CNN performs a <strong>classification</strong> task at each 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="n">file_url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.stsci.edu/hlsps/hellouniverse/hellouniverse_stella_500.fits&#39;</span>
 <span class="n">hdu</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">download_file</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.27 ms, sys: 481 µs, total: 1.75 ms
-Wall time: 1.44 ms
 </pre></div>
 </div>
 </div>
@@ -575,13 +544,10 @@ For our purposes (i.e., building the <code class="docutils literal notranslate">
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/a2264e9510fe310225f771b72b749be977f6e6a193b3ce667db6e614cac69ebb.png" src="../../../_images/a2264e9510fe310225f771b72b749be977f6e6a193b3ce667db6e614cac69ebb.png" />
-</div>
 </div>
 </section>
 <section id="build-a-cnn-in-keras">
-<h2>2. Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code><a class="headerlink" href="#build-a-cnn-in-keras" title="Link to this heading">#</a></h2>
+<h2>2. Build a CNN in <code class="docutils literal notranslate"><span class="pre">Keras</span></code><a class="headerlink" href="#build-a-cnn-in-keras" title="Permalink to this heading">#</a></h2>
 <p>Here, we will build the CNN model described in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">Feinstein et al. 2020</a> and implemented in <code class="docutils literal notranslate"><span class="pre">stella</span></code> from scratch.</p>
 <p>Further details about Conv1D, MaxPooling1D, BatchNormalization, Dropout, and Dense layers can be found in the <a class="reference external" href="https://keras.io/api/layers/">Keras Layers Documentation</a>.
 Further details about the sigmoid and softmax activation function can be found in the <a class="reference external" href="https://keras.io/api/layers/activations/">Keras Activation Function Documentation</a>.</p>
@@ -626,7 +592,7 @@ Further details about the sigmoid and softmax activation function can be found i
 </div>
 </section>
 <section id="compile-the-cnn">
-<h2>3. Compile the CNN<a class="headerlink" href="#compile-the-cnn" title="Link to this heading">#</a></h2>
+<h2>3. Compile the CNN<a class="headerlink" href="#compile-the-cnn" title="Permalink to this heading">#</a></h2>
 <p>Next, we compile the model.
 As in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">Feinstein et al. 2020</a>, we select the Adam optimizer and the binary cross entropy loss function (as this is a binary classification problem).</p>
 <p>You can learn more about <a class="reference external" href="https://keras.io/api/optimizers/">optimizers</a> and more about <a class="reference external" href="https://keras.io/api/losses/">loss functions for regression tasks</a> in the <a class="reference external" href="https://keras.io/">Keras documentation</a>.</p>
@@ -641,47 +607,10 @@ As in <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/a
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;model&quot;
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- input_1 (InputLayer)        [(None, 200, 1)]          0         
-                                                                 
- conv1d (Conv1D)             (None, 200, 7)            119       
-                                                                 
- max_pooling1d (MaxPooling1  (None, 100, 7)            0         
- D)                                                              
-                                                                 
- dropout (Dropout)           (None, 100, 7)            0         
-                                                                 
- conv1d_1 (Conv1D)           (None, 100, 3)            1347      
-                                                                 
- max_pooling1d_1 (MaxPoolin  (None, 50, 3)             0         
- g1D)                                                            
-                                                                 
- dropout_1 (Dropout)         (None, 50, 3)             0         
-                                                                 
- flatten (Flatten)           (None, 150)               0         
-                                                                 
- dense (Dense)               (None, 32)                4832      
-                                                                 
- dropout_2 (Dropout)         (None, 32)                0         
-                                                                 
- dense_1 (Dense)             (None, 1)                 33        
-                                                                 
-=================================================================
-Total params: 6331 (24.73 KB)
-Trainable params: 6331 (24.73 KB)
-Non-trainable params: 0 (0.00 Byte)
-_________________________________________________________________
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="train-the-cnn-to-perform-a-classification-task">
-<h2>4. Train the CNN to perform a classification task<a class="headerlink" href="#train-the-cnn-to-perform-a-classification-task" title="Link to this heading">#</a></h2>
+<h2>4. Train the CNN to perform a classification task<a class="headerlink" href="#train-the-cnn-to-perform-a-classification-task" title="Permalink to this heading">#</a></h2>
 <p>We will start with training for 20 epochs, but this almost certainly won’t be long enough to get great results.
 Once you’ve run your model and evaluated the fit, you can come back here and run the next cell again for 100 epochs or longer.</p>
 <p>You can learn more about <code class="docutils literal notranslate"><span class="pre">fit</span></code> <a class="reference external" href="https://keras.rstudio.com/reference/fit.html">here</a>.</p>
@@ -701,50 +630,6 @@ Once you’ve run your model and evaluated the fit, you can come back here and r
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/20
-23/23 [==============================] - 1s 15ms/step - loss: 0.6098 - accuracy: 0.7158 - val_loss: 0.6070 - val_accuracy: 0.7088
-Epoch 2/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5910 - accuracy: 0.7309 - val_loss: 0.6046 - val_accuracy: 0.7088
-Epoch 3/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5886 - accuracy: 0.7309 - val_loss: 0.6063 - val_accuracy: 0.7088
-Epoch 4/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5813 - accuracy: 0.7309 - val_loss: 0.6095 - val_accuracy: 0.7088
-Epoch 5/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5834 - accuracy: 0.7329 - val_loss: 0.5988 - val_accuracy: 0.7088
-Epoch 6/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5750 - accuracy: 0.7343 - val_loss: 0.5968 - val_accuracy: 0.7143
-Epoch 7/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5668 - accuracy: 0.7411 - val_loss: 0.5861 - val_accuracy: 0.7143
-Epoch 8/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5530 - accuracy: 0.7486 - val_loss: 0.5743 - val_accuracy: 0.7143
-Epoch 9/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5405 - accuracy: 0.7520 - val_loss: 0.5658 - val_accuracy: 0.7308
-Epoch 10/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5404 - accuracy: 0.7596 - val_loss: 0.5550 - val_accuracy: 0.7308
-Epoch 11/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5316 - accuracy: 0.7609 - val_loss: 0.5483 - val_accuracy: 0.7308
-Epoch 12/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5177 - accuracy: 0.7712 - val_loss: 0.5419 - val_accuracy: 0.7308
-Epoch 13/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.5044 - accuracy: 0.7746 - val_loss: 0.5331 - val_accuracy: 0.7363
-Epoch 14/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.4979 - accuracy: 0.7828 - val_loss: 0.5139 - val_accuracy: 0.7637
-Epoch 15/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.4827 - accuracy: 0.7896 - val_loss: 0.4947 - val_accuracy: 0.7637
-Epoch 16/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.4723 - accuracy: 0.7944 - val_loss: 0.4816 - val_accuracy: 0.7747
-Epoch 17/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.4592 - accuracy: 0.8067 - val_loss: 0.4797 - val_accuracy: 0.7637
-Epoch 18/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.4425 - accuracy: 0.8122 - val_loss: 0.4584 - val_accuracy: 0.7802
-Epoch 19/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.4345 - accuracy: 0.8197 - val_loss: 0.4391 - val_accuracy: 0.7912
-Epoch 20/20
-23/23 [==============================] - 0s 9ms/step - loss: 0.4124 - accuracy: 0.8279 - val_loss: 0.4212 - val_accuracy: 0.7967
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -754,16 +639,10 @@ Epoch 20/20
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/lib/python3.11/site-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save(&#39;my_model.keras&#39;)`.
-  saving_api.save_model(
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="test-the-cnn-performance">
-<h2>5. Test the CNN performance<a class="headerlink" href="#test-the-cnn-performance" title="Link to this heading">#</a></h2>
+<h2>5. Test the CNN performance<a class="headerlink" href="#test-the-cnn-performance" title="Permalink to this heading">#</a></h2>
 <p>Apply the CNN to predict flares on the “test” set, not used for training or validating the CNN, and evaluate the performance using a confusion matrix.
 See the documentation from <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html">sklearn on confusion matrices</a> for more information.
 The code for generating and plotting the confusion matrix below was adapted from the application by <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020A%26C....3200390C/abstract">Ciprijanovic et al. 2020</a> for <a class="reference external" href="https://github.com/deepskies/deepmerge-public">DeepMerge</a>.</p>
@@ -820,15 +699,9 @@ The code for generating and plotting the confusion matrix below was adapted from
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6/6 [==============================] - 0s 2ms/step
-</pre></div>
-</div>
-<img alt="../../../_images/1f2fe2eb034f7e80c1407665c19045a67992be5f29ebc1bc348d2288385c0b74.png" src="../../../_images/1f2fe2eb034f7e80c1407665c19045a67992be5f29ebc1bc348d2288385c0b74.png" />
-</div>
 </div>
 <section id="faq">
-<h3>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h3>
+<h3>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>The results don’t look great… why?</strong> From the confusion matrix in Section 5, when faced with the test dataset (i.e., data not used for training or validation), the model predicts a large fraction of false positive flare events, and consequently not enough true negative flare events).
 The published models from <a class="reference external" href="https://dx.doi.org/10.3847/1538-3881/abac0a">Feinstein et al. 2020</a> perform <em>much better</em>, and the confusion matrix <strong>should look more like the results shown below</strong>.
@@ -844,12 +717,6 @@ We note that in this notebook we are using a subset of the available training da
 <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">pretrained_model</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6/6 [==============================] - 0s 1ms/step
-</pre></div>
-</div>
-<img alt="../../../_images/b27487f73744c85a56cc08c12daae8abe8cbf7b30fa9590f95e10b9fcd33f940.png" src="../../../_images/b27487f73744c85a56cc08c12daae8abe8cbf7b30fa9590f95e10b9fcd33f940.png" />
 </div>
 </div>
 <ul class="simple">
@@ -870,7 +737,7 @@ Always keep your training, validation, and testing sets completely separate!</p>
 </ul>
 </section>
 <section id="extensions-exercises">
-<h3>Extensions/Exercises<a class="headerlink" href="#extensions-exercises" title="Link to this heading">#</a></h3>
+<h3>Extensions/Exercises<a class="headerlink" href="#extensions-exercises" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Is the model “overfitting”?</strong>
 Using the results of the model’s <code class="docutils literal notranslate"><span class="pre">history</span></code> (saved as a result of the model training process), investigate the behavior of the training and validation losses and accuracies as a function of training epoch.
@@ -885,7 +752,7 @@ An example workflow is shown below:</p></li>
 </section>
 </section>
 <section id="predict-flares-in-a-new-dataset">
-<h2>6. Predict flares in a new dataset<a class="headerlink" href="#predict-flares-in-a-new-dataset" title="Link to this heading">#</a></h2>
+<h2>6. Predict flares in a new dataset<a class="headerlink" href="#predict-flares-in-a-new-dataset" title="Permalink to this heading">#</a></h2>
 <p>In this step, we will download light curves directly from TESS, pre-process them for input to the CNN, and predict flares.
 The sample is a set of bright M dwarfs not featured in the training/validation/tests datasets.</p>
 <p>First select a sample of sources by their ids numbers:</p>
@@ -1011,23 +878,10 @@ The sample is a set of bright M dwarfs not featured in the training/validation/t
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>572/572 [==============================] - 1s 1ms/step
-572/572 [==============================] - 1s 1ms/step
-572/572 [==============================] - 1s 2ms/step
-572/572 [==============================] - 1s 2ms/step
-572/572 [==============================] - 1s 2ms/step
-572/572 [==============================] - 1s 1ms/step
-572/572 [==============================] - 1s 1ms/step
-572/572 [==============================] - 1s 1ms/step
-</pre></div>
-</div>
-<img alt="../../../_images/4999510bb48c7e7b27d0a88701724712c247a82b29be5c3aa2c36b69be2a7025.png" src="../../../_images/4999510bb48c7e7b27d0a88701724712c247a82b29be5c3aa2c36b69be2a7025.png" />
-</div>
 </div>
 </section>
 <section id="id1">
-<h2>FAQ<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>FAQ<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Why does the data near gaps have a high probability of being flares?</strong>
 This isn’t necessarily the case.
@@ -1040,7 +894,7 @@ Unfortunately, <code class="docutils literal notranslate"><span class="pre">stel
 </ul>
 </section>
 <section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
+<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
 <p>If you use this CNN, <code class="docutils literal notranslate"><span class="pre">stella</span></code>, <code class="docutils literal notranslate"><span class="pre">astropy</span></code>, or <code class="docutils literal notranslate"><span class="pre">keras</span></code> for published research, please cite the
 authors. Follow these links for more information:</p>
 <ul class="simple">
@@ -1049,7 +903,7 @@ authors. Follow these links for more information:</p>
 <li><p><a class="reference external" href="https://www.astropy.org/acknowledging.html">Citing <code class="docutils literal notranslate"><span class="pre">astropy</span></code></a></p></li>
 <li><p><a class="reference external" href="https://keras.io/getting_started/faq/#how-should-i-cite-keras">Citing <code class="docutils literal notranslate"><span class="pre">keras</span></code></a></p></li>
 </ul>
-<p><a class="reference internal" href="#top"><span class="xref myst">Top of Page</span></a>
+<p><span class="xref myst">Top of Page</span>
 <img style="float: right;" src="https://raw.githubusercontent.com/spacetelescope/notebooks/master/assets/stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="Space Telescope Logo" width="200px"/></p>
 </section>
 </section>

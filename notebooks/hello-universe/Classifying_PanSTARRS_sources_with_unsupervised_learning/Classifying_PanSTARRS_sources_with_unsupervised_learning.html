@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Classifying Pan-STARRS sources with unsupervised and supervised learning &#8212; Hello Universe!</title>
   
@@ -28,44 +29,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=cd6c26fb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/table.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../../_static/sphinx-thebe.js?v=afe5de03"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/hello-universe/Classifying_PanSTARRS_sources_with_unsupervised_learning/Classifying_PanSTARRS_sources_with_unsupervised_learning';</script>
@@ -165,18 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -416,14 +402,14 @@ document.write(`
                   
   <p><a id="top"></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="classifying-pan-starrs-sources-with-unsupervised-and-supervised-learning">
-<h1>Classifying Pan-STARRS sources with unsupervised and supervised learning<a class="headerlink" href="#classifying-pan-starrs-sources-with-unsupervised-and-supervised-learning" title="Link to this heading">#</a></h1>
+<h1>Classifying Pan-STARRS sources with unsupervised and supervised learning<a class="headerlink" href="#classifying-pan-starrs-sources-with-unsupervised-and-supervised-learning" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="learning-goals">
-<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Link to this heading">#</a></h2>
+<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading">#</a></h2>
 <p><strong>In this tutorial, you will see an example of using models to classify sources extracted from astronomical data.</strong>  By the end of this tutorial you will have working examples of how to apply principal component analysis (PCA), t-distributed stochastic neighbor embedding (tSNE), k-means clustering (unsupervised learning) and stochastic gradient descent (SGD) classification (supervised learning).</p>
 </section>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>Machine learning which can be applied in both supervised and unsupervised contexts for classification. In this notebook, we will walk through the basic steps of reducing the dimensionality of astronomical source catalogs with PCA and tSNE and classifying the sources in unsupervised and supervised formats.</p>
 <ol class="arabic simple">
 <li><p>Download and import the data</p></li>
@@ -436,7 +422,7 @@ document.write(`
 <p>Here we will classify sources extracted from multi-wavelength photometry from the <a class="reference external" href="https://outerspace.stsci.edu/display/PANSTARRS/">Pan-STARRS</a> survey, and compare with previous classifications from a convolutional neural network analysis by the <a class="reference external" href="https://archive.stsci.edu/hlsp/ps1-strm">PS1-STRM</a> team.</p>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
 <p>This notebook uses the following:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> to handle array functions</p></li>
@@ -488,7 +474,7 @@ document.write(`
 </div>
 </div>
 <section id="download-the-data">
-<h3>1. Download the data<a class="headerlink" href="#download-the-data" title="Link to this heading">#</a></h3>
+<h3>1. Download the data<a class="headerlink" href="#download-the-data" title="Permalink to this heading">#</a></h3>
 <p>For the following exercises, we will use data from the Pan-STARRS1 (PS1) catalog, which includes wide-area imaging in five wavelength bands, g, r, i, z  and y.</p>
 <p>Using convolutional neural networks (CNNs) trained on spectroscopic surveys, the Pan-STARRS1 Source Types and Redshifts with Machine Learning (PS1-STRM) (<a class="reference external" href="https://dx.doi.org/10.1093/mnras/staa2587">Beck et al. 2020</a>) team classified (“star”, “galaxy”, “QSO” and “unsure”) and regressed redshift information for the 2,902,054,648 discree sources in the <a class="reference external" href="https://outerspace.stsci.edu/display/PANSTARRS/PS1+Source+extraction+and+catalogs">PS1 3<span class="math notranslate nohighlight">\(\pi\)</span> DR1 catalog</a>. This volume of data is far too large to analyze in a short notebook example. Therefore, we extracted a subset of PS1-STRM and cross-matched it with the PS1 catalog (see Appendix for details on how to obtain this subset from MAST).</p>
 <p>This subset of PS1 will be used to test whether simple clustering algorithms can reproduce the classification results of PS1-STRM.  The dataset consists of 100,000 sources, randomly selected to have roughly equal representation in the four PS1-STRM classes.</p>
@@ -502,8 +488,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 509 ms, sys: 351 ms, total: 860 ms
-Wall time: 6.57 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 607 ms, sys: 341 ms, total: 948 ms
+Wall time: 6.61 s
 </pre></div>
 </div>
 </div>
@@ -517,7 +503,7 @@ Wall time: 6.57 s
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=100000</i>
-<table id="table140201065850320" class="table-striped table-bordered table-condensed">
+<table id="table139622971627408" class="table-striped table-bordered table-condensed">
 <thead><tr><th>class</th><th>prob_Galaxy</th><th>prob_Star</th><th>prob_QSO</th><th>z_phot</th><th>z_photErr</th><th>objID</th><th>uniquePspsFOid</th><th>ippObjID</th><th>randomForcedObjID</th><th>nDetections</th><th>batchID</th><th>processingVersion</th><th>gnTotal</th><th>gnIncPSFFlux</th><th>gnIncKronFlux</th><th>gnIncApFlux</th><th>gnIncR5</th><th>gnIncR6</th><th>gnIncR7</th><th>gFPSFFlux</th><th>gFPSFFluxErr</th><th>gFPSFFluxStd</th><th>gFPSFMag</th><th>gFPSFMagErr</th><th>gFKronFlux</th><th>gFKronFluxErr</th><th>gFKronFluxStd</th><th>gFKronMag</th><th>gFKronMagErr</th><th>gFApFlux</th><th>gFApFluxErr</th><th>gFApFluxStd</th><th>gFApMag</th><th>gFApMagErr</th><th>gFmeanflxR5</th><th>gFmeanflxR5Err</th><th>gFmeanflxR5Std</th><th>gFmeanflxR5Fill</th><th>gFmeanMagR5</th><th>gFmeanMagR5Err</th><th>gFmeanflxR6</th><th>gFmeanflxR6Err</th><th>gFmeanflxR6Std</th><th>gFmeanflxR6Fill</th><th>gFmeanMagR6</th><th>gFmeanMagR6Err</th><th>gFmeanflxR7</th><th>gFmeanflxR7Err</th><th>gFmeanflxR7Std</th><th>gFmeanflxR7Fill</th><th>gFmeanMagR7</th><th>gFmeanMagR7Err</th><th>gFlags</th><th>gE1</th><th>gE2</th><th>rnTotal</th><th>rnIncPSFFlux</th><th>rnIncKronFlux</th><th>rnIncApFlux</th><th>rnIncR5</th><th>rnIncR6</th><th>rnIncR7</th><th>rFPSFFlux</th><th>rFPSFFluxErr</th><th>rFPSFFluxStd</th><th>rFPSFMag</th><th>rFPSFMagErr</th><th>rFKronFlux</th><th>rFKronFluxErr</th><th>rFKronFluxStd</th><th>rFKronMag</th><th>rFKronMagErr</th><th>rFApFlux</th><th>rFApFluxErr</th><th>rFApFluxStd</th><th>rFApMag</th><th>rFApMagErr</th><th>rFmeanflxR5</th><th>rFmeanflxR5Err</th><th>rFmeanflxR5Std</th><th>rFmeanflxR5Fill</th><th>rFmeanMagR5</th><th>rFmeanMagR5Err</th><th>rFmeanflxR6</th><th>rFmeanflxR6Err</th><th>rFmeanflxR6Std</th><th>rFmeanflxR6Fill</th><th>rFmeanMagR6</th><th>rFmeanMagR6Err</th><th>rFmeanflxR7</th><th>rFmeanflxR7Err</th><th>rFmeanflxR7Std</th><th>rFmeanflxR7Fill</th><th>rFmeanMagR7</th><th>rFmeanMagR7Err</th><th>rFlags</th><th>rE1</th><th>rE2</th><th>inTotal</th><th>inIncPSFFlux</th><th>inIncKronFlux</th><th>inIncApFlux</th><th>inIncR5</th><th>inIncR6</th><th>inIncR7</th><th>iFPSFFlux</th><th>iFPSFFluxErr</th><th>iFPSFFluxStd</th><th>iFPSFMag</th><th>iFPSFMagErr</th><th>iFKronFlux</th><th>iFKronFluxErr</th><th>iFKronFluxStd</th><th>iFKronMag</th><th>iFKronMagErr</th><th>iFApFlux</th><th>iFApFluxErr</th><th>iFApFluxStd</th><th>iFApMag</th><th>iFApMagErr</th><th>iFmeanflxR5</th><th>iFmeanflxR5Err</th><th>iFmeanflxR5Std</th><th>iFmeanflxR5Fill</th><th>iFmeanMagR5</th><th>iFmeanMagR5Err</th><th>iFmeanflxR6</th><th>iFmeanflxR6Err</th><th>iFmeanflxR6Std</th><th>iFmeanflxR6Fill</th><th>iFmeanMagR6</th><th>iFmeanMagR6Err</th><th>iFmeanflxR7</th><th>iFmeanflxR7Err</th><th>iFmeanflxR7Std</th><th>iFmeanflxR7Fill</th><th>iFmeanMagR7</th><th>iFmeanMagR7Err</th><th>iFlags</th><th>iE1</th><th>iE2</th><th>znTotal</th><th>znIncPSFFlux</th><th>znIncKronFlux</th><th>znIncApFlux</th><th>znIncR5</th><th>znIncR6</th><th>znIncR7</th><th>zFPSFFlux</th><th>zFPSFFluxErr</th><th>zFPSFFluxStd</th><th>zFPSFMag</th><th>zFPSFMagErr</th><th>zFKronFlux</th><th>zFKronFluxErr</th><th>zFKronFluxStd</th><th>zFKronMag</th><th>zFKronMagErr</th><th>zFApFlux</th><th>zFApFluxErr</th><th>zFApFluxStd</th><th>zFApMag</th><th>zFApMagErr</th><th>zFmeanflxR5</th><th>zFmeanflxR5Err</th><th>zFmeanflxR5Std</th><th>zFmeanflxR5Fill</th><th>zFmeanMagR5</th><th>zFmeanMagR5Err</th><th>zFmeanflxR6</th><th>zFmeanflxR6Err</th><th>zFmeanflxR6Std</th><th>zFmeanflxR6Fill</th><th>zFmeanMagR6</th><th>zFmeanMagR6Err</th><th>zFmeanflxR7</th><th>zFmeanflxR7Err</th><th>zFmeanflxR7Std</th><th>zFmeanflxR7Fill</th><th>zFmeanMagR7</th><th>zFmeanMagR7Err</th><th>zFlags</th><th>zE1</th><th>zE2</th><th>ynTotal</th><th>ynIncPSFFlux</th><th>ynIncKronFlux</th><th>ynIncApFlux</th><th>ynIncR5</th><th>ynIncR6</th><th>ynIncR7</th><th>yFPSFFlux</th><th>yFPSFFluxErr</th><th>yFPSFFluxStd</th><th>yFPSFMag</th><th>yFPSFMagErr</th><th>yFKronFlux</th><th>yFKronFluxErr</th><th>yFKronFluxStd</th><th>yFKronMag</th><th>yFKronMagErr</th><th>yFApFlux</th><th>yFApFluxErr</th><th>yFApFluxStd</th><th>yFApMag</th><th>yFApMagErr</th><th>yFmeanflxR5</th><th>yFmeanflxR5Err</th><th>yFmeanflxR5Std</th><th>yFmeanflxR5Fill</th><th>yFmeanMagR5</th><th>yFmeanMagR5Err</th><th>yFmeanflxR6</th><th>yFmeanflxR6Err</th><th>yFmeanflxR6Std</th><th>yFmeanflxR6Fill</th><th>yFmeanMagR6</th><th>yFmeanMagR6Err</th><th>yFmeanflxR7</th><th>yFmeanflxR7Err</th><th>yFmeanflxR7Std</th><th>yFmeanflxR7Fill</th><th>yFmeanMagR7</th><th>yFmeanMagR7Err</th><th>yFlags</th><th>yE1</th><th>yE2</th></tr></thead>
 <thead><tr><th>bytes6</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float64</th></tr></thead>
 <tr><td>GALAXY</td><td>0.980312</td><td>0.004782678</td><td>0.014905294</td><td>0.471364349126816</td><td>4.93913290028734</td><td>200402322441266604</td><td>3939368000018016</td><td>356370616559241</td><td>0.703470831460758</td><td>83</td><td>3939368</td><td>3</td><td>14</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>-999.0</td><td>16416</td><td>-999.0</td><td>-999.0</td><td>20</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>5.90703984926222e-06</td><td>1.7672400431934e-08</td><td>0.000323351006954908</td><td>21.9715995788574</td><td>0.00324800005182624</td><td>3.25623987009749e-05</td><td>3.41189002028841e-06</td><td>2.69455003738403</td><td>20.1182994842529</td><td>0.113762997090817</td><td>1.9500199414324e-05</td><td>9.20953979743899e-09</td><td>8.78130013006739e-05</td><td>20.6749992370605</td><td>0.000513000006321818</td><td>2.96671005344251e-05</td><td>2.79615005638334e-06</td><td>4.15236991102574e-06</td><td>0.974824011325836</td><td>20.2194004058838</td><td>0.10233099758625</td><td>7.4609401053749e-05</td><td>4.38834013039013e-06</td><td>8.68179995450191e-07</td><td>1.00258994102478</td><td>19.2180995941162</td><td>0.0638599991798401</td><td>0.000167539998074062</td><td>7.01975977790426e-06</td><td>1.16333003461477e-05</td><td>1.00093996524811</td><td>18.3397998809814</td><td>0.0454909987747669</td><td>16416</td><td>0.171017006039619</td><td>0.130113005638123</td><td>21</td><td>9</td><td>8</td><td>8</td><td>9</td><td>9</td><td>9</td><td>4.33265995525289e-06</td><td>4.05088997013081e-07</td><td>0.2674959897995</td><td>22.3082008361816</td><td>0.101511999964714</td><td>5.15503006681683e-06</td><td>1.99629994313e-06</td><td>2.35437989234924</td><td>22.119499206543</td><td>0.420453995466232</td><td>3.32163995153678e-06</td><td>1.73556998106505e-06</td><td>6.28458023071289</td><td>22.596700668335</td><td>0.567304015159607</td><td>6.54475979899871e-06</td><td>4.31527996624936e-06</td><td>1.42750996019458e-05</td><td>0.974824011325836</td><td>21.8603000640869</td><td>0.715879023075104</td><td>1.62930991791654e-05</td><td>6.75111004966311e-06</td><td>3.42612984240986e-05</td><td>0.993659019470215</td><td>20.8701000213623</td><td>0.449878990650177</td><td>4.30016989412252e-05</td><td>1.0813700100698e-05</td><td>8.05731033324264e-05</td><td>0.988604009151459</td><td>19.8164005279541</td><td>0.273032993078232</td><td>114720</td><td>0.435211986303329</td><td>0.452488988637924</td><td>15</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>9.07123023807799e-07</td><td>1.30901003103645e-06</td><td>0.100748002529144</td><td>24.0058994293213</td><td>1.5667599439621</td><td>2.49327990786696e-06</td><td>8.35970968182664e-06</td><td>0.218798995018005</td><td>22.9081001281738</td><td>3.64036011695862</td><td>3.70626003132202e-06</td><td>3.32830995830591e-06</td><td>0.651328027248383</td><td>22.4776992797852</td><td>0.975014984607697</td><td>3.51279005883498e-08</td><td>7.84874009696068e-06</td><td>7.69306006986881e-06</td><td>0.974824011325836</td><td>27.5359001159668</td><td>242.589996337891</td><td>8.15007024357328e-06</td><td>1.23233003250789e-05</td><td>8.9091499830829e-06</td><td>1.00258994102478</td><td>21.622200012207</td><td>1.64169001579285</td><td>-1.1616200026765e-05</td><td>1.97320005099755e-05</td><td>8.54328027344309e-06</td><td>1.00093996524811</td><td>-999.0</td><td>-999.0</td><td>16416</td><td>13.102499961853</td><td>5.33730983734131</td><td>13</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>6.04524984737509e-06</td><td>5.89502997172531e-06</td><td>1.01250004768372</td><td>21.9465007781982</td><td>1.05876004695892</td><td>1.14544000098249e-05</td><td>2.82598994090222e-05</td><td>4.9345498085022</td><td>21.2525997161865</td><td>2.67868995666504</td><td>2.03251001948956e-05</td><td>1.01291998362285e-05</td><td>5.01808977127075</td><td>20.6299991607666</td><td>0.54108601808548</td><td>1.49158004205674e-05</td><td>1.5456700566574e-05</td><td>2.05233991437126e-05</td><td>0.974824011325836</td><td>20.9659004211426</td><td>1.12511003017426</td><td>2.12734994420316e-05</td><td>2.42331007029861e-05</td><td>2.80195999948774e-05</td><td>1.00258994102478</td><td>20.5804996490479</td><td>1.23678994178772</td><td>3.41193008353002e-05</td><td>3.88197986467276e-05</td><td>9.14734991965815e-05</td><td>1.00093996524811</td><td>20.0676002502441</td><td>1.23531997203827</td><td>16416</td><td>-0.532278001308441</td><td>-0.118960998952389</td></tr>
@@ -545,7 +531,7 @@ Wall time: 6.57 s
 </div>
 </section>
 <section id="clean-the-data">
-<h3>2. Clean the data<a class="headerlink" href="#clean-the-data" title="Link to this heading">#</a></h3>
+<h3>2. Clean the data<a class="headerlink" href="#clean-the-data" title="Permalink to this heading">#</a></h3>
 <p>As our interest is to classify the sources, we first “encode” the PS1-STRM classifications from string values to integers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -609,7 +595,7 @@ Wall time: 6.57 s
 </div>
 </section>
 <section id="reduce-dimensionality-with-pca-and-tsne">
-<h3>3. Reduce dimensionality with PCA and tSNE<a class="headerlink" href="#reduce-dimensionality-with-pca-and-tsne" title="Link to this heading">#</a></h3>
+<h3>3. Reduce dimensionality with PCA and tSNE<a class="headerlink" href="#reduce-dimensionality-with-pca-and-tsne" title="Permalink to this heading">#</a></h3>
 <p>To explore how our selected features recover the classifications from PS1-STRM, we will apply PCA to the full sample.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -666,7 +652,7 @@ Wall time: 6.57 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/db9937a9ecaa3ad36050a39e33bfede2aa849342f57611d14a49c919379d6dcf.png" src="../../../_images/db9937a9ecaa3ad36050a39e33bfede2aa849342f57611d14a49c919379d6dcf.png" />
+<img alt="../../../_images/71310c08dc29618b94c6ae25f0347034c405a21f98eee38b1fa50df7bf741515.png" src="../../../_images/71310c08dc29618b94c6ae25f0347034c405a21f98eee38b1fa50df7bf741515.png" />
 </div>
 </div>
 <p>By inspection of the above panels, it looks like the different classes occupy unique regions of the simple PCA parameter space, with considerable overlap. As a next test, we will use tSNE to reduce dimensionality of the original dataset. In this example we will randomly subset the sample by 10% so that the tSNE algorithm runs quickly:</p>
@@ -679,8 +665,8 @@ Wall time: 6.57 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1min 12s, sys: 276 ms, total: 1min 12s
-Wall time: 36.5 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1min 9s, sys: 225 ms, total: 1min 9s
+Wall time: 35.2 s
 </pre></div>
 </div>
 </div>
@@ -717,13 +703,13 @@ Wall time: 36.5 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/ab3172ca60321149f9361ec3619065e55b275cf304a99d1b2984f43dfacd6cdd.png" src="../../../_images/ab3172ca60321149f9361ec3619065e55b275cf304a99d1b2984f43dfacd6cdd.png" />
+<img alt="../../../_images/936145ed76014c10898ea024c78d079099fc98982506d9eaf11e722e36607703.png" src="../../../_images/936145ed76014c10898ea024c78d079099fc98982506d9eaf11e722e36607703.png" />
 </div>
 </div>
 <p>Again, it looks like each class occupies a distinct region of tSNE parameter space, although it is a bit noisy with lots of overlap, especially between the “galaxy” and “unsure” classes.</p>
 </section>
 <section id="perform-unsupervised-classification">
-<h3>4. Perform unsupervised classification<a class="headerlink" href="#perform-unsupervised-classification" title="Link to this heading">#</a></h3>
+<h3>4. Perform unsupervised classification<a class="headerlink" href="#perform-unsupervised-classification" title="Permalink to this heading">#</a></h3>
 <p>Next we will perform unsupervised classification with clustering. There are many choices of algorithms (see the <a class="reference external" href="https://scikit-learn.org/stable/modules/clustering.html">sklearn clustering documentation</a>), and here we will apply the <a class="reference external" href="https://scikit-learn.org/stable/modules/clustering.html#k-means">k-means</a> algorithm, which requires that we specify the number of clusters a priori (4 in this case):</p>
 <p>First, we will split the sample into training and test sets:</p>
 <div class="cell docutils container">
@@ -744,11 +730,411 @@ Wall time: 36.5 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/sklearn/cluster/_kmeans.py:1416: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
-  super()._check_params_vs_input(X, default_n_init=10)
-</pre></div>
-</div>
-<div class="output text_html"><style>#sk-container-id-1 {color: black;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(n_clusters=4)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">KMeans</label><div class="sk-toggleable__content"><pre>KMeans(n_clusters=4)</pre></div></div></div></div></div></div></div>
+<div class="output text_html"><style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: black;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 1ex;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(n_clusters=4)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;KMeans<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.cluster.KMeans.html">?<span>Documentation for KMeans</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>KMeans(n_clusters=4)</pre></div> </div></div></div></div></div></div>
 </div>
 <p>To visualize the results of the unsupervised clustering model, we will use the PCA representation of the <strong>test</strong> dataset and color the points by their labels assigned by k-means:</p>
 <div class="cell docutils container">
@@ -783,13 +1169,13 @@ Wall time: 36.5 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/40c1f0ed4a531661a40c53d1e09853f82b8028162a021034257ad20283f72f45.png" src="../../../_images/40c1f0ed4a531661a40c53d1e09853f82b8028162a021034257ad20283f72f45.png" />
+<img alt="../../../_images/13fee04365f39b192703e64c78f19d077f26eb5aa55a7443a524450b28c34fbf.png" src="../../../_images/13fee04365f39b192703e64c78f19d077f26eb5aa55a7443a524450b28c34fbf.png" />
 </div>
 </div>
 <p>When given the number of clusters, the k-means algorithm does a reasonable job of identifying distinct clusters. However, comparing these results with the true locations of the “galaxy”, “qso”, “star” and “unsure” classes in the PCA figure in Section 3, we can see that there is not a perfect correspondence between them.</p>
 </section>
 <section id="perform-supervised-clustering">
-<h3>5. Perform supervised clustering<a class="headerlink" href="#perform-supervised-clustering" title="Link to this heading">#</a></h3>
+<h3>5. Perform supervised clustering<a class="headerlink" href="#perform-supervised-clustering" title="Permalink to this heading">#</a></h3>
 <p>Given the class labels from the CNN analysis by <a class="reference external" href="https://dx.doi.org/10.1093/mnras/staa2587">Beck et al. 2020</a>, we will also apply supervised classification (i.e., training the algorithm using a sample of known answers). Here we’ll use <a class="reference external" href="https://scikit-learn.org/stable/modules/sgd.html#sgd">stochastic gradient descent (SGD)</a>.</p>
 <p>Initialize the SGD classifier via sklearn. Here we will use the default parameters, but please see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier">the SGDClassifier() documentation</a> for more information on the available options.</p>
 <div class="cell docutils container">
@@ -802,11 +1188,415 @@ Wall time: 36.5 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 526 ms, sys: 155 µs, total: 527 ms
-Wall time: 526 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 508 ms, sys: 0 ns, total: 508 ms
+Wall time: 508 ms
 </pre></div>
 </div>
-<div class="output text_html"><style>#sk-container-id-2 {color: black;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>SGDClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">SGDClassifier</label><div class="sk-toggleable__content"><pre>SGDClassifier()</pre></div></div></div></div></div></div></div>
+<div class="output text_html"><style>#sk-container-id-2 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: black;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-2 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-2 pre {
+  padding: 0;
+}
+
+#sk-container-id-2 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-2 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-2 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-2 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-2 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-2 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-2 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-2 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-2 label.sk-toggleable__label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-2 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label label.sk-toggleable__label,
+#sk-container-id-2 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-2 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-2 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-2 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-2 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-2 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 1ex;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-2 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-2 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>SGDClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;SGDClassifier<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.linear_model.SGDClassifier.html">?<span>Documentation for SGDClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>SGDClassifier()</pre></div> </div></div></div></div></div></div>
 </div>
 <p>To visualize the results of the supervised classification model, we will use the PCA representation of the <strong>test</strong> dataset and color the points by their labels assigned by SGD:</p>
 <div class="cell docutils container">
@@ -842,13 +1632,13 @@ Wall time: 526 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/66196a1fbcb513cdd641150b1e6bb0973d77c2e448df9f29bf8d91376b6f7be1.png" src="../../../_images/66196a1fbcb513cdd641150b1e6bb0973d77c2e448df9f29bf8d91376b6f7be1.png" />
+<img alt="../../../_images/6429157cd4547e2c49a7629e5cb4fb8804901ac945ee7e445f6a0a40d1c17842.png" src="../../../_images/6429157cd4547e2c49a7629e5cb4fb8804901ac945ee7e445f6a0a40d1c17842.png" />
 </div>
 </div>
 <p>Unlike the unsupervised k-means classifier, the supervised SGD classifier appears to do a better job of identifying the true classifications (see Section 3), especially in the case of overlapping clusters in the PCA representation.</p>
 </section>
 <section id="assess-the-model-performance">
-<h3>6. Assess the model performance<a class="headerlink" href="#assess-the-model-performance" title="Link to this heading">#</a></h3>
+<h3>6. Assess the model performance<a class="headerlink" href="#assess-the-model-performance" title="Permalink to this heading">#</a></h3>
 <p>To visulize the performance of the supervised and unsupervised model results, we will use a <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html">confusion matrix</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -897,7 +1687,7 @@ Wall time: 526 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/464f149f42e224ff6fa0c7c653eb23f468277211f6c351dc5c409b3d8f6197f8.png" src="../../../_images/464f149f42e224ff6fa0c7c653eb23f468277211f6c351dc5c409b3d8f6197f8.png" />
+<img alt="../../../_images/7a53500b17584d35ebee1054e7c2a60096b6e9ad7b3eeba4d7d6b02c72e0e0bf.png" src="../../../_images/7a53500b17584d35ebee1054e7c2a60096b6e9ad7b3eeba4d7d6b02c72e0e0bf.png" />
 </div>
 </div>
 <p>From the above plot, it is clear that the unsupervised clustering algorithm does an extremely poor job of identifying the correct classes!</p>
@@ -908,14 +1698,14 @@ Wall time: 526 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/ffbdfe21bc75c883abce7675e659310f0992f600180784e79035bcdb16b01e27.png" src="../../../_images/ffbdfe21bc75c883abce7675e659310f0992f600180784e79035bcdb16b01e27.png" />
+<img alt="../../../_images/d4cd4069fa5b2e7eb35362b5c28cf6348f96cb88586c265e634633a81c7280a1.png" src="../../../_images/d4cd4069fa5b2e7eb35362b5c28cf6348f96cb88586c265e634633a81c7280a1.png" />
 </div>
 </div>
 <p>Based on the above confusion matrix, the SGD classifier performs very well at identifying stars (~94% true positive) whereas it does not perform as well at distinguishing between the galaxy, QSO and unsure classes.</p>
 </section>
 </section>
 <section id="faqs">
-<h2>FAQs<a class="headerlink" href="#faqs" title="Link to this heading">#</a></h2>
+<h2>FAQs<a class="headerlink" href="#faqs" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>How do I interpret these results?</strong> The analysis above indicates that meaningful information about unresolved astronomical sources can be extracted from their simple measured fluxes and colors. In particular, the SGD classifier is able to identify stars well, even with the out-of-the-box parameters from sklearn. However, unsupervised k-means clustering is not able to successfully classify sources.</p></li>
 <li><p><strong>Can I improve the model by changing it?</strong> Yes! In the k-means clustering and SGD classifier cases, there are many model parameters which can be tuned to improve the performance of the model. For example, in SGD, you can select the loss function (here we use the default, “hinge” which gives a linear <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html">support vector machine</a>.</p></li>
@@ -923,7 +1713,7 @@ Wall time: 526 ms
 <li><p><strong>I want to test my model on my training data!</strong> No. You will convince yourself that your results are much better than they actually are.  Always keep your training, validation, and testing sets completely separate!</p></li>
 </ul>
 <section id="appendix">
-<h3>Appendix<a class="headerlink" href="#appendix" title="Link to this heading">#</a></h3>
+<h3>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h3>
 <p><strong>How to extract the subset of data analyzed here from the PS1 and PS1-STRM catalogs</strong></p>
 <p>Instead of working with the full PS1-STRM catalog, we extracted a subset of 100,000 sources.</p>
 <p>First, we downloaded a single <a class="reference external" href="https://archive.stsci.edu/hlsp/ps1-strm">PS1-STRM</a> file (all sources with Declinations between 77 and 90) from MAST. We then randomly selected objects so that each of the four classes (“galaxy”, “qso”, “star”, “unsure”) had equal representation in a sample of 100,000 objects. We then saved the object IDs and unique internal object identifiers to a csv catalog file.</p>
@@ -940,7 +1730,7 @@ Wall time: 526 ms
 </section>
 </section>
 <section id="about-this-notebook">
-<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Link to this heading">#</a></h2>
+<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this heading">#</a></h2>
 <p><strong>Author:</strong><br />
 Claire Murray, Assistant Astronomer, <a class="reference external" href="mailto:cmurray1&#37;&#52;&#48;stsci&#46;edu">cmurray1<span>&#64;</span>stsci<span>&#46;</span>edu</a></p>
 <p><strong>Info:</strong><br />
@@ -948,7 +1738,7 @@ This notebook is based on the PS1-STRM catalog (<a class="reference external" hr
 <p><strong>Updated On:</strong> 2022-5-25</p>
 </section>
 <section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
+<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
 <p>If you use this data set, <code class="docutils literal notranslate"><span class="pre">astropy</span></code>, or <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> for published research, please cite the
 authors. Follow these links for more information:</p>
 <ul class="simple">
@@ -956,7 +1746,7 @@ authors. Follow these links for more information:</p>
 <li><p><a class="reference external" href="https://www.astropy.org/acknowledging.html">Citing <code class="docutils literal notranslate"><span class="pre">astropy</span></code></a></p></li>
 <li><p><a class="reference external" href="http://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html">Citing <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a></p></li>
 </ul>
-<p><a class="reference internal" href="#top"><span class="xref myst">Top of Page</span></a>
+<p><span class="xref myst">Top of Page</span>
 <img style="float: right;" src="https://raw.githubusercontent.com/spacetelescope/notebooks/master/assets/stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="Space Telescope Logo" width="200px"/></p>
 </section>
 </section>
