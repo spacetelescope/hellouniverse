@@ -1,6 +1,5 @@
-astropy>=5.0.2
-matplotlib>=3.5.1
-numpy>=1.22.3
-scikit-learn
-tensorrt 
-torch-tensorrt
+astropy==6.1.2
+matplotlib==3.9.0
+numpy<2.0.0
+scikit_learn==1.5.1
+scipy==1.14.0
