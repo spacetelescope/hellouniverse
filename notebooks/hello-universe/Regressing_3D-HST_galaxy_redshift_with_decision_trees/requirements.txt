@@ -2,3 +2,4 @@ astropy==6.1.2
 matplotlib==3.9.0
 numpy==2.0.1
 scikit_learn==1.5.1
+pandas
