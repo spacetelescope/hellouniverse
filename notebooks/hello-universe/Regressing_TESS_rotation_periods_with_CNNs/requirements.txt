@@ -1,4 +1,4 @@
 numpy
-pytorch
+torch
 astropy
 git+https://github.com/zclaytor/smartsnn
