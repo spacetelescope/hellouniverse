@@ -2,4 +2,3 @@ numpy
 matplotlib
 torch
 astropy
-git+https://github.com/zclaytor/smartsnn
