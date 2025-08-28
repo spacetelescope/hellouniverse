@@ -6,7 +6,7 @@ name: Notebook CI - Scheduled
 on:
   # Run weekly on Sundays at 2 AM UTC
   schedule:
-    - cron: '45 9 * * *'
+    - cron: '52 21 * * *'
     #- cron: '0 2 * * 0'
 
 jobs:
@@ -44,4 +44,5 @@ jobs:
       collect_execution_stats: true
       
     secrets: inherit
+
 
