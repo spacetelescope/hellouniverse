@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Estimating TESS rotation periods with CNNs &#8212; Hello Universe!</title>
   
@@ -29,40 +28,37 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/table.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=cd6c26fb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/main.css?v=aa74839e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/hello-universe/Estimating_TESS_rotation_periods_with_CNNs/Estimating_TESS_rotation_periods_with_CNNs';</script>
@@ -166,7 +162,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -211,9 +218,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -354,9 +361,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -402,33 +409,33 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="estimating-tess-rotation-periods-with-cnns">
-<h1>Estimating TESS rotation periods with CNNs<a class="headerlink" href="#estimating-tess-rotation-periods-with-cnns" title="Permalink to this heading">#</a></h1>
+<h1>Estimating TESS rotation periods with CNNs<a class="headerlink" href="#estimating-tess-rotation-periods-with-cnns" title="Link to this heading">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>The NASA TESS mission conducts an all-sky survey searching for exoplanets that transit their host stars. To do so, it collects time series photometry called “light curves” for millions of stars across the sky. These light curves have many science uses besides exoplanets, including stellar rotation. As a star rotates, cool magnetic spots come into and out of view, causing periodic wiggles in the brighness measurements through time. We can therefore use light curves from TESS to infer stellar rotation periods, which are useful for studying stellar magnetism, structure, and ages.</p>
 <p>However, systematics associated with the telescope’s special Earth-Moon orbit make it difficult to measure long (&gt; 13 day) rotation periods from TESS light curves using conventional frequency analysis techniques. Machine learning methods, and in particular Convolutional Neural Networks (CNN) have been shown to circumvent some of the effects of systematics and estimate rotation periods from TESS light curves and their frequency transforms.</p>
 <p>In this tutorial we will use a CNN to estimate stellar rotation periods from frequency transforms of TESS light curves. For our training set, we will use the simulations from the MAST High Level Science Product <a class="reference external" href="https://archive.stsci.edu/hlsp/smarts">SMARTS</a>. SMARTS combines physically realistic simulations of rotational light curves with real noise and systematics from TESS. This combination allows CNNs to learn the difference between rotation signals and systematics and estimate stellar rotation periods.</p>
 </section>
 <section id="goals">
-<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this heading">#</a></h2>
+<h2>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h2>
 <p>The goal of this notebook is to use <a class="reference external" href="https://archive.stsci.edu/hlsp/smarts">SMARTS</a> data to train a CNN to regress TESS rotation periods. We will</p>
 <ol class="arabic simple" start="0">
-<li><p><span class="xref myst">Configure the training run</span>,</p></li>
-<li><p><span class="xref myst">Prepare the training data</span>,</p></li>
-<li><p><span class="xref myst">Build the CNN</span>,</p></li>
-<li><p><span class="xref myst">Define training, validation, and evaluation functions</span>,</p></li>
-<li><p><span class="xref myst">Train the CNN</span>, and</p></li>
-<li><p><span class="xref myst">Test the CNN performance</span>.</p></li>
+<li><p><a class="reference internal" href="#0.configure-training-run"><span class="xref myst">Configure the training run</span></a>,</p></li>
+<li><p><a class="reference internal" href="#1.prepare-training-data"><span class="xref myst">Prepare the training data</span></a>,</p></li>
+<li><p><a class="reference internal" href="#2.build-the-cnn"><span class="xref myst">Build the CNN</span></a>,</p></li>
+<li><p><a class="reference internal" href="#3.define-training-validation-and-evaluation-functions"><span class="xref myst">Define training, validation, and evaluation functions</span></a>,</p></li>
+<li><p><a class="reference internal" href="#4.train-the-cnn-on-smarts-data"><span class="xref myst">Train the CNN</span></a>, and</p></li>
+<li><p><a class="reference internal" href="#5.test-the-cnn-performance"><span class="xref myst">Test the CNN performance</span></a>.</p></li>
 </ol>
 <p>The training examples are 2-dimensional arrays of wavelet transforms of TESS light curves. The wavelet transform concentrates the periodicity of the light curve, making it easier for a CNN to regress the period. CNNs take advantage of the image-like nature of a wavelet transform in the same way that CNNs are useful for image recognition and computer vision.</p>
 </section>
 <section id="runtime">
-<h2>Runtime<a class="headerlink" href="#runtime" title="Permalink to this heading">#</a></h2>
+<h2>Runtime<a class="headerlink" href="#runtime" title="Link to this heading">#</a></h2>
 <p>On the <a class="reference external" href="https://timeseries.science.stsci.edu">TIKE</a> “Large” instance, this notebook takes just under 3 minutes to run from start to finish. The bulk of this time is spent downloading the training data. Once you’ve done that once, you can comment out the cell, and the notebook will be faster.</p>
 <p>This notebook, including the CNN training, is configured to run on a single CPU.</p>
 </section>
 <section id="installs-and-imports">
-<h2>Installs and Imports<a class="headerlink" href="#installs-and-imports" title="Permalink to this heading">#</a></h2>
+<h2>Installs and Imports<a class="headerlink" href="#installs-and-imports" title="Link to this heading">#</a></h2>
 <p>This notebook uses the following packages:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">glob</span></code> for generating lists of training files</p></li>
@@ -460,7 +467,7 @@ document.write(`
 </div>
 </section>
 <section id="configure-training-run">
-<h2>0. Configure training run<a class="headerlink" href="#configure-training-run" title="Permalink to this heading">#</a></h2>
+<h2>0. Configure training run<a class="headerlink" href="#configure-training-run" title="Link to this heading">#</a></h2>
 <p>Before we get started, we need to set some configuration parameters to know how much data to read in, and how many epochs to train for. Ideally, we want to run on the full training set (<code class="docutils literal notranslate"><span class="pre">max_n</span> <span class="pre">=</span> <span class="pre">1_000_000</span></code>) for long enough that the loss plateaus (usually <code class="docutils literal notranslate"><span class="pre">num_epochs</span> <span class="pre">=</span> <span class="pre">500</span></code>). But this for this simple demo, we will use a subset of training data and a shorter training time. We will train/validation/test using a 80%/10%/10% <code class="docutils literal notranslate"><span class="pre">split</span></code>, and we’ll build a CNN with 3 convolution layers with filter depths increasing from 8, to 16, to 32 <code class="docutils literal notranslate"><span class="pre">filters</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -474,7 +481,7 @@ document.write(`
 </div>
 </section>
 <section id="prepare-training-data">
-<h2>1. Prepare training data<a class="headerlink" href="#prepare-training-data" title="Permalink to this heading">#</a></h2>
+<h2>1. Prepare training data<a class="headerlink" href="#prepare-training-data" title="Link to this heading">#</a></h2>
 <p>The SMARTS training data are in the form of continuous Morlet wavelet transforms (CWTs) or wavelet power spectra (WPS). Rather than train on the light curve itself, the WPS provides a 2D representation of the frequency information present in the light curve. With frequency or period on the y-axis and time on the x-axis, the WPS illustrates which frequencies dominate the light curve at different times. Since it is effectively an image, we can take advantage of image recognition capabilities of CNNs.</p>
 <p>For more information on CWTs, see</p>
 <ul class="simple">
@@ -1956,7 +1963,7 @@ Storing training data into DataLoaders...Done.
 <p>This panel (without the axes or colorbar) is what the CNN will be trained on.</p>
 </section>
 <section id="build-the-cnn">
-<h2>2. Build the CNN<a class="headerlink" href="#build-the-cnn" title="Permalink to this heading">#</a></h2>
+<h2>2. Build the CNN<a class="headerlink" href="#build-the-cnn" title="Link to this heading">#</a></h2>
 <p>We will build a CNN that takes 2D input (the WPS) and predicts two values: the stellar rotation period and its corresponding uncertainty. The CNN has the following aspects:</p>
 <ul class="simple">
 <li><p>Three 2D convolution layers for feature extraction</p></li>
@@ -2077,7 +2084,7 @@ Storing training data into DataLoaders...Done.
 </div>
 </section>
 <section id="define-training-validation-and-evaluation-functions">
-<h2>3. Define training, validation, and evaluation functions<a class="headerlink" href="#define-training-validation-and-evaluation-functions" title="Permalink to this heading">#</a></h2>
+<h2>3. Define training, validation, and evaluation functions<a class="headerlink" href="#define-training-validation-and-evaluation-functions" title="Link to this heading">#</a></h2>
 <p>We train the CNN using the Adam optimizer, which uses adaptive learning rates (LR) to train the network. To vary the LR, we use a plateau scheduler (<code class="docutils literal notranslate"><span class="pre">ReduceLROnPlateau</span></code>), which reduces the LR when the loss plateaus. This enables the CNN parameters to find local minima more easily, rather than take large steps over them.</p>
 <p>Finally, we will also use an early stopping criterion. This means that if the validation loss plateaus or increases for a certain number of epochs, training stops early, and the best fit CNN values are saved.</p>
 <div class="cell docutils container">
@@ -2181,7 +2188,7 @@ Storing training data into DataLoaders...Done.
 </div>
 </section>
 <section id="train-the-cnn-on-smarts-data">
-<h2>4. Train the CNN on SMARTS data<a class="headerlink" href="#train-the-cnn-on-smarts-data" title="Permalink to this heading">#</a></h2>
+<h2>4. Train the CNN on SMARTS data<a class="headerlink" href="#train-the-cnn-on-smarts-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize CNN</span>
@@ -3195,12 +3202,12 @@ Epoch:  20 [    0/ 8000 (  0%)] Training Loss:  0.242851
 <img alt="../../../_images/cdfc5058c414c8b2958ec2157f18151a824393435c0433fb3aff5ccad8f3cf47.png" src="../../../_images/cdfc5058c414c8b2958ec2157f18151a824393435c0433fb3aff5ccad8f3cf47.png" />
 </div>
 </div>
-<p>For this exercise, we only trained on a small subset of the training data, and for a limited number of training epochs. This means that the CNN hasn’t yet reached a plateau, and it’s not fully trained. You will see better performance by training for more epochs (until the loss values plateau), which you can configure back in <span class="xref myst">Section 0</span> by changing <code class="docutils literal notranslate"><span class="pre">num_epochs</span></code>. You can also train on a larger piece of the training data by configuring <code class="docutils literal notranslate"><span class="pre">max_n</span></code> in the same cell.</p>
+<p>For this exercise, we only trained on a small subset of the training data, and for a limited number of training epochs. This means that the CNN hasn’t yet reached a plateau, and it’s not fully trained. You will see better performance by training for more epochs (until the loss values plateau), which you can configure back in <a class="reference internal" href="#0.configure-training-run"><span class="xref myst">Section 0</span></a> by changing <code class="docutils literal notranslate"><span class="pre">num_epochs</span></code>. You can also train on a larger piece of the training data by configuring <code class="docutils literal notranslate"><span class="pre">max_n</span></code> in the same cell.</p>
 </section>
 <section id="test-the-cnn-performance">
-<h2>5. Test the CNN performance<a class="headerlink" href="#test-the-cnn-performance" title="Permalink to this heading">#</a></h2>
+<h2>5. Test the CNN performance<a class="headerlink" href="#test-the-cnn-performance" title="Link to this heading">#</a></h2>
 <p>Now we use the trained CNN to predict stellar rotation periods from a held-out test set, and compare the predictions to the true values.</p>
-<p>Since we’re only training over a small fraction of the training set in this tutorial, we don’t expect the predictions to match the true values. You will see better performance by training on a larger piece (or all) of the training set, or training for more epochs, by configuring <code class="docutils literal notranslate"><span class="pre">max_n</span></code> or <code class="docutils literal notranslate"><span class="pre">num_epochs</span></code> back in <span class="xref myst">Section 0</span>.</p>
+<p>Since we’re only training over a small fraction of the training set in this tutorial, we don’t expect the predictions to match the true values. You will see better performance by training on a larger piece (or all) of the training set, or training for more epochs, by configuring <code class="docutils literal notranslate"><span class="pre">max_n</span></code> or <code class="docutils literal notranslate"><span class="pre">num_epochs</span></code> back in <a class="reference internal" href="#0.configure-training-run"><span class="xref myst">Section 0</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># evaluate CNN to infer rotation periods</span>
@@ -3304,7 +3311,7 @@ RMS error: 29.18 days.
 </ul>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>CNNs are useful machine learning models that can leverage spatially correlated information in images and image-like data. CNNs trained on simulated light curve wavelet transforms make reasonable predictions of the rotation periods of TESS stars despite the complicated orbit-related systematics present in the light curves.</p>
 <p>In this tutorial, we</p>
 <ol class="arabic simple">
@@ -3322,7 +3329,7 @@ RMS error: 29.18 days.
 </ul>
 </section>
 <section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
 <p>Now that we’ve run the base case, try the following exercises:</p>
 <ul class="simple">
 <li><p>train on a larger fraction of the training data by increasing <code class="docutils literal notranslate"><span class="pre">max_n</span></code>,</p></li>
@@ -3334,7 +3341,7 @@ RMS error: 29.18 days.
 <p>See how any of these choices might affect the CNN performance.</p>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2022ApJ...927..219C/abstract"><em>Recovery of TESS Stellar Rotation Periods Using Deep Learning</em> (Claytor et al. 2022)</a></p></li>
 <li><p><a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2024ApJ...962...47C/abstract"><em>TESS Stellar Rotation up to 80 Days in the Southern Continuous Viewing Zone</em> (Claytor et al. 2024)</a></p></li>

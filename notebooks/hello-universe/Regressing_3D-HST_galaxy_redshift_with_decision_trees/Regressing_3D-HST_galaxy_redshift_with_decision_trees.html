@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Predicting galaxy redshift via regression on 3D-HST photometry &#8212; Hello Universe!</title>
   
@@ -29,40 +28,37 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/table.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=cd6c26fb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/main.css?v=aa74839e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/hello-universe/Regressing_3D-HST_galaxy_redshift_with_decision_trees/Regressing_3D-HST_galaxy_redshift_with_decision_trees';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -164,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -209,9 +216,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -352,9 +359,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -404,14 +411,14 @@ document.write(`
                   
   <p><a id="top"></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="predicting-galaxy-redshift-via-regression-on-3d-hst-photometry">
-<h1>Predicting galaxy redshift via regression on 3D-HST photometry<a class="headerlink" href="#predicting-galaxy-redshift-via-regression-on-3d-hst-photometry" title="Permalink to this heading">#</a></h1>
+<h1>Predicting galaxy redshift via regression on 3D-HST photometry<a class="headerlink" href="#predicting-galaxy-redshift-via-regression-on-3d-hst-photometry" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="learning-goals">
-<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading">#</a></h2>
+<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Link to this heading">#</a></h2>
 <p><strong>In this tutorial, you will see an example of building and training a decision tree-based regression model to perform regression on astronomical data.</strong>  By the end of this tutorial you will have working examples of how to apply decision trees and random forests in scikit-learn (sklearn).</p>
 </section>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Decision trees are a form supervised machine learning which can be used for classification or regression. In this notebook, we will walk through the basic steps of applying three types of decision tree algorithms to multi-wavelength photometric data.</p>
 <ol class="arabic simple">
 <li><p>Download and import the data</p></li>
@@ -425,7 +432,7 @@ document.write(`
 <p>Decision trees are used in a wide range of vector analysis tasks. Here we will use them to regress galaxy redshift from its multi-wavelength photometry. We will use data from the <a class="reference external" href="https://archive.stsci.edu/prepds/3d-hst/">3D-HST</a> survey.</p>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <p>This notebook uses the following packages:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> to handle array functions</p></li>
@@ -468,7 +475,7 @@ document.write(`
 </div>
 </div>
 <section id="download-and-import-the-data">
-<h3>1. Download and import the data<a class="headerlink" href="#download-and-import-the-data" title="Permalink to this heading">#</a></h3>
+<h3>1. Download and import the data<a class="headerlink" href="#download-and-import-the-data" title="Link to this heading">#</a></h3>
 <p>First, download the 3D-HST catalog from the MAST archive. This dataset is described in <a class="reference external" href="https://dx.doi.org/10.1088/0067-0049/214/2/24">Skelton et. al 2014</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -826,7 +833,7 @@ document.write(`
 </div>
 </section>
 <section id="perform-data-cleaning-steps">
-<h3>2. Perform data cleaning steps<a class="headerlink" href="#perform-data-cleaning-steps" title="Permalink to this heading">#</a></h3>
+<h3>2. Perform data cleaning steps<a class="headerlink" href="#perform-data-cleaning-steps" title="Link to this heading">#</a></h3>
 <p>Before building and applying a regression model, we first need to inspect and clean the dataset.</p>
 <p>To explore the physical parameters of the sample, we plot the spectroscopic redshift vs. the mass derived from the <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2018ascl.soft03008K/abstract">FAST</a> phototmetric fit:</p>
 <div class="cell docutils container">
@@ -950,7 +957,7 @@ document.write(`
 </div>
 </section>
 <section id="divide-the-data-into-train-test-and-validation-sets">
-<h3>3. Divide the data into train, test and validation sets<a class="headerlink" href="#divide-the-data-into-train-test-and-validation-sets" title="Permalink to this heading">#</a></h3>
+<h3>3. Divide the data into train, test and validation sets<a class="headerlink" href="#divide-the-data-into-train-test-and-validation-sets" title="Link to this heading">#</a></h3>
 <p>First, define the independent (X) and dependent (y) variables from the dataset</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -981,7 +988,7 @@ document.write(`
 </div>
 </section>
 <section id="decision-tree-regression">
-<h3>4. Decision tree regression<a class="headerlink" href="#decision-tree-regression" title="Permalink to this heading">#</a></h3>
+<h3>4. Decision tree regression<a class="headerlink" href="#decision-tree-regression" title="Link to this heading">#</a></h3>
 <p>Using sklearn, we can very easily construct a decision tree model for regressing redshift from the photometric catalog features. A decision tree is composed of a series of <code class="docutils literal notranslate"><span class="pre">if-else</span></code> decision steps. The number of steps and the types of decision at each step is determined by training the algorithm with supervision. In this first example, we will use the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRegressor</span></code></a> from <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1909,7 +1916,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p>The model improved somewhat with hyperparameter tuning (i.e., the MSE decreased), but the results still looks pretty bad. We’ll try another model next!</p>
 </section>
 <section id="random-forest-regression">
-<h3>5. Random forest regression<a class="headerlink" href="#random-forest-regression" title="Permalink to this heading">#</a></h3>
+<h3>5. Random forest regression<a class="headerlink" href="#random-forest-regression" title="Link to this heading">#</a></h3>
 <p>A random forest is an algorithm composed of many decision trees. Trained via supervised machine learning, random forests are used for both classification and regression tasks. Here we’ll apply a random forest to regress redshift from 3D-HST photometry, and compare the results to the simple decision tree in Section 4. We will use the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html"><code class="docutils literal notranslate"><span class="pre">RandomForestRegressor</span></code></a> from <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2361,7 +2368,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </section>
 <section id="test-for-over-fitting">
-<h3>6. Test for over-fitting<a class="headerlink" href="#test-for-over-fitting" title="Permalink to this heading">#</a></h3>
+<h3>6. Test for over-fitting<a class="headerlink" href="#test-for-over-fitting" title="Link to this heading">#</a></h3>
 <p>The results are much improved by the random forest! <strong>However, we must be cautious!</strong> It is possible that this model suffers from over-fitting. To visualize overfitting, we can compare the mean squared error (MSE) for models of increasing <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> on the training and testing sets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2449,7 +2456,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p>The most “important” features in this model are the F125W and F606W fluxes. Parameters such as id, ra, dec, x, and y understandably have very little influence on the predictions.</p>
 </section>
 <section id="compare-to-the-state-of-the-art">
-<h3>7. Compare to the state of the art<a class="headerlink" href="#compare-to-the-state-of-the-art" title="Permalink to this heading">#</a></h3>
+<h3>7. Compare to the state of the art<a class="headerlink" href="#compare-to-the-state-of-the-art" title="Link to this heading">#</a></h3>
 <p>A crucial step in the process of constructing a machine learning model is to consider how the results compare to the state of the art. In this case, we can compare the predictions from our random forest model to the results of detailed modeling of the photometric redshift (<code class="docutils literal notranslate"><span class="pre">z_peak</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2500,7 +2507,7 @@ Skelton et al. (2014) MSE = 0.0928
 </section>
 </section>
 <section id="faqs">
-<h2>FAQs<a class="headerlink" href="#faqs" title="Permalink to this heading">#</a></h2>
+<h2>FAQs<a class="headerlink" href="#faqs" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>How do I interpret these results?</strong> Overall, although the random forest model is not significantly over-fitting, it performs much worse than the (<a class="reference external" href="https://dx.doi.org/10.1088/0067-0049/214/2/24">Skelton et al. 2014</a>) model. We can concluded that this particular random forest model is <strong>not</strong> a good choice for predicting galaxy redshift. However, an important difference between these two models is that this random forest only uses photometric bands (F606W, F816W, F125W, F140W, and F160W) while Skelton et al. (2014) uses upwards of 15 photometric bands!</p></li>
 <li><p><strong>How can I improve the results of the model?</strong> There are several strategies to try. You can explore changes to the current models, including parameter grid searches, or <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/tree/plot_cost_complexity_pruning.html">pruning</a>. Finally you can apply additional “feature engineering”, for example selecting different subsets of features or exploring how to improve the data cleaning.</p></li>
@@ -2509,7 +2516,7 @@ Skelton et al. (2014) MSE = 0.0928
 </ul>
 </section>
 <section id="extensions-exercises">
-<h2>Extensions / Exercises<a class="headerlink" href="#extensions-exercises" title="Permalink to this heading">#</a></h2>
+<h2>Extensions / Exercises<a class="headerlink" href="#extensions-exercises" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Upgrade the analysis by including new features!</strong> For example, if you include galaxy colors (e.g., F125W-F140W, F140W-F160W, F606W-F125W) do the model results improve? Can you think of other features to include?</p></li>
 <li><p><strong>Tune the model parameters with a grid search</strong> Do the Random Forest model results improve if you implement a random grid search over hyperparameters as we did for the Decision Tree model?</p></li>
@@ -2517,7 +2524,7 @@ Skelton et al. (2014) MSE = 0.0928
 </ul>
 </section>
 <section id="about-this-notebook">
-<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this heading">#</a></h2>
+<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Link to this heading">#</a></h2>
 <p><strong>Author:</strong><br />
 Claire Murray, Assistant Astronomer, <a class="reference external" href="mailto:cmurray1&#37;&#52;&#48;stsci&#46;edu">cmurray1<span>&#64;</span>stsci<span>&#46;</span>edu</a></p>
 <p><strong>Info:</strong><br />
@@ -2525,7 +2532,7 @@ This notebook is based on the machine learning tutorials by John F. Wu, Assistan
 <p><strong>Updated On:</strong> 2022-5-25</p>
 </section>
 <section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
+<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
 <p>If you use this data set, <code class="docutils literal notranslate"><span class="pre">astropy</span></code>, or <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> for published research, please cite the
 authors. Follow these links for more information:</p>
 <ul class="simple">
@@ -2533,7 +2540,7 @@ authors. Follow these links for more information:</p>
 <li><p><a class="reference external" href="https://www.astropy.org/acknowledging.html">Citing <code class="docutils literal notranslate"><span class="pre">astropy</span></code></a></p></li>
 <li><p><a class="reference external" href="https://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html">Citing <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a></p></li>
 </ul>
-<p><span class="xref myst">Top of Page</span>
+<p><a class="reference internal" href="#top"><span class="xref myst">Top of Page</span></a>
 <img style="float: right;" src="https://raw.githubusercontent.com/spacetelescope/notebooks/master/assets/stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="Space Telescope Logo" width="200px"/></p>
 </section>
 </section>

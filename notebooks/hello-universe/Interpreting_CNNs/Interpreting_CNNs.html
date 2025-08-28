@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Interpreting Convolutional Neural Networks &#8212; Hello Universe!</title>
   
@@ -29,40 +28,37 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/table.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=cd6c26fb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/main.css?v=aa74839e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/hello-universe/Interpreting_CNNs/Interpreting_CNNs';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -163,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -208,9 +215,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -351,9 +358,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -418,15 +425,15 @@ document.write(`
                   
   <p><a id="top"></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="interpreting-convolutional-neural-networks">
-<h1>Interpreting Convolutional Neural Networks<a class="headerlink" href="#interpreting-convolutional-neural-networks" title="Permalink to this heading">#</a></h1>
+<h1>Interpreting Convolutional Neural Networks<a class="headerlink" href="#interpreting-convolutional-neural-networks" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="learning-goals">
-<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading">#</a></h2>
+<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Link to this heading">#</a></h2>
 <p><strong>In this tutorial, you will practice analyzing and interpreting a convolutional neural network.</strong>
 This tutorial assumes a basic knowledge of convolutional neural networks. We will utilize the model described in <code class="docutils literal notranslate"><span class="pre">Classifying_JWST-HST_galaxy_mergers_with_CNNs</span></code>, so it is recommended to complete that notebook before reading this one.</p>
 </section>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Machine learning techniques can be powerful tools for categorizing data and performing data analysis questions. However, machine learning techniques often involve a lot of hidden computation that is not immediately meaningful. The black-box nature of intermediary processes, especially in layered neural networks, can make it difficult to interpret and understand. The goal of this notebook is to familiarize you with some of the various techniques used to make sense of machine learning and convolutional neural networks (CNNs) in particular. CNNs in particular can be very difficult to interpret due to their multi-layered structure and convolutional layers. In this notebook, we will examine two methods of visualizing CNN results (Backpropagation and Grad-CAM) and another method for testing model architecture.</p>
 <ol class="arabic simple">
 <li><p>Load the data</p></li>
@@ -435,7 +442,7 @@ This tutorial assumes a basic knowledge of convolutional neural networks. We wil
 <li><p>Apply some interpretation technique to understand your results from a physical perspective.</p></li>
 </ol>
 <section id="dependencies">
-<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">#</a></h3>
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">#</a></h3>
 <p>This notebook uses the following packages:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> to handle array functions</p></li>
@@ -497,7 +504,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </section>
 <section id="reloading-our-model">
-<h3>Reloading our Model<a class="headerlink" href="#reloading-our-model" title="Permalink to this heading">#</a></h3>
+<h3>Reloading our Model<a class="headerlink" href="#reloading-our-model" title="Link to this heading">#</a></h3>
 <p>To start, we need to reload our model from the previous galaxy classification notebook from the Mikulski Archive for Space Telescopes (MAST). The following code is directly copied over from that notebook. For a quick refresher, the model intakes a FITS file from a high level science product hosted by MAST. There are 15,426 observations in total, each taken with three filters (F814W from the Advanced Camera for Surveys and F160W from the Wide Field Camera 3 on the Hubble Space Telescope (HST), and F160W and F356W from Near Infrared Camera on the James Webb Space Telescope (JWST)). The model then applies a Convolutional Neural Network to classify whether a galaxy has undergone a merger.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -511,7 +518,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </section>
 </section>
 <section id="build-and-compile-the-convolutional-model">
-<h2>Build and Compile the Convolutional Model<a class="headerlink" href="#build-and-compile-the-convolutional-model" title="Permalink to this heading">#</a></h2>
+<h2>Build and Compile the Convolutional Model<a class="headerlink" href="#build-and-compile-the-convolutional-model" title="Link to this heading">#</a></h2>
 <p>For the sake of transparency, we will rebuild the model using the same architecture as the original notebook. The model can also be loaded directly by using <code class="docutils literal notranslate"><span class="pre">save_model</span></code> and <code class="docutils literal notranslate"><span class="pre">load_model</span></code> from the <a class="reference external" href="https://www.tensorflow.org/guide/keras/serialization_and_saving">Keras</a> package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -550,7 +557,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <section id="generate-the-model-architecture-written-for-keras-2">
-<h3>Generate the model architecture (written for Keras 2)<a class="headerlink" href="#generate-the-model-architecture-written-for-keras-2" title="Permalink to this heading">#</a></h3>
+<h3>Generate the model architecture (written for Keras 2)<a class="headerlink" href="#generate-the-model-architecture-written-for-keras-2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define architecture for model</span>
@@ -585,7 +592,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </section>
 <section id="compile-model">
-<h3>Compile Model<a class="headerlink" href="#compile-model" title="Permalink to this heading">#</a></h3>
+<h3>Compile Model<a class="headerlink" href="#compile-model" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="s1">&#39;adam&#39;</span>
@@ -598,7 +605,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </section>
 <section id="load-pretrained-weights">
-<h3>Load pretrained weights<a class="headerlink" href="#load-pretrained-weights" title="Permalink to this heading">#</a></h3>
+<h3>Load pretrained weights<a class="headerlink" href="#load-pretrained-weights" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.stsci.edu/hlsps/hellouniverse/hellouniverse_interpretability_best_weights.hdf5&#39;</span>
@@ -615,10 +622,10 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </section>
 </section>
 <section id="saliency-maps">
-<h2>1. Saliency Maps<a class="headerlink" href="#saliency-maps" title="Permalink to this heading">#</a></h2>
+<h2>1. Saliency Maps<a class="headerlink" href="#saliency-maps" title="Link to this heading">#</a></h2>
 <p>We will start by introducing the most popular and well known method of interpreting CNNs. A saliency map can help us identify which pixels are significant to the models final prediction. There are many methods of calculating saliency maps, but the most popular method utilizes gradient backpropagation to determine the significance of pixels at each layer of the model. To calculate the saliency map, the error gradient at each layer is calculated and then fed into the previous layer, repeating until we reach the original image. Then the pixels with the highest gradient values will also have the most effect on the model’s activation. This methodology is described in detail by <a href='https://arxiv.org/abs/1312.6034'>Simonyan et al. 2013</a>.</p>
 <section id="id1">
-<h3>Dependencies<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Dependencies<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">tensorflow.GradientTape()</span></code> is used to track the gradient of the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -652,7 +659,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </section>
 <section id="plot-the-original-image-and-the-saliency-map">
-<h3>Plot the original image and the saliency map<a class="headerlink" href="#plot-the-original-image-and-the-saliency-map" title="Permalink to this heading">#</a></h3>
+<h3>Plot the original image and the saliency map<a class="headerlink" href="#plot-the-original-image-and-the-saliency-map" title="Link to this heading">#</a></h3>
 <p>Saliency maps provide an intuitive understanding of how the model works. The hot pixels represent higher activation and more importance. In the below model, the saliency maps demonstrates that the model focuses on the area around the center of the galaxy for the majority of galaxies. Our results are in line with a corroborating result by <a class="reference external" href="https://arxiv.org/abs/1810.07703">Ntampaka et al. 2018</a>, suggesting that the key features of a galaxy are found the ring around the galaxy rather than in the center of the galaxy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -702,7 +709,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 <p><strong>Image caption</strong>: The above image contains three panels in a horizontal row. The first panel shows the original image of a merging galaxy candidate, the second panel shows a logarithmically-scaled version of the original image, and the third panel shows a heat map of the saliency map.</p>
 </section>
 <section id="create-a-stack-of-saliency-images">
-<h3>Create a stack of saliency images<a class="headerlink" href="#create-a-stack-of-saliency-images" title="Permalink to this heading">#</a></h3>
+<h3>Create a stack of saliency images<a class="headerlink" href="#create-a-stack-of-saliency-images" title="Link to this heading">#</a></h3>
 <p>To understand the overall behavior of our algorithm, we can stack some or all of the saliency maps in the test set to generate an overarching estimate of important pixels. For the sake of simplicity, we will stack the saliency maps for the first 100 images in the test set. Our results once again indicate that the region around a galaxy is particularly important to the model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -747,11 +754,11 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </section>
 </section>
 <section id="grad-cam">
-<h2>2. Grad-CAM<a class="headerlink" href="#grad-cam" title="Permalink to this heading">#</a></h2>
+<h2>2. Grad-CAM<a class="headerlink" href="#grad-cam" title="Link to this heading">#</a></h2>
 <p>While gradient backpropagation has historically been the most popular type of saliency map, the highly connected nature of backtracking has been shown to produce high variance under small changes to inputs. As such, gradient backpropagation is extremely sensitive to data manipulation (preprocessing, sensitivity analysis, GANs), raising questions about its reliability and validity. Gradient Class Activation Mapping (Grad-CAM) is an alternative method for generating saliency models that only examines the gradient of the final convolutional layer when producing the map. As a consequence, Grad-CAM maps have lower (coarser) resolution than backpropagation but are far more resilient to small changes and therefore more reliable when tuning a model. A full description of the technique can be found in <a href='https://arxiv.org/abs/1610.02391'>Selveraju et al. 2016</a>.</p>
 <p>The code for Grad-CAM comes from a useful tutorial on the subject by Daniel Reiff. For more information, please visit the  <a href='https://towardsdatascience.com/understand-your-algorithm-with-grad-cam-d3b62fce353'>full tutorial</a>.</p>
 <section id="id2">
-<h3>Dependencies<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Dependencies<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Open_CV</span></code> and <code class="docutils literal notranslate"><span class="pre">astropy.simple_norm</span></code> are used to do manipulate the image for display. Alternatively, we could allow Python to automatically clip the image when the heatmap is out of range.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -855,7 +862,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </section>
 </section>
 <section id="rise-algorithm">
-<h2>3. RISE Algorithm<a class="headerlink" href="#rise-algorithm" title="Permalink to this heading">#</a></h2>
+<h2>3. RISE Algorithm<a class="headerlink" href="#rise-algorithm" title="Link to this heading">#</a></h2>
 <p>The RISE (Randomized Input Sampling for Explanation) Algorithm is another interpretation technique for calculating saliency maps. Instead of calculating gradients from within the model, the RISE implementation works by covering up pieces of the input image, running it through the model, and calculating the average activation in order to determine what parts of the image are most important. As such, this method does not require any access to the inner workings of the model. The algorithm first generates a random sequence of binary grids (called masks), which are placed onto the image. Everything not covered by the mask is removed by multiplying the images together, and the resultant activations are averaged to get our final heatmap. A full description of the algorithm and its variations is provided by <a href='https://arxiv.org/abs/1806.07421'>Petsiuk et al. 2018</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -962,12 +969,12 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 <p><strong>When examining the selected image</strong>, we see a ring around the galactic center. Note that this is not the case for all astronomical images, or even all images in this dataset. Try playing around with the selected image to generate different saliency maps. For images where the central feature is relatively small, RISE’s occlusion-based methodology can be unreliable.</p>
 </section>
 <section id="ablation-analysis">
-<h2>4. Ablation Analysis<a class="headerlink" href="#ablation-analysis" title="Permalink to this heading">#</a></h2>
+<h2>4. Ablation Analysis<a class="headerlink" href="#ablation-analysis" title="Link to this heading">#</a></h2>
 <p>Saliency maps provide an intuitive visual understanding of our model’s focus and can be useful for understanding the physical relevance of our classification scheme. In order to understand the efficacy of our model’s architecture, we can instead use ablation analysis to determine the most important layers of our model. Ablation analysis works by rebuilding our model without a specified layer of interest and testing and comparing the performance of a partial model. Since we are focusing on our model’s internal architecture rather than the features of the dataset we are looking at, we want to use this technique when trying to improve the training metrics of our model by editing its layers. This method allows us to determine which layers of the model are most important, or if some layers are hindering the learning capabilities of our mode</p>
-<p>In the exercise below, we will build and train four mini-models on the same data set as before. As this is an educational notebook, we will limit the training time of each model to five epochs. Results with these models may vary considerably due to these training constraints, but we highly encourage you to try modifying this section of the notebook for different results (see <span class="xref myst">Exercises</span>)</p>
+<p>In the exercise below, we will build and train four mini-models on the same data set as before. As this is an educational notebook, we will limit the training time of each model to five epochs. Results with these models may vary considerably due to these training constraints, but we highly encourage you to try modifying this section of the notebook for different results (see <a class="reference internal" href="#Exercises/Extensions"><span class="xref myst">Exercises</span></a>)</p>
 <p>Note that performing an ablation analysis will require training multiple models with the same architecture. This can be quite compute intensive on personal computers, so if you are running this notebook locally it is recommended that your device be plugged in before running the analysis.</p>
 <section id="id3">
-<h3>Dependencies<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Dependencies<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Tensorflow</span></code> is used build our model and train it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -21343,7 +21350,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </section>
 </section>
 <section id="faq">
-<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">#</a></h2>
+<h2>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>How do I choose which saliency model to use?</strong> Each saliency technique has it’s own strengths and weaknesses. If you are looking for an intuitive approach that produces the highest resolution image, then gradient backpropagation is the best choice. If you want to control which layer to look at and watch how the model evolves or are concerned about reliability, then Grad-CAM will perform better. If you don’t have access to the inner workings of the model or want to understand how a model would perform with slightly different inputs, then RISE is the best option. As a reminder, ablation analysis is used when trying to improve the training metrics of our model by editing its layers. This method allows us to determine which layers of the model are most important, or if some layers are hindering the learning capabilities of our model.</p></li>
 <li><p><strong>Why does my ablation analysis have a negative performance drop?</strong> A negative performance drop suggests that removing a layer would be beneficial to the accuracy of the model, which can actually be the case. In this particular scenario, however, it is more likely that your model ran into a fluke while training. Try cranking up the number of epochs and retraining for longer periods of time to get more consistent results.</p></li>
@@ -21351,18 +21358,18 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </ul>
 </section>
 <section id="exercises-extensions">
-<h2>Exercises/Extensions<a class="headerlink" href="#exercises-extensions" title="Permalink to this heading">#</a></h2>
+<h2>Exercises/Extensions<a class="headerlink" href="#exercises-extensions" title="Link to this heading">#</a></h2>
 <p><strong>Viewing different layers.</strong> Go back to the Grad-CAM implementation and select the first convolutional layer instead (typically named “conv2d”). Run the code and compare your heatmap with the one produced by the third layer. What differences do you notice in terms of resolution and regional focus? Repeat with the second convolutional layer. How does the model’s focus change?</p>
 <p><strong>Changing kernel size.</strong> Go back to the RISE implementation and try playing around with the size of the mask. How does this impact the saliency image generated? Try playing around with N (the number of masks) and p1 (the probability of a given cell being visible). How does the image change as N increases? 0.5 is a commonly accepted value of p1. What problems do we run into at small and large p1?</p>
 <p><strong>Other RISE implementations.</strong> The RISE algorithm can be implemented many different ones. In the given example, we create patches of visibility on an otherwise covered image. Try reversing the algorithm so that masks black out a piece of the image and leave the rest visible. How does this affect our saliency map? Which of these two methods is better in this particular case and why?</p>
 </section>
 <section id="about-this-notebook">
-<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this heading">#</a></h2>
+<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Link to this heading">#</a></h2>
 <p><strong>Info:</strong><br />
 This notebook is based on the code repository for the paper <a href="https://doi.org/10.1016/j.ascom.2020.100390">”DeepMerge: Classifying High-redshift Merging Galaxies with Deep Neural Networks”</a>, A. Ćiprijanović, G.F. Snyder, B. Nord, J.E.G. Peek, Astronomy &amp; Computing, Volume 32, July 2020, and the notebook “CNN_for_cluster_masses” by Michelle Ntampaka, Assistant Astronomer, <a class="reference external" href="mailto:mntampaka&#37;&#52;&#48;stsci&#46;edu">mntampaka<span>&#64;</span>stsci<span>&#46;</span>edu</a>.</p>
 </section>
 <section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
+<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
 <p>If you use this data set, <code class="docutils literal notranslate"><span class="pre">astropy</span></code>, or <code class="docutils literal notranslate"><span class="pre">keras</span></code> for published research, please cite the
 authors. Follow these links for more information:</p>
 <ul class="simple">
