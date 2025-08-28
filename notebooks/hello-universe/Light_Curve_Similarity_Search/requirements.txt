@@ -1,0 +1,9 @@
+pandas
+numpy
+scipy
+s3fs
+lightkurve>=2.5
+dask
+scikit-learn
+seaborn
+torch
