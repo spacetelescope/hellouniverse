@@ -6,44 +6,22 @@ name: Notebook CI - Scheduled
 on:
   # Run weekly on Sundays at 2 AM UTC
   schedule:
-    - cron: '57 20 * * *'
+    - cron: '47 14 * * *'
     #- cron: '0 2 * * 0'
-
+          
 jobs:
-  notebook-ci:
+  execute-all:
+    if: inputs.action_type == 'execute-all'  
     uses: spacetelescope/notebook-ci-actions/.github/workflows/notebook-ci-unified.yml@v1.0.0
     with:
-      # Repository-specific configuration
-      notebook_path: 'notebooks'
-      python_version: '3.11'
-      
-      # Scheduled execution settings
-      execution_mode: 'force_execute'
-      notebook_pattern: ''
-      
-      # Environment settings
-      environment_file: 'requirements.txt'
-      conda_environment_file: ''
-      
-      # Security and validation
-      security_check: true
-      notebook_validation: true
-      
-      # Documentation generation
-      generate_docs: true
-      docs_artifact: 'hellouniverse-scheduled-docs'
-      
-      # Artifact settings
-      artifact_retention_days: 30
-      
-      # Performance settings
-      timeout_minutes: 60
-      max_parallel: 3
-      
-      # Scheduled-specific settings
-      collect_execution_stats: true
-      
+      execution-mode: 'force_execute'
+      trigger-event: 'execute'
+      python-version: '3.11'
+      enable-validation: false
+      enable-security: false
+      enable-execution: true
+      enable-storage: false
+      enable-html-build: false
     secrets: inherit
-
 
 
