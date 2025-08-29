@@ -13,7 +13,7 @@ jobs:
   execute-all:  
     uses: spacetelescope/notebook-ci-actions/.github/workflows/notebook-ci-unified.yml@v1.0.0
     with:
-      execution-mode: 'force_execute'
+      execution-mode: 'on-demand'
       trigger-event: 'execute'
       python-version: '3.11'
       enable-validation: false
@@ -22,6 +22,7 @@ jobs:
       enable-storage: false
       enable-html-build: false
     secrets: inherit
+
 
 
 
