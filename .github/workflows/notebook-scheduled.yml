@@ -10,8 +10,7 @@ on:
     #- cron: '0 2 * * 0'
           
 jobs:
-  execute-all:
-    if: inputs.action_type == 'execute-all'  
+  execute-all:  
     uses: spacetelescope/notebook-ci-actions/.github/workflows/notebook-ci-unified.yml@v1.0.0
     with:
       execution-mode: 'force_execute'
@@ -23,6 +22,7 @@ jobs:
       enable-storage: false
       enable-html-build: false
     secrets: inherit
+
 
 
 
