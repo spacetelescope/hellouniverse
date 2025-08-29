@@ -6,8 +6,7 @@ name: Notebook CI - Scheduled
 on:
   # Run weekly on Sundays at 2 AM UTC
   schedule:
-    - cron: '*/10 * * * *'
-    #- cron: '0 2 * * 0'
+    - cron: '0 2 * * 0'
           
 jobs:
   execute-all:  
@@ -22,6 +21,7 @@ jobs:
       enable-storage: false
       enable-html-build: false
     secrets: inherit
+
 
 
 
