@@ -9,3 +9,4 @@ chapters:
 - file: notebooks/hello-universe/Regressing_3D-HST_galaxy_redshift_with_decision_trees/Regressing_3D-HST_galaxy_redshift_with_decision_trees.ipynb
 - file: notebooks/hello-universe/Classifying_PanSTARRS_sources_with_unsupervised_learning/Classifying_PanSTARRS_sources_with_unsupervised_learning.ipynb
 - file: notebooks/hello-universe/Interpreting_CNNs/Interpreting_CNNs.ipynb
+- file: notebooks/hello-universe/Estimating_TESS_rotation_periods_with_CNNs/Estimating_TESS_rotation_periods_with_CNNs.ipynb
