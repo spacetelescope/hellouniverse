@@ -7,3 +7,4 @@ dask
 scikit-learn
 seaborn
 torch
+pyarrow
