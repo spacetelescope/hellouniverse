@@ -34,4 +34,5 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
-
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}

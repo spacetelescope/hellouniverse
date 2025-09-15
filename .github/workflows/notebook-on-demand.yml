@@ -68,6 +68,8 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}
 
   execute-all:
     if: inputs.action_type == 'execute-all'  
@@ -85,6 +87,8 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}
 
   security-scan-all:
     if: inputs.action_type == 'security-scan-all'
@@ -102,6 +106,8 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}
 
   validate-single:
     if: inputs.action_type == 'validate-single'
@@ -120,6 +126,8 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}
 
   execute-single:
     if: inputs.action_type == 'execute-single'
@@ -138,6 +146,8 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}
 
   full-pipeline-all:
     if: inputs.action_type == 'full-pipeline-all'
@@ -155,6 +165,8 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}
 
   full-pipeline-single:
     if: inputs.action_type == 'full-pipeline-single'
@@ -173,6 +185,8 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}
 
   build-html-only:
     if: inputs.action_type == 'build-html-only'
@@ -189,6 +203,8 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}
 
   deprecate-notebook:
     if: inputs.action_type == 'deprecate-notebook'
@@ -207,6 +223,8 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}
 
   performance-test:
     if: inputs.action_type == 'performance-test'
@@ -224,3 +242,5 @@ jobs:
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
+      HELLO_USERID: ${{ secrets.HELLO_USERID }}
+      HELLO_PW: ${{ secrets.HELLO_PW }}
