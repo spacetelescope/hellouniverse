@@ -8,3 +8,5 @@ scikit-learn
 seaborn
 torch
 pyarrow
+sqlalchemy
+psycopg2
