@@ -152,6 +152,7 @@ jobs:
       enable-execution: true
       enable-storage: true
       enable-html-build: true
+      enable-a11y-nb-check: true
     secrets:
       CASJOBS_USERID: ${{ secrets.CASJOBS_USERID }}
       CASJOBS_PW: ${{ secrets.CASJOBS_PW }}
