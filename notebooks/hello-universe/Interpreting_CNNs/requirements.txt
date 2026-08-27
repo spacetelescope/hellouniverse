@@ -1,5 +1,5 @@
-keras==2.15.0
-tensorflow==2.15.1
+keras>=3.11.3
+tensorflow
 astropy
 numpy
 matplotlib>=3.7.2
